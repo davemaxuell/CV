@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { MapPin, Mail, Phone, Menu, X } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
-import portrait from "../assets/images/dave_portrait_1789965082593.jpg";
+import portrait from "../assets/images/dave-profile.jpg";
 import { panelTransition } from './motionSettings';
 
 export const Sidebar = ({
@@ -64,13 +64,15 @@ export const Sidebar = ({
     <aside className="profile-column">
       <div className="profile-sticky">
         <div className="profile-card">
+          <div className="profile-photo-frame">
           <img
             className="profile-photo"
             src={portrait}
             alt="Dave Maxuell"
-            width="360"
-            height="387"
+            width="960"
+            height="1280"
           />
+          </div>
           <div className="profile-copy">
             <h1>
               <span className="profile-greeting">Hello, I’m</span>

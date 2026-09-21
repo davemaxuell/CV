@@ -172,14 +172,25 @@ textarea:focus-visible {
   box-shadow: var(--shadow);
   position: relative;
 }
-.profile-photo {
+.profile-photo-frame {
   display: block;
   width: 100%;
   height: 236px;
-  object-fit: cover;
-  object-position: top;
+  overflow: hidden;
   border-radius: 8px;
   margin-bottom: 10px;
+}
+.profile-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 56% 75%;
+  transform: scale(1.45);
+  transform-origin: 56% 62%;
+}
+@media (max-width: 809px) {
+  .profile-photo { transform: scale(1.7); }
 }
 .profile-copy h1 {
   font-size: 24px;
@@ -854,7 +865,7 @@ textarea:focus-visible {
     gap: 8px;
     min-height: 166px;
   }
-  .profile-photo {
+  .profile-photo-frame {
     width: 126px;
     height: auto;
     min-height: 154px;
@@ -1017,7 +1028,7 @@ textarea:focus-visible {
   }
 }
 @media (max-width: 359px) {
-  .profile-photo {
+  .profile-photo-frame {
     width: 100px;
     flex-basis: 100px;
   }
@@ -1062,7 +1073,7 @@ textarea:focus-visible {
 }
 /* Reference typography stays the same on mobile; only the name drops to 22px. */
 @media (max-width: 809px) {
-  .profile-photo {
+  .profile-photo-frame {
     height: 154px;
     min-height: 154px;
     max-height: 154px;
@@ -1218,7 +1229,7 @@ textarea:focus-visible {
     padding: 8px;
     min-height: 180px;
   }
-  .profile-photo {
+  .profile-photo-frame {
     width: 134px;
     height: 164px;
     flex: 0 0 134px;
@@ -1463,7 +1474,7 @@ html { scrollbar-gutter: stable; }
   letter-spacing: 0;
   color: var(--body);
 }
-.profile-photo { margin-bottom: 16px; }
+.profile-photo-frame { margin-bottom: 16px; }
 .profile-copy h1 { margin-bottom: 12px; }
 .profile-tagline { margin-bottom: 16px; }
 .profile-location { gap: 8px; line-height: 1.5; }
@@ -1474,11 +1485,11 @@ html { scrollbar-gutter: stable; }
 .profile-actions .primary-button, .profile-actions .secondary-button { min-height: 44px; display: flex; align-items: center; justify-content: center; }
 @media (min-width: 810px) and (max-width: 1199px) {
   .profile-contact { margin-top: 0; }
-  .profile-photo { margin-bottom: 0; }
+  .profile-photo-frame { margin-bottom: 0; }
 }
 @media (max-width: 809px) {
   .profile-card { padding: 8px; }
-  .profile-photo { margin-bottom: 0; }
+  .profile-photo-frame { margin-bottom: 0; }
   .profile-greeting { font-size: 0.75rem; margin-bottom: 2px; }
   .profile-copy h1 { margin-bottom: 8px; }
   .mobile-profile-contact .profile-links a { min-height: 36px; }
