@@ -1,6 +1,7 @@
 import React from 'react';
 import { Project } from '../types';
 import { X, CheckCircle, Calendar, Tag, Building } from 'lucide-react';
+import { useDialog } from './useDialog';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -8,10 +9,11 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+  const dialogRef = useDialog(!!project, onClose);
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/40 backdrop-blur-xs animate-in fade-in duration-200">
+    <div ref={dialogRef} role="dialog" aria-modal="true" aria-label={project.title} className="cv-dialog fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/40" onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
       <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-neutral-200 shadow-2xl relative">
         {/* Close button */}
         <button

@@ -1,3 +1,5 @@
+import vlmImage from '../assets/images/project_vlm_agent_1789965110812.jpg';
+import ragImage from '../assets/images/project_rag_system_1789965097574.jpg';
 import { Experience, Project, Publication, EducationItem, RecognitionItem, SkillCategory } from '../types';
 
 export const personalInfo = {
@@ -327,7 +329,7 @@ export const projects: Project[] = [
       "Collaborative GitHub architecture integrating maps, geolocation, and place recommendations."
     ],
     tags: ["RAG", "OpenAI API", "Vector Search", "Multilingual", "FastAPI", "Web Integration"],
-    image: "/src/assets/images/project_rag_system_1789965097574.jpg",
+    image: ragImage,
     linkText: "View Architecture"
   },
   {
@@ -343,7 +345,7 @@ export const projects: Project[] = [
       "Automated evaluation against Character Error Rate (CER), Error F1, and Correction Accuracy."
     ],
     tags: ["VLM", "Qwen-VL", "InternVL", "EXAONE 4.5", "LoRA", "Diffusion"],
-    image: "/src/assets/images/project_vlm_agent_1789965110812.jpg",
+    image: vlmImage,
     linkText: "View Model Details"
   },
   {

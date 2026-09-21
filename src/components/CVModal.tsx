@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Printer, Copy, Check, Download } from 'lucide-react';
+import { useDialog } from './useDialog';
 import {
   personalInfo,
   experiences,
@@ -17,6 +18,8 @@ interface CVModalProps {
 
 export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState(false);
+  const dialogRef = useDialog(isOpen, onClose);
 
   if (!isOpen) return null;
 
@@ -48,12 +51,11 @@ ${educationList.map(edu => `### ${edu.institution}\n*${edu.period}*\n${edu.degre
   const handleCopyMarkdown = async () => {
     try {
       await navigator.clipboard.writeText(getMarkdownContent());
+      setCopyError(false);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Fallback
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setCopyError(true);
     }
   };
 
@@ -65,10 +67,11 @@ ${educationList.map(edu => `### ${edu.institution}\n*${edu.period}*\n${edu.degre
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
+    URL.revokeObjectURL(element.href);
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/50 backdrop-blur-xs">
+    <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Curriculum Vitae" className="cv-dialog fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/50" onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
       <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col border border-neutral-300 shadow-2xl overflow-hidden">
         {/* Modal Top Bar */}
         <div className="px-6 py-4 border-b border-neutral-200 bg-neutral-50 flex items-center justify-between">
@@ -132,8 +135,9 @@ ${educationList.map(edu => `### ${edu.institution}\n*${edu.period}*\n${edu.degre
           </div>
         </div>
 
+        {copyError && <p role="status" className="px-6 py-2 text-sm">Clipboard access failed. Use Export .md to save your CV.</p>}
         {/* Formatted CV Content (Printable) */}
-        <div className="p-6 sm:p-10 overflow-y-auto font-sans text-neutral-900 space-y-8 print:p-0">
+        <div className="p-6 sm:p-10 overflow-y-auto text-neutral-900 space-y-8 print:p-0">
           {/* Header */}
           <div className="text-center border-b border-neutral-200 pb-5">
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-950">
