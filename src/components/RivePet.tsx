@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Rive } from '@rive-app/canvas';
 import wasmUrl from '@rive-app/canvas/rive.wasm?url';
+import { PetThoughts } from './PetThoughts';
 
 const assetBase = `${import.meta.env.BASE_URL}pet/interactive-character-follow`;
 
@@ -152,6 +153,14 @@ export const RivePet = () => {
 
   return (
     <figure className="pet-companion print:hidden" aria-label="Interactive character companion">
+      <svg width="0" height="0" className="pet-filter" aria-hidden="true" focusable="false">
+        <defs>
+          <filter id="pet-ink" colorInterpolationFilters="sRGB">
+            {/* Keep the monochrome artwork transparent without blending the speech bubble. */}
+            <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -0.2126 -0.7152 -0.0722 1 0" />
+          </filter>
+        </defs>
+      </svg>
       <div ref={sceneRef} className="pet-scene">
         {(!ready || failed) && (
           <img src={`${assetBase}.png`} alt="A friendly illustrated character with round glasses" className="absolute inset-0 w-full h-full object-contain" width="800" height="600" />
@@ -164,6 +173,7 @@ export const RivePet = () => {
         />
       </div>
       <figcaption className="pet-caption">
+        <PetThoughts active={visible} />
         {!failed && (
           <button type="button" onClick={() => setPaused(value => !value)}
             aria-label={paused ? 'Play pet animation' : 'Pause pet animation'}>

@@ -18,27 +18,22 @@ export const personalInfo = {
   ]
 };
 
-export const moreAboutMe = {
-  intro: "I'm Dave, an undergraduate student in Busan, South Korea. I usually approach AI through projects: a concrete problem, a working pipeline, and questions to investigate along the way.",
-  sections: [
-    {
-      title: "Where I am now",
-      text: "I study at Busan University of Foreign Studies and expect to graduate in February 2027. Alongside my research at BUFS, I'm a research intern at UNIST's Interactive Multimodal Machine Learning Lab. I want to continue this path through graduate study."
-    },
-    {
-      title: "I think in workflows and pipelines",
-      text: "My approach is project-based. I pay close attention to the workflow: how the stages fit together and how an idea becomes a working AI system. LLMs, NLP, VLMs, and RAG are the areas where I'm putting that approach into practice."
-    },
-    {
-      title: "Training and rewards matter to me",
-      text: "Within a project, I'm especially interested in effective training and reward methods: how a model learns, what it is rewarded for, and how those choices shape its behavior. These are questions I want to investigate more deeply through reinforcement learning and post-training."
-    },
-    {
-      title: "What I want to explore next",
-      text: "In the future, I want to go deeper into foundation models and model architecture, alongside my interests in vision-language-action systems and vision-language navigation. Graduate study is the next step I want to take toward understanding and contributing to these directions."
-    }
-  ]
-};
+// Short, authored thoughts from Dave; opinions stay in the first person.
+export const petThoughts = [
+  "I learn AI by building projects.",
+  "I think in workflows and pipelines.",
+  "LLMs, NLP, VLMs, RAG: that's my focus.",
+  "I'm curious about better training and rewards.",
+  "I want to dig deeper into post-training.",
+  "Reinforcement learning is on my learning list.",
+  "I want to explore foundation models and model architecture.",
+  "VLA and VLN have my curiosity, too.",
+  "I'm an undergrad. There's so much more to explore!",
+  "I want to take my AI research into graduate study.",
+  "I believe AI development should keep moving.",
+  "I believe AI won't replace humans.",
+  "I see recursive self-improvement (RSI) as dangerous.",
+];
 
 export const skillCategories: SkillCategory[] = [
   {
