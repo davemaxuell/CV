@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { MapPin, Mail, Phone, Globe, Menu, X } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
 import portrait from "../assets/images/dave_portrait_1789965082593.jpg";
+import { panelTransition } from './motionSettings';
 
 export const Sidebar = ({
   onScrollToContact,
@@ -106,7 +107,7 @@ export const Sidebar = ({
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: reduced ? 0 : 0.4 }}
+              transition={reduced ? { duration: 0 } : panelTransition}
             >
               <div>{contact}</div>
             </motion.div>

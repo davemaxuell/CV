@@ -4,7 +4,7 @@
  * FIRST VIEWPORT: 200px profile at left, 500px text column at right, generous section rhythm.
  * FORM: User-pinned reference; measured in Playwright, no alternate visual direction. */
 import { useState } from "react";
-import { MotionConfig } from "motion/react";
+import { AnimatePresence, MotionConfig } from "motion/react";
 import { Sidebar } from "./components/Sidebar";
 import { AboutSection } from "./components/AboutSection";
 import { SkillsSection } from "./components/SkillsSection";
@@ -55,7 +55,9 @@ export default function App() {
       <aside className="floating-pet" aria-label="Website pet">
         <RivePet />
       </aside>
-      <ProjectModal project={project} onClose={() => setProject(null)} />
+      <AnimatePresence>
+        {project && <ProjectModal key={project.id} project={project} onClose={() => setProject(null)} />}
+      </AnimatePresence>
     </MotionConfig>
   );
 }

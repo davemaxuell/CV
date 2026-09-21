@@ -1,12 +1,17 @@
 import type { Project } from '../types';
 import { X } from 'lucide-react';
 import { useDialog } from './useDialog';
+import { motion, useReducedMotion } from 'motion/react';
+import { gentleEase } from './motionSettings';
 
 export const ProjectModal = ({ project, onClose }: { project: Project | null; onClose: () => void }) => {
   const dialogRef = useDialog(!!project, onClose);
+  const reduced = useReducedMotion();
   if (!project) return null;
   return (
-    <div ref={dialogRef} role="dialog" aria-modal="true" aria-label={project.title}
+    <motion.div ref={dialogRef} role="dialog" aria-modal="true" aria-label={project.title}
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      transition={{ duration: reduced ? 0 : 0.18, ease: gentleEase }}
       className="project-dialog cv-dialog"
       onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
       <div className="project-document">
@@ -18,6 +23,6 @@ export const ProjectModal = ({ project, onClose }: { project: Project | null; on
         {project.highlights.length > 0 && <ul>{project.highlights.map((item) => <li key={item}>{item}</li>)}</ul>}
         <p className="document-tools">{project.tags.join(' · ')}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };

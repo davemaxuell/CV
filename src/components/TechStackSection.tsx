@@ -39,6 +39,7 @@ export const TechStackSection = () => {
         <div
           className="tech-track"
           style={{
+            willChange: running && !paused && !reduced ? "transform" : "auto",
             animationPlayState:
               running && !paused && !reduced ? "running" : "paused",
           }}

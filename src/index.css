@@ -378,7 +378,7 @@ textarea:focus-visible {
 .skill-detail {
   overflow: hidden;
 }
-.skill-detail > div {
+.skill-detail-content {
   padding-top: 24px;
   font-size: 14px;
 }
@@ -1442,7 +1442,7 @@ body { letter-spacing: 0; }
   line-height: 1.55;
 }
 .resume-date { font-size: 0.8125rem; line-height: 1.5; letter-spacing: 0; font-variant-numeric: tabular-nums; }
-.resume-details, .skill-detail > div, .project-document { font-size: 1rem; line-height: 1.7; }
+.resume-details, .skill-detail-content, .project-document { font-size: 1rem; line-height: 1.7; }
 .resume-details > p, .resume-details > ul, .project-document > p, .project-document > ul { max-width: 70ch; }
 .detail-tools, .publication-metrics, .form-note, .project-link, .project-document .document-tools {
   font-size: 0.8125rem;
@@ -1471,3 +1471,16 @@ body { letter-spacing: 0; }
   .publication-list .resume-heading, .publication-list .resume-date { grid-column: 1; }
   .publication-list .resume-chevron { grid-column: 2; }
 }
+
+/* Consistent, interruptible motion; native wheel and touch scrolling remain native. */
+:root { --motion-ease: cubic-bezier(0.22, 1, 0.36, 1); }
+html { scrollbar-gutter: stable; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  .resume-chevron, .skill-chip svg { transition: transform 320ms var(--motion-ease); }
+  .primary-button, .secondary-button, .skill-chip, .link-grid a, .project-link {
+    transition: background-color 180ms var(--motion-ease), color 180ms var(--motion-ease), border-color 180ms var(--motion-ease);
+  }
+}
+.skill-detail > div { display: flow-root; }
+.project-dialog { animation: none; }

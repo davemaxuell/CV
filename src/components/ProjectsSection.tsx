@@ -14,18 +14,22 @@ export const ProjectsSection = ({
   const reduced = useReducedMotion();
   useEffect(() => {
     const track = trackRef.current!;
-    const update = () =>
-      setEdges({
-        start: track.scrollLeft < 2,
-        end: track.scrollLeft + track.clientWidth >= track.scrollWidth - 2,
-      });
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const start = track.scrollLeft < 2;
+      const end = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+      setEdges(previous => previous.start === start && previous.end === end ? previous : { start, end });
+    };
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
     const resize = new ResizeObserver(update);
     resize.observe(track);
-    track.addEventListener("scroll", update);
+    track.addEventListener("scroll", onScroll, { passive: true });
     update();
     return () => {
       resize.disconnect();
-      track.removeEventListener("scroll", update);
+      track.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(frame);
     };
   }, []);
   const scroll = (direction: number) =>

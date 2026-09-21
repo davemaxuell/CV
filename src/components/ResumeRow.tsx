@@ -1,6 +1,7 @@
 ﻿import { useId, useState, type ReactNode } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ChevronDown } from "lucide-react";
+import { panelTransition } from './motionSettings';
 
 export const ResumeRow = ({
   title,
@@ -47,7 +48,7 @@ export const ResumeRow = ({
             transition={
               reduced
                 ? { duration: 0 }
-                : { type: "spring", duration: 0.4, bounce: 0.08 }
+                : panelTransition
             }
             className="resume-panel"
           >

@@ -96,6 +96,8 @@ export const RivePet = () => {
 
   useEffect(() => {
     let frame = 0;
+    let previousTime = performance.now();
+    let gaze: { x: number; y: number } | null = null;
     const update = () => {
       frame = 0;
       const canvas = canvasRef.current;
@@ -111,11 +113,21 @@ export const RivePet = () => {
       const scale = Math.min(1,
         (rect.width * 0.45) / (Math.abs(dx) || 1),
         (rect.height * 0.45) / (Math.abs(dy) || 1));
+      const target = { x: centerX + dx * scale, y: centerY + dy * scale };
+      const now = performance.now();
+      const blend = 1 - Math.exp(-Math.min(now - previousTime, 32) / 65);
+      previousTime = now;
+      if (!gaze) gaze = target;
+      gaze.x += (target.x - gaze.x) * blend;
+      gaze.y += (target.y - gaze.y) * blend;
+      const settling = Math.hypot(target.x - gaze.x, target.y - gaze.y) > 0.2;
+      if (!settling) gaze = target;
       canvas.dispatchEvent(new MouseEvent('mousemove', {
-        clientX: centerX + dx * scale,
-        clientY: centerY + dy * scale,
+        clientX: gaze.x,
+        clientY: gaze.y,
         bubbles: false,
       }));
+      if (settling) frame = requestAnimationFrame(update);
     };
     const schedule = () => {
       if (!frame) frame = requestAnimationFrame(update);

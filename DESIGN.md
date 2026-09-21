@@ -77,3 +77,10 @@ Small surfaces use 0 2px 8px 1px rgba(0,0,0,.04). Expandable rows have a 1px das
 Preserve all substantive CV data and keep it discoverable through expansions, dialogs, and CV export. Match the reference's exact typefaces and three responsive arrangements. Do not introduce fabricated testimonials, backend delivery confirmations, large highlight grids, or unrelated decorative animation.
 
 The mechanical detector's generic warnings about Inter and spring easing are intentional exceptions: both are explicitly required by the user's reference and verified from its live styles/animation frames.
+
+
+## Motion refinement
+
+Use 320ms deceleration (0.22, 1, 0.36, 1) for accordion and menu height changes, 180ms opacity for dialog entry/exit and control feedback. Skill content uses ResizeObserver-measured heights so switching between open categories animates as well as opening/closing. Native anchor scrolling is smooth; wheel and touch remain browser-controlled. Stable scrollbar space prevents modal scroll-lock shifts. Carousel scroll listeners are passive and frame-batched and only update React when edge availability changes. The logo marquee promotes its transform only while active. Pet gaze uses a frame-rate-independent 65ms smoothing time constant and stops requesting frames when settled; direction remains relative to the pet. Reduced motion bypasses transitions, and continuous motion retains pause/visibility controls.
+
+Research: https://web.dev/articles/animations-guide and https://motion.dev/docs/react-animation. Layout-changing disclosures necessarily update layout, so their scope and duration are bounded; opacity/transform are used for overlays and continuous marquee movement.

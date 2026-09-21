@@ -1,11 +1,10 @@
-﻿import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useState } from "react";
+import { SmoothHeight } from "./SmoothHeight";
 import { ChevronDown } from "lucide-react";
 import { SectionBadge } from "./SectionBadge";
 import { skillCategories } from "../data/portfolioData";
 export const SkillsSection = () => {
   const [selected, setSelected] = useState<string | null>(null);
-  const reduced = useReducedMotion();
   const group = skillCategories.find((g) => g.title === selected);
   return (
     <section id="skills" className="cv-section">
@@ -24,17 +23,9 @@ export const SkillsSection = () => {
           </button>
         ))}
       </div>
-      <AnimatePresence initial={false}>
+      <SmoothHeight id="skill-detail" hidden={!group}>
         {group && (
-          <motion.div
-            id="skill-detail"
-            className="skill-detail"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: reduced ? 0 : 0.3 }}
-          >
-            <div>
+            <div className="skill-detail-content">
               <h3>{group.title}</h3>
               <p>{group.description}</p>
               <ul>
@@ -43,9 +34,8 @@ export const SkillsSection = () => {
                 ))}
               </ul>
             </div>
-          </motion.div>
         )}
-      </AnimatePresence>
+      </SmoothHeight>
     </section>
   );
 };
