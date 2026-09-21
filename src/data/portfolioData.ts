@@ -165,8 +165,8 @@ export const experiences: Experience[] = [
     id: "unist-intern",
     company: "UNIST, Interactive Multimodal Machine Learning Lab",
     role: "Research Intern",
-    period: "Feb. 2026 – Aug. 2026",
-    current: false,
+    period: "Feb. 2026 – Present",
+    current: true,
     department: "Multimodal AI & Robotics",
     iconType: "lab",
     points: [
