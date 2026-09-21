@@ -83,7 +83,7 @@ ${languageSkills.map(skill => `- **${skill.title}** (${skill.year}) — ${skill.
               Curriculum Vitae — {personalInfo.name}
             </h2>
             <p className="text-xs text-neutral-500">
-              AI Researcher & Engineer • Multimodal & RAG
+              {personalInfo.title} · {personalInfo.tagline}
             </p>
           </div>
 

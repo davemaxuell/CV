@@ -2,8 +2,8 @@ import { Experience, Project, Publication, EducationItem, RecognitionItem, Skill
 
 export const personalInfo = {
   name: "Dave Maxuell",
-  title: "AI Researcher & Engineer",
-  tagline: "Multimodal AI, RAG & Model Reasoning",
+  title: "Undergraduate Student",
+  tagline: "AI research · LLM, NLP, VLM & RAG",
   status: "Available for Research & Roles",
   location: "Busan, South Korea",
   email: "davemaxuell@gmail.com",
@@ -12,9 +12,9 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/dave-maxuell-b39185224/",
   scholar: "https://scholar.google.com/citations?user=DpN3XPYAAAAJ&hl=en",
   aboutIntro: [
-    "I'm an AI researcher and engineer based in Busan, South Korea. Messy documents and tricky questions are my kind of problem. I build multimodal AI, retrieval-augmented generation (RAG) systems, and vision-language models that turn complex information into useful answers.",
-    "I research model reasoning and document understanding at Busan University of Foreign Studies and currently intern at UNIST's Interactive Multimodal Machine Learning Lab. I take ideas from experiments to working AI agents, then test how well they hold up.",
-    "My research has earned multiple Excellent Paper Awards at HCLT and KIISE conferences. Next up: more good questions, rigorous experiments, and useful things to build. I'm open to research collaborations and AI engineering opportunities."
+    "I'm an undergraduate student based in Busan, South Korea, actively researching AI. Messy documents and tricky questions are my kind of problem. My current focus is large language models (LLMs), natural language processing (NLP), vision-language models (VLMs), and retrieval-augmented generation (RAG).",
+    "I conduct research at Busan University of Foreign Studies and currently intern at UNIST's Interactive Multimodal Machine Learning Lab. I take ideas from experiments to working systems, then test how well they hold up. My work has earned Excellent Paper Awards at HCLT and KIISE.",
+    "I want to pursue AI research more deeply through graduate study. Beyond my current focus, I'm interested in foundation models, vision-language-action (VLA), vision-language navigation (VLN), reinforcement learning, and post-training. I'm keen to keep learning, ask better questions, and contribute to research with practical value."
   ]
 };
 
@@ -52,10 +52,10 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     id: "robotics-vla",
-    title: "Embodied AI & Simulation",
-    shortTitle: "Embodied AI & VLA",
+    title: "Research Interests: Embodied AI & Simulation",
+    shortTitle: "VLA & VLN Interests",
     iconName: "Bot",
-    description: "VLA, vision-and-language navigation & simulators",
+    description: "Exploring VLA, vision-language navigation & simulation",
     items: [
       "Vision-Language-Action (VLA)",
       "Vision-Language Navigation (VLN)",
