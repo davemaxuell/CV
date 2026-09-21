@@ -29,17 +29,17 @@
   font-display: swap;
 }
 :root {
-  --page: #f4f7f5;
+  --page: #faf7f4;
   --surface: #ffffff;
-  --ink: #23332e;
-  --body: #4a5b55;
-  --line: #d6e0da;
-  --accent: #23645a;
-  --accent-hover: #184d46;
-  --accent-soft: #e7f0eb;
+  --ink: #332a24;
+  --body: #62544a;
+  --line: #e5dcd4;
+  --accent: #b3470b;
+  --accent-hover: #913707;
+  --accent-soft: #fff0e3;
   --award-ink: #745923;
   --award-surface: #fff5d6;
-  --shadow: 0 2px 8px 1px rgba(35, 51, 46, 0.04);
+  --shadow: 0 2px 8px 1px rgba(51, 42, 36, 0.04);
   --spring: linear(
     0,
     0.0235,

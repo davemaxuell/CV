@@ -2,14 +2,14 @@
 name: Dave Maxuell CV
 description: MonoCV reference adapted to Dave's research portfolio
 colors:
-  page: '#f4f7f5'
+  page: '#faf7f4'
   surface: '#ffffff'
-  ink: '#23332e'
-  body: '#4a5b55'
-  line: '#d6e0da'
-  accent: '#23645a'
-  accentHover: '#184d46'
-  accentSoft: '#e7f0eb'
+  ink: '#332a24'
+  body: '#62544a'
+  line: '#e5dcd4'
+  accent: '#b3470b'
+  accentHover: '#913707'
+  accentSoft: '#fff0e3'
   awardInk: '#745923'
   awardSurface: '#fff5d6'
 typography:
@@ -37,9 +37,9 @@ User-pinned reference: https://monocv.framer.website/. Measured in Playwright on
 
 ## Colors
 
-User-requested restrained color palette: sage-white canvas #f4f7f5, white surfaces, green-gray ink #23332e and body #4a5b55. Deep teal #23645a owns primary actions, focus, section labels, and recognition rules; #184d46 is its hover shade and #e7f0eb its light selection surface. Paper awards use muted gold #745923 on #fff5d6. Borders are #d6e0da. Original organization artwork keeps its own colors.
+User-requested restrained color palette: warm off-white canvas #faf7f4, white surfaces, warm charcoal ink #332a24 and body #62544a. Burnt orange #b3470b owns primary actions, focus, section labels, and recognition rules; #913707 is its hover shade and #fff0e3 its light selection surface. Paper awards use muted gold #745923 on #fff5d6. Borders are #e5dcd4. Original organization artwork keeps its own colors.
 
-Palette direction informed by Radix's accent/neutral pairing guidance: https://www.radix-ui.com/themes/docs/theme/color. This color request supersedes the reference's monochrome palette while retaining its type, layout, and motion.
+Orange explicitly selected by the user, replacing the previous green palette. This color request supersedes the reference's monochrome palette while retaining its type, layout, and motion.
 
 ## Typography
 
