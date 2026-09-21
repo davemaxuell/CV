@@ -89,11 +89,26 @@
 }
 body {
   margin: 0;
+  isolation: isolate;
   min-width: 320px;
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0.02em;
   -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(105deg, #f2e6d9 0%, var(--page) 24%, var(--page) 76%, #f3e9df 100%);
+}
+@media (max-width: 809px) {
+  body::before { opacity: 0.55; }
+}
+@media print {
+  body::before { display: none; }
 }
 h1,
 h2,

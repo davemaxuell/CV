@@ -86,3 +86,5 @@ Use 320ms deceleration (0.22, 1, 0.36, 1) for accordion and menu height changes,
 Research: https://web.dev/articles/animations-guide and https://motion.dev/docs/react-animation. Layout-changing disclosures necessarily update layout, so their scope and duration are bounded; opacity/transform are used for overlays and continuous marquee movement.
 
 Latest layout refinement: About uses one continuous column at every width. Organization logos occupy centered 48px squares (44px on mobile), inset 12px within row headers. Lenis smooths wheel and section-link scrolling with lerp 0.12; touch remains native, reduced motion destroys the instance, and dialog body locks pause it. Section offsets come from scroll-margin-top.
+
+Background: a static warm edge wash (#f2e6d9 / #f3e9df) fades into the neutral page center. It sits behind content, ignores pointer input, reduces opacity on mobile, and is omitted in print.
