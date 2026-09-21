@@ -80,12 +80,12 @@ with sync_playwright() as p:
     assert reduced.locator('.cv-shell').evaluate('(e)=>getComputedStyle(e).animationName')=='none'
     reduced.locator('#tech-stack').scroll_into_view_if_needed()
     assert reduced.locator('.tech-track').evaluate('(e)=>getComputedStyle(e).animationName')=='none'
-    pet=reduced.locator('.mobile-pet')
+    pet=reduced.locator('.floating-pet')
     pet.scroll_into_view_if_needed()
     assert pet.get_by_role('button',name='Play pet animation').is_visible()
     assert pet.locator('img').evaluate('(e)=>e.complete && e.naturalWidth>0')
     pet.get_by_role('button',name='Play pet animation').click()
-    reduced.wait_for_function("!document.querySelector('.mobile-pet canvas').classList.contains('invisible')")
+    reduced.wait_for_function("!document.querySelector('.floating-pet canvas').classList.contains('invisible')")
     pet.get_by_role('button',name='Pause pet animation').click()
     print('Reduced motion, static tech strip, pet opt-in: pass',flush=True)
     browser.close()

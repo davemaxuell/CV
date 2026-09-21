@@ -51,12 +51,12 @@ export default function App() {
           <LanguageSkillsSection />
           <LinksSection />
           <ContactSection />
-          <div className="mobile-pet">
-            <RivePet />
-          </div>
         </div>
       </main>
       <Footer />
+      <aside className="floating-pet" aria-label="Website pet">
+        <RivePet />
+      </aside>
       <ProjectModal project={project} onClose={() => setProject(null)} />
       <CVModal isOpen={cvOpen} onClose={() => setCVOpen(false)} />
     </MotionConfig>

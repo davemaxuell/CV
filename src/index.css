@@ -1388,3 +1388,44 @@ textarea:focus-visible {
   .project-document { padding: 32px 20px; }
   .project-document h2 { font-size: 22px; }
 }
+
+.floating-pet {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  z-index: 30;
+  width: 140px;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+.floating-pet .pet-scene { width: 140px; height: 130px; }
+.floating-pet canvas,
+.floating-pet .pet-scene > img {
+  position: absolute;
+  width: 360px;
+  height: 270px;
+  max-width: none;
+  left: -110px;
+  top: -65px;
+}
+.floating-pet .pet-caption { justify-content: center; gap: 12px; pointer-events: auto; }
+.pet-credits { position: relative; }
+.pet-credits summary { cursor: pointer; }
+.pet-credits > div {
+  position: absolute;
+  bottom: 28px;
+  right: 0;
+  width: 170px;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.pet-credits a { display: block; }
+@media (max-width: 809px) {
+  .floating-pet { width: 100px; right: 8px; bottom: 8px; }
+  .floating-pet .pet-scene { width: 100px; height: 90px; }
+  .floating-pet canvas,
+  .floating-pet .pet-scene > img { width: 270px; height: 202px; left: -85px; top: -50px; }
+}
+@media print { .floating-pet { display: none; } }

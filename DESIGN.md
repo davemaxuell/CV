@@ -44,7 +44,7 @@ Desktop at 1200px and above: centered shell up to 1240px wide with at least 40px
 
 Tablet 810?1199px: 32px outer gutters, full-width horizontal profile/contact header, flexible profile plus 240px contact column. Main content fills the same width beneath it.
 
-Mobile below 810px: horizontal portrait/name card with a menu for contact links and actions. Single-column content with 14px gutters. Pet appears after the contact section on every screen size, without a surrounding card. At 320px, row dates move below titles when necessary.
+Mobile below 810px: horizontal portrait/name card with a menu for contact links and actions. Single-column content with 14px gutters. The pet floats in a fixed bottom-right position outside the page layout, tracks pointer movement across the viewport, and scales down on mobile. Artwork lets clicks through; only its controls capture clicks. At 320px, row dates move below titles when necessary.
 
 ## Elevation & Depth
 

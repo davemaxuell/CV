@@ -94,6 +94,37 @@ export const RivePet = () => {
     return () => document.removeEventListener('visibilitychange', syncPlayback);
   }, [visible, paused, ready]);
 
+  useEffect(() => {
+    if (!ready || paused || failed) return;
+    let frame = 0;
+    let x = window.innerWidth / 2;
+    let y = window.innerHeight / 2;
+    const update = () => {
+      frame = 0;
+      const canvas = canvasRef.current;
+      if (!canvas || document.hidden) return;
+      const rect = canvas.getBoundingClientRect();
+      canvas.dispatchEvent(new MouseEvent('mousemove', {
+        clientX: rect.left + Math.max(0, Math.min(1, x / window.innerWidth)) * rect.width,
+        clientY: rect.top + Math.max(0, Math.min(1, y / window.innerHeight)) * rect.height,
+        bubbles: false,
+      }));
+    };
+    const follow = (event: PointerEvent) => {
+      x = event.clientX;
+      y = event.clientY;
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    window.addEventListener('pointermove', follow, { passive: true });
+    window.addEventListener('pointerdown', follow, { passive: true });
+    update();
+    return () => {
+      window.removeEventListener('pointermove', follow);
+      window.removeEventListener('pointerdown', follow);
+      cancelAnimationFrame(frame);
+    };
+  }, [ready, paused, failed]);
+
   return (
     <figure className="pet-companion print:hidden" aria-label="Interactive character companion">
       <div ref={sceneRef} className="pet-scene">
@@ -102,14 +133,19 @@ export const RivePet = () => {
         )}
         <canvas
           ref={canvasRef}
-          aria-label="Animated character that follows your pointer within this scene"
+          aria-label="Website pet that follows your pointer across the page"
           role="img"
           className={`block w-full h-full ${!ready || failed ? 'invisible' : ''} ${paused ? 'pointer-events-none' : ''}`}
         />
       </div>
       <figcaption className="pet-caption">
-        <a href={source} target="_blank" rel="noreferrer">Character by alinazari</a>
-        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>
+        <details className="pet-credits">
+          <summary>Credits</summary>
+          <div>
+            <a href={source} target="_blank" rel="noreferrer">Character by alinazari</a>
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>
+          </div>
+        </details>
         {!failed && (
           <button type="button" onClick={() => setPaused(value => !value)}
             aria-label={paused ? 'Play pet animation' : 'Pause pet animation'}>
