@@ -10,6 +10,7 @@ export const AboutSection = () => (
     </div>
     <p className="academic-context">
       {educationList[0].degree} · BUFS · GPA {educationList[0].gpa}
+      {educationList[0].expectedGraduation && ` · Expected graduation: ${educationList[0].expectedGraduation}`}
     </p>
     <nav className="cv-navigation" aria-label="CV sections">
       <a href="#experience">Experience</a>

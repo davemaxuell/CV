@@ -1499,6 +1499,7 @@ html { scrollbar-gutter: stable; }
 .section-context a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .resume-title, .resume-subtitle { white-space: normal; overflow: visible; text-overflow: clip; }
 .resume-summary { display: block; margin-top: 6px; font-size: 0.875rem; line-height: 1.6; color: var(--body); }
+.resume-status { font-size: 0.8125rem; line-height: 1.5; font-weight: 500; color: var(--accent); margin-top: 4px; }
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .project-grid .project-card { width: auto; min-width: 0; }
 .project-grid .project-copy { padding: 20px; gap: 12px; }

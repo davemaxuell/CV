@@ -13,7 +13,7 @@ export const EducationSection = () => (
           title={e.institution}
           subtitle={e.degree}
           date={e.period}
-          summary={e.gpa ? `GPA: ${e.gpa}` : undefined}
+          summary={[e.gpa && `GPA: ${e.gpa}`, e.expectedGraduation && `Expected graduation: ${e.expectedGraduation}`].filter(Boolean).join(' · ') || undefined}
           icon={
             e.iconType === "scholarship" ? (
               <Award size={28} />

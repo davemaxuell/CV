@@ -10,6 +10,7 @@ export const ResumeRow = ({
   icon,
   award,
   summary,
+  status,
   children,
 }: {
   title: string;
@@ -18,6 +19,7 @@ export const ResumeRow = ({
   icon?: ReactNode;
   award?: string;
   summary?: string;
+  status?: string;
   children: ReactNode;
 }) => {
   const [open, setOpen] = useState(false);
@@ -35,6 +37,7 @@ export const ResumeRow = ({
         <span className="resume-heading">
           <span className="resume-title">{title}</span>
           <span className="resume-subtitle">{subtitle}</span>
+          {status && <span className="resume-status">{status}</span>}
           {award && <span className="resume-award">{award}</span>}
           {summary && <span className="resume-summary">{summary}</span>}
         </span>

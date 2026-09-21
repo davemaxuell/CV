@@ -262,6 +262,7 @@ export const experiences: Experience[] = [
 export const publications: Publication[] = [
   {
     id: "pub-hclt-2026-1",
+    status: "Accepted for oral presentation",
     highlight: "Compared SFT and process-reward-guided GRPO using 50,000 synthetic handwriting images.",
     title: "Process-Reward-Guided Stepwise Verification for Grammatical Error Diagnosis and Correction in Korean Handwritten Text",
     conference: "HCLT 2026 (Human & Cognitive Language Technology)",
@@ -309,6 +310,7 @@ export const publications: Publication[] = [
   },
   {
     id: "pub-hclt-2026-2",
+    status: "Accepted for oral presentation",
     highlight: "Error preservation improved from 41.04% to 62.30%; over-correction fell from 39.78% to 22.63%.",
     title: "Synthetic Data Construction and VLM Over-Correction Mitigation for Preserving Learner Errors in Korean Handwriting Recognition",
     conference: "HCLT 2026",
@@ -420,6 +422,7 @@ export const educationList: EducationItem[] = [
     period: "Mar. 2023 – Present",
     current: true,
     gpa: "4.25 / 4.50",
+    expectedGraduation: "Feb. 2027",
     details: [
       "Double majors in Computer Science and Finance & Economics (8th semester).",
       "Core Research Focus: Foundation models, multilingual NLP, multimodal learning, RAG, and VLM/VLA systems.",

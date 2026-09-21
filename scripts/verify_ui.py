@@ -51,7 +51,8 @@ with sync_playwright() as p:
         for title in page.locator('.resume-title').all():
             assert title.evaluate('(e)=>e.scrollWidth<=e.clientWidth+1'), title.inner_text()
         assert page.locator('#experience .resume-summary').count()==7
-        assert page.locator('#education .resume-summary').first.inner_text()=='GPA: 4.25 / 4.50'
+        assert page.locator('#education .resume-summary').first.inner_text()=='GPA: 4.25 / 4.50 · Expected graduation: Feb. 2027'
+        assert page.locator('#publications .resume-status').all_text_contents()==['Accepted for oral presentation']*2
         assert '3 first-author works' in page.locator('#publications .section-context').inner_text()
         for link in page.locator('.cv-navigation a').all():
             assert page.locator(link.get_attribute('href')).count()==1

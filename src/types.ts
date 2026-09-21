@@ -35,6 +35,7 @@ export interface Publication {
   conference: string;
   year: string;
   authorRole: 'First author' | 'Second author' | 'Co-author';
+  status?: string;
   highlight?: string;
   award?: string;
   pages?: string;
@@ -50,6 +51,7 @@ export interface EducationItem {
   period: string;
   current?: boolean;
   gpa?: string;
+  expectedGraduation?: string;
   details: string[];
   iconType: 'university' | 'language' | 'scholarship';
 }
