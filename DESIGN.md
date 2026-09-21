@@ -57,7 +57,7 @@ Small surfaces use 0 2px 8px 1px rgba(0,0,0,.04). Expandable rows have a 1px das
 ## Components
 
 - Experience/education rows start closed, with an organization logo, title, role, date, and rotating chevron. Long names truncate only when closed; opening reveals the full name and all details.
-- Skills are simple white chips; selecting one expands the original category details.
+- Skills use equal-width white buttons in a four-column grid when the section is at least 840px wide, and two columns on smaller screens. Each has a disclosure chevron; selecting one expands the original category details.
 - Tech stack uses standalone real marks and moves at 30px/second, with hover/focus, visibility, and manual pause. Reduced motion shows a static list.
 - Projects use plain text cards with dates, titles, descriptions, and a detail link. They scroll with touch or previous/next controls. No invented preview artwork or placeholder tiles. Details use a plain document layout with bullet lists, not icon boxes and tag pills.
 - Publications use the same expandable vocabulary; recognition has a thin green rule and dotted leaders.

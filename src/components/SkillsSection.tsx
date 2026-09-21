@@ -1,5 +1,6 @@
 ﻿import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { ChevronDown } from "lucide-react";
 import { SectionBadge } from "./SectionBadge";
 import { skillCategories } from "../data/portfolioData";
 export const SkillsSection = () => {
@@ -18,7 +19,8 @@ export const SkillsSection = () => {
             aria-controls="skill-detail"
             onClick={() => setSelected(selected === g.title ? null : g.title)}
           >
-            {g.shortTitle || g.title}
+            <span>{g.shortTitle || g.title}</span>
+            <ChevronDown size={14} aria-hidden="true" />
           </button>
         ))}
       </div>

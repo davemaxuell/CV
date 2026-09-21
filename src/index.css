@@ -336,15 +336,25 @@ textarea:focus-visible {
   line-height: 25.6px;
   letter-spacing: 0.32px;
 }
+#skills {
+  container-type: inline-size;
+}
 .skill-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 .skill-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 56px;
+  min-width: 0;
+  text-align: left;
   font-size: 16px;
   line-height: 22.4px;
-  padding: 6px 12px;
+  padding: 12px;
   border-radius: 8px;
   background: var(--surface);
   box-shadow: var(--shadow);
@@ -482,6 +492,21 @@ textarea:focus-visible {
 }
 .publication-list {
   width: 100%;
+}
+.skill-chip svg {
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.skill-chip[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+@container (min-width: 840px) {
+  .skill-chips {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skill-chip svg { transition: none; }
 }
 .resume-award {
   align-self: flex-start;
