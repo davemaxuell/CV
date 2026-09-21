@@ -674,6 +674,12 @@ textarea:focus-visible {
   overflow: hidden;
   letter-spacing: 0;
 }
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
 .project-link {
   align-self: flex-start;
   margin-top: auto;

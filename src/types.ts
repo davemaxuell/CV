@@ -23,6 +23,8 @@ export interface Project {
   tags: string[];
   image?: string;
   linkText?: string;
+  liveUrl?: string;
+  repositoryUrl?: string;
   award?: string;
 }
 

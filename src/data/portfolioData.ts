@@ -315,6 +315,16 @@ export const publications: Publication[] = [
 
 export const projects: Project[] = [
   {
+    id: "pharmaagent-os",
+    title: "PharmaAgent OS",
+    period: "2026",
+    description: "AI research workspace for FDA drug warning letters, with source-cited briefs, conversational search, and English–Korean support.",
+    highlights: [],
+    tags: ["Next.js", "FastAPI", "RAG", "PostgreSQL", "pgvector"],
+    liveUrl: "https://pharmaagent-os-ochre.vercel.app/",
+    repositoryUrl: "https://github.com/its-davemaxuell/daewoong-PharmaAgentOS"
+  },
+  {
     id: "silla-road",
     title: "Silla Road Global",
     subtitle: "Multilingual Tourism Recommendation Service",

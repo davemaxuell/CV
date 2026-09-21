@@ -48,12 +48,23 @@ export const ProjectsSection = ({
                 <p className="project-period">{p.period}</p>
                 <h3>{p.title}</h3>
                 <p>{p.description}</p>
-                <button
+                {p.liveUrl ? (
+                  <div className="project-actions">
+                    <a className="project-link" href={p.liveUrl} target="_blank" rel="noopener noreferrer">
+                      View project <ArrowUpRight size={12} />
+                    </a>
+                    {p.repositoryUrl && (
+                      <a className="project-link" href={p.repositoryUrl} target="_blank" rel="noopener noreferrer">
+                        GitHub <ArrowUpRight size={12} />
+                      </a>
+                    )}
+                  </div>
+                ) : <button
                   className="project-link"
                   onClick={() => onSelectProject(p)}
                 >
                   Click to view <ArrowUpRight size={12} />
-                </button>
+                </button>}
               </div>
             </article>
           ))}
