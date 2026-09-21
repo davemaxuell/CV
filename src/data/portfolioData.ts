@@ -396,7 +396,8 @@ export const projects: Project[] = [
       "Isolated shock volatility in geopolitical events and currency fluctuations with high statistical confidence."
     ],
     tags: ["Time-Series", "LSTM", "Anomaly Transformer", "SARIMAX", "Econometrics"],
-    linkText: "View Analysis"
+    linkText: "View Analysis",
+    repositoryUrl: "https://github.com/davemaxuell/korea-tourism-forecasting"
   }
 ];
 

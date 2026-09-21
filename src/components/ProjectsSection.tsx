@@ -48,12 +48,12 @@ export const ProjectsSection = ({
                 <p className="project-period">{p.period}</p>
                 <h3>{p.title}</h3>
                 <p>{p.description}</p>
-                {p.liveUrl ? (
+                {p.liveUrl || p.repositoryUrl ? (
                   <div className="project-actions">
-                    <a className="project-link" href={p.liveUrl} target="_blank" rel="noopener noreferrer">
-                      View project <ArrowUpRight size={12} />
+                    <a className="project-link" href={p.liveUrl || p.repositoryUrl} target="_blank" rel="noopener noreferrer">
+                      {p.liveUrl ? 'View project' : 'View on GitHub'} <ArrowUpRight size={12} />
                     </a>
-                    {p.repositoryUrl && (
+                    {p.liveUrl && p.repositoryUrl && (
                       <a className="project-link" href={p.repositoryUrl} target="_blank" rel="noopener noreferrer">
                         GitHub <ArrowUpRight size={12} />
                       </a>
