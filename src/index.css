@@ -32,7 +32,7 @@
   --page: #faf7f4;
   --surface: #ffffff;
   --ink: #332a24;
-  --body: #62544a;
+  --body: #51483f;
   --line: #e5dcd4;
   --accent: #b3470b;
   --accent-hover: #913707;
@@ -1419,3 +1419,54 @@ textarea:focus-visible {
   .floating-pet .pet-scene > img { width: 270px; height: 202px; left: -85px; top: -50px; }
 }
 @media print { .floating-pet { display: none; } }
+
+/* Reading hierarchy: retain the reference faces with a more legible scale. */
+body { letter-spacing: 0; }
+.about-copy { max-width: 68ch; }
+.about-copy p { font-size: 1.0625rem; line-height: 1.75; letter-spacing: 0; }
+.profile-copy h1 { font-size: 1.75rem; line-height: 1.18; letter-spacing: -0.02em; }
+.profile-role { font-size: 1rem; line-height: 1.5; }
+.profile-tagline, .profile-links a { font-size: 0.8125rem; line-height: 1.5; }
+.availability { font-size: 0.75rem; line-height: 1.5; }
+.profile-actions .primary-button, .profile-actions .secondary-button { font-size: 0.9375rem; line-height: 1.4; }
+.section-badge { font-size: 0.875rem; line-height: 1.4; letter-spacing: 0.04em; }
+.skill-chip { font-size: 1rem; line-height: 1.5; font-weight: 500; }
+.resume-title, .project-copy h3, .recognition-heading h3 {
+  font-size: 1.125rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+.resume-subtitle, .recognition-row > p, .project-copy > p {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+.resume-date { font-size: 0.8125rem; line-height: 1.5; letter-spacing: 0; font-variant-numeric: tabular-nums; }
+.resume-details, .skill-detail > div, .project-document { font-size: 1rem; line-height: 1.7; }
+.resume-details > p, .resume-details > ul, .project-document > p, .project-document > ul { max-width: 70ch; }
+.detail-tools, .publication-metrics, .form-note, .project-link, .project-document .document-tools {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+.recognition-heading > span:last-child { font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
+.contact-form label { font-size: 0.9375rem; font-weight: 500; }
+@media (max-width: 1199px) {
+  .profile-copy h1 { font-size: 1.5rem; }
+}
+@media (max-width: 809px) {
+  .profile-copy h1 { font-size: 1.375rem; }
+  .profile-role { font-size: 0.9375rem; }
+  .availability { font-size: 0.6875rem; }
+  .about-copy p { font-size: 1rem; line-height: 1.75; }
+}
+@media (max-width: 600px) {
+  .resume-trigger { display: grid; grid-template-columns: 48px minmax(0, 1fr) 14px; gap: 0 8px; padding: 8px; }
+  .resume-logo { grid-column: 1; grid-row: 1 / 3; width: 48px; }
+  .resume-heading { grid-column: 2; grid-row: 1; padding: 0; }
+  .resume-date { grid-column: 2; grid-row: 2; text-align: left; padding-top: 4px; }
+  .resume-chevron { grid-column: 3; grid-row: 1 / 3; }
+  .resume-title { font-size: 1rem; }
+  .resume-subtitle { font-size: 0.875rem; }
+  .publication-list .resume-trigger { grid-template-columns: minmax(0, 1fr) 14px; padding: 12px; }
+  .publication-list .resume-heading, .publication-list .resume-date { grid-column: 1; }
+  .publication-list .resume-chevron { grid-column: 2; }
+}

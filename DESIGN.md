@@ -5,7 +5,7 @@ colors:
   page: '#faf7f4'
   surface: '#ffffff'
   ink: '#332a24'
-  body: '#62544a'
+  body: '#51483f'
   line: '#e5dcd4'
   accent: '#b3470b'
   accentHover: '#913707'
@@ -37,13 +37,13 @@ User-pinned reference: https://monocv.framer.website/. Measured in Playwright on
 
 ## Colors
 
-User-requested restrained color palette: warm off-white canvas #faf7f4, white surfaces, warm charcoal ink #332a24 and body #62544a. Burnt orange #b3470b owns primary actions, focus, section labels, and recognition rules; #913707 is its hover shade and #fff0e3 its light selection surface. Paper awards use muted gold #745923 on #fff5d6. Borders are #e5dcd4. Original organization artwork keeps its own colors.
+User-requested restrained color palette: warm off-white canvas #faf7f4, white surfaces, warm charcoal ink #332a24 and body #51483f. Burnt orange #b3470b owns primary actions, focus, section labels, and recognition rules; #913707 is its hover shade and #fff0e3 its light selection surface. Paper awards use muted gold #745923 on #fff5d6. Borders are #e5dcd4. Original organization artwork keeps its own colors.
 
 Orange explicitly selected by the user, replacing the previous green palette. This color request supersedes the reference's monochrome palette while retaining its type, layout, and motion.
 
 ## Typography
 
-General Sans 500: name 24px/1.2 (22px mobile), badges 14px/1.2 with .02em tracking, entry titles 16px/1.2. Inter Display 400: body 16px/1.6 with .02em tracking, secondary text 14px/1.4, dates 12px/1.3. Controls use Inter Display 500/600. Actual webfonts are hosted locally with source/license records in public/fonts. Mobile retains the reference's body, badge, and row-title sizes. Font synthesis is disabled.
+General Sans 500 for headings: profile name 28px desktop, 24px tablet, 22px mobile; entry titles 18px/1.35 (16px on small screens). Inter Display for reading: introductory prose 17px/1.75 desktop and 16px/1.75 mobile, capped at 68ch; expanded details 16px/1.7 capped at 70ch; supporting copy 15px/1.55; dates and metadata 13px/1.5. Body tracking is normal. Dates use tabular numbers and never wrap. Below 600px dates occupy their own line beneath the title and role. Skill labels use medium weight. Body text #51483f strengthens contrast. Fonts remain locally hosted with actual weights and original licenses.
 
 ## Layout
 
