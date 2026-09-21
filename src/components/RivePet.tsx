@@ -8,6 +8,7 @@ export const RivePet = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<Rive | null>(null);
+  const pointerRef = useRef<{ x: number; y: number } | null>(null);
   const [visible, setVisible] = useState(false);
   const [started, setStarted] = useState(false);
   const [ready, setReady] = useState(false);
@@ -94,32 +95,45 @@ export const RivePet = () => {
   }, [visible, paused, ready]);
 
   useEffect(() => {
-    if (!ready || paused || failed) return;
     let frame = 0;
-    let x = window.innerWidth / 2;
-    let y = window.innerHeight / 2;
     const update = () => {
       frame = 0;
       const canvas = canvasRef.current;
-      if (!canvas || document.hidden) return;
+      const pointer = pointerRef.current;
+      if (!canvas || !pointer || !ready || paused || failed || document.hidden) return;
       const rect = canvas.getBoundingClientRect();
+      // Rive expects a point inside its artboard. Preserve the actual direction
+      // from the character, projecting distant pointers to the artboard edge.
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const dx = pointer.x - centerX;
+      const dy = pointer.y - centerY;
+      const scale = Math.min(1,
+        (rect.width * 0.45) / (Math.abs(dx) || 1),
+        (rect.height * 0.45) / (Math.abs(dy) || 1));
       canvas.dispatchEvent(new MouseEvent('mousemove', {
-        clientX: rect.left + Math.max(0, Math.min(1, x / window.innerWidth)) * rect.width,
-        clientY: rect.top + Math.max(0, Math.min(1, y / window.innerHeight)) * rect.height,
+        clientX: centerX + dx * scale,
+        clientY: centerY + dy * scale,
         bubbles: false,
       }));
     };
-    const follow = (event: PointerEvent) => {
-      x = event.clientX;
-      y = event.clientY;
+    const schedule = () => {
       if (!frame) frame = requestAnimationFrame(update);
+    };
+    const follow = (event: PointerEvent) => {
+      pointerRef.current = { x: event.clientX, y: event.clientY };
+      schedule();
     };
     window.addEventListener('pointermove', follow, { passive: true });
     window.addEventListener('pointerdown', follow, { passive: true });
+    window.addEventListener('resize', schedule);
+    window.addEventListener('scroll', schedule, { passive: true });
     update();
     return () => {
       window.removeEventListener('pointermove', follow);
       window.removeEventListener('pointerdown', follow);
+      window.removeEventListener('resize', schedule);
+      window.removeEventListener('scroll', schedule);
       cancelAnimationFrame(frame);
     };
   }, [ready, paused, failed]);
