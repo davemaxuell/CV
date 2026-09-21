@@ -457,6 +457,12 @@ export const recognitions: RecognitionItem[] = [
     issuer: "Busan Metropolitan City & BUFS",
     year: "2024",
     badge: "Merit Scholar"
+  },
+  {
+    id: "rec-gks-u-2022",
+    title: "GKS-U Scholarship",
+    issuer: "Awardee",
+    year: "2022"
   }
 ];
 
