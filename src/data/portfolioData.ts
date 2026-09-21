@@ -13,7 +13,8 @@ export const personalInfo = {
   scholar: "https://scholar.google.com/citations?user=DpN3XPYAAAAJ&hl=en",
   aboutIntro: [
     "I am an AI Researcher and Engineer based in Busan, South Korea, specializing in Multimodal Learning, Retrieval-Augmented Generation (RAG), Foundation Models, and Vision-Language-Action (VLA) systems.",
-    "With active research at Busan University of Foreign Studies and prior research at UNIST's Interactive Multimodal Machine Learning Lab, I focus on building robust reasoning agents, document understanding pipelines, and process-reward-guided vision-language models. My work has been recognized with multiple Excellent Paper Awards at top Korean AI conferences (HCLT & KIISE)."
+    "With active research at Busan University of Foreign Studies and prior research at UNIST's Interactive Multimodal Machine Learning Lab, I focus on building robust reasoning agents, document understanding pipelines, and process-reward-guided vision-language models.",
+    "My work has been recognized with multiple Excellent Paper Awards at top Korean AI conferences (HCLT & KIISE)."
   ]
 };
 

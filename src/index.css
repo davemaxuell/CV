@@ -1429,8 +1429,15 @@ textarea:focus-visible {
 
 /* Reading hierarchy: retain the reference faces with a more legible scale. */
 body { letter-spacing: 0; }
-.about-copy { max-width: 68ch; }
-.about-copy p { font-size: 1.0625rem; line-height: 1.75; letter-spacing: 0; }
+#about { container-type: inline-size; }
+#about .section-badge { margin-bottom: 24px; }
+.about-copy { max-width: none; gap: 20px; }
+.about-copy p { font-size: 1rem; line-height: 1.7; letter-spacing: 0; }
+.about-copy p:first-child { font-size: 1.125rem; line-height: 1.65; color: var(--ink); }
+@container (min-width: 840px) {
+  .about-copy { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); column-gap: 40px; row-gap: 24px; }
+  .about-copy p:first-child { grid-column: 1 / -1; max-width: 75ch; }
+}
 .profile-copy h1 { font-size: 1.75rem; line-height: 1.18; letter-spacing: -0.02em; }
 .profile-role { font-size: 1rem; line-height: 1.5; }
 .profile-tagline, .profile-links a { font-size: 0.8125rem; line-height: 1.5; }
