@@ -25,9 +25,11 @@ with sync_playwright() as p:
         assert page.locator('.about-copy p').first.evaluate('(e)=>getComputedStyle(e).fontFamily').startswith('"Inter Display"')
         body_box = page.locator('.cv-content').bounding_box()
         if width == 1440:
-            assert abs(body_box['x']-600)<1 and abs(body_box['width']-500)<1
+            assert abs(body_box['x']-388)<1 and abs(body_box['width']-952)<1
+            profile_box = page.locator('.profile-sticky').bounding_box()
+            assert abs(profile_box['x'] - (width - body_box['x'] - body_box['width'])) < 1
         elif width in (1000,810):
-            assert abs(body_box['width']-550)<1
+            assert abs(body_box['width']-(width-64))<1
             assert body_box['y'] >= 208
         for image in page.locator('img[src*="/logos/"],.profile-photo').all():
             assert image.evaluate('(i)=>i.complete && i.naturalWidth>0'), image.get_attribute('src')

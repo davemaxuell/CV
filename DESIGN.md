@@ -40,9 +40,9 @@ General Sans 500: name 24px/1.2 (22px mobile), badges 14px/1.2 with .02em tracki
 
 ## Layout
 
-Desktop at 1200px and above: max-width 1200px outer grid, 40% profile and 60% content columns. A 200px profile sits 30px before the reading column, starting 42px down. Main content is 500px wide and starts 56px down. At 1440px, profile x370 and content x600 match the reference. Sections have 56px gaps; badges precede content by 32px.
+Desktop at 1200px and above: centered shell up to 1240px wide with at least 40px outer gutters. A 240px profile and 48px gap precede a flexible content column. At 1440px, the shell spans x100 to x1340, and the reading column is 952px wide. About paragraphs are limited to 75ch; resume rows fill the column. The user requested broader use of horizontal space, superseding the reference's narrow column dimensions. Sections retain 56px gaps.
 
-Tablet 810–1199px: a centered 570px horizontal profile/contact header, columns 380px/180px with a 10px gap, 28px top inset. Centered 550px content begins 34px below the header. At 810px, content x130 matches the reference.
+Tablet 810?1199px: 32px outer gutters, full-width horizontal profile/contact header, flexible profile plus 240px contact column. Main content fills the same width beneath it.
 
 Mobile below 810px: horizontal portrait/name card with a menu for contact links and actions. Single-column content with 14px gutters. Pet appears after the contact section on every screen size, without a surrounding card. At 320px, row dates move below titles when necessary.
 

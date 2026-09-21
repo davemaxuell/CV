@@ -43,8 +43,8 @@ export const TechStackSection = () => {
               running && !paused && !reduced ? "running" : "paused",
           }}
         >
-          {[0, 1].map((copy) => (
-            <div className="tech-set" key={copy} aria-hidden={copy === 1}>
+          {[0, 1, 2].map((copy) => (
+            <div className="tech-set" key={copy} aria-hidden={copy > 0}>
               {techStackPills.map((t, i) => (
                 <div
                   className="tech-item"
