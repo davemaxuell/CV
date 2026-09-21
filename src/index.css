@@ -560,11 +560,11 @@ textarea:focus-visible {
 .tech-track {
   display: flex;
   width: max-content;
-  animation: tech-scroll 26.6667s linear infinite;
+  animation: tech-scroll var(--tech-duration, 26.6667s) linear infinite;
 }
 .tech-set {
   display: flex;
-  width: 800px;
+  width: var(--tech-set-width, 800px);
   justify-content: space-around;
 }
 .tech-item {
@@ -624,7 +624,7 @@ textarea:focus-visible {
 }
 @keyframes tech-scroll {
   to {
-    transform: translateX(-800px);
+    transform: translateX(calc(-1 * var(--tech-set-width, 800px)));
   }
 }
 .project-carousel {

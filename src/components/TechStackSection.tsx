@@ -3,16 +3,7 @@ import { useReducedMotion } from "motion/react";
 import { SectionBadge } from "./SectionBadge";
 import { techStackPills } from "../data/portfolioData";
 import { Pause, Play } from "lucide-react";
-const files = [
-  "pytorch.svg",
-  "huggingface.svg",
-  "vllm.png",
-  "langchain.svg",
-  "fastapi.svg",
-  "qdrant.svg",
-  "nvidia.svg",
-  "docling.svg",
-];
+import type { CSSProperties } from "react";
 export const TechStackSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [running, setRunning] = useState(false);
@@ -35,7 +26,8 @@ export const TechStackSection = () => {
   return (
     <section id="tech-stack" className="cv-section">
       <SectionBadge label="Tech stack" />
-      <div ref={ref} className={`tech-window ${reduced ? "is-static" : ""}`}>
+      <div ref={ref} className={`tech-window ${reduced ? "is-static" : ""}`}
+        style={{ '--tech-set-width': `${techStackPills.length * 100}px`, '--tech-duration': `${techStackPills.length * 100 / 30}s` } as CSSProperties}>
         <div
           className="tech-track"
           style={{
@@ -46,19 +38,20 @@ export const TechStackSection = () => {
         >
           {[0, 1, 2].map((copy) => (
             <div className="tech-set" key={copy} aria-hidden={copy > 0}>
-              {techStackPills.map((t, i) => (
+              {techStackPills.map((t) => (
                 <div
                   className="tech-item"
                   key={t.name}
                   title={`${t.name} · ${t.category}`}
                 >
                   <img
-                    src={`${import.meta.env.BASE_URL}tech/${files[i]}`}
-                    alt={copy === 0 ? t.name : ""}
+                    src={`${import.meta.env.BASE_URL}tech/${t.icon}`}
+                    alt=""
                     width="40"
                     height="40"
                     loading="lazy"
                   />
+                  <span>{t.name}</span>
                 </div>
               ))}
             </div>

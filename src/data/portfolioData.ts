@@ -137,14 +137,12 @@ export const skillCategories: SkillCategory[] = [
 ];
 
 export const techStackPills = [
-  { name: "PyTorch", category: "Framework", iconName: "Flame" },
-  { name: "Hugging Face", category: "Ecosystem", iconName: "Cpu" },
-  { name: "vLLM", category: "Inference", iconName: "Zap" },
-  { name: "LangChain", category: "RAG Agent", iconName: "Link2" },
-  { name: "FastAPI", category: "Backend", iconName: "Server" },
-  { name: "Qdrant", category: "Vector DB", iconName: "Database" },
-  { name: "Isaac Sim", category: "Simulation", iconName: "Box" },
-  { name: "Docling / OCR", category: "Vision", iconName: "Eye" }
+  { name: "Python", category: "Primary language", icon: "python.svg" },
+  { name: "PyTorch", category: "Deep learning", icon: "pytorch.svg" },
+  { name: "Hugging Face", category: "Transformers and model training", icon: "huggingface.svg" },
+  { name: "FastAPI", category: "Python APIs", icon: "fastapi.svg" },
+  { name: "PostgreSQL", category: "Data and vector storage", icon: "postgresql.svg" },
+  { name: "Next.js", category: "Web applications", icon: "nextdotjs.svg" }
 ];
 
 export const experiences: Experience[] = [
