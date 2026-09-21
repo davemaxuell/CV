@@ -1,4 +1,6 @@
-﻿# Dave Maxuell — CV & Portfolio
+# Dave Maxuell — CV & Portfolio
+
+Live website: [dave-maxuell-cv.vercel.app](https://dave-maxuell-cv.vercel.app).
 
 A React/Vite CV with a visual system measured against [MonoCV](https://monocv.framer.website/): General Sans headings, Inter Display body text, compact profile cards, expandable résumé entries, a tech-logo marquee, and a horizontal project carousel. Dave's original CV content, verified organization logos, and attributed Rive companion are retained.
 
