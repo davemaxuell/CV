@@ -1,5 +1,5 @@
 ﻿/* THESIS: Reproduce the user-selected MonoCV reference with Dave's own CV.
- * OWN-WORLD: General Sans + Inter Display, #f6f6f6, small white surfaces and dashed rows.
+ * OWN-WORLD: General Sans + Inter Display, #f6f6f6, small white surfaces and solid row outlines.
  * STORY: Read the profile, scan credentials, expand evidence, view projects, make contact.
  * FIRST VIEWPORT: 200px profile at left, 500px text column at right, generous section rhythm.
  * FORM: User-pinned reference; measured in Playwright, no alternate visual direction. */

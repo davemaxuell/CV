@@ -55,7 +55,7 @@ Mobile below 810px: horizontal portrait/name card with a menu for contact links 
 
 ## Elevation & Depth
 
-Small surfaces use 0 2px 8px 1px rgba(0,0,0,.04). Expandable rows have a 1px dashed outline. No large dashboard cards or floating deployment instructions. Dialog depth is a plain dark overlay and restrained shadow.
+Small surfaces use 0 2px 8px 1px rgba(0,0,0,.04). Expandable rows have a 1px solid outline. All dividers and outlines use solid strokes, per the user's preference. No large dashboard cards or floating deployment instructions. Dialog depth is a plain dark overlay and restrained shadow.
 
 ## Shapes
 

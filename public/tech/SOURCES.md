@@ -14,3 +14,5 @@ Brand colors applied 2026-09-21 from https://raw.githubusercontent.com/simple-ic
 Hugging Face uses its full-color original: https://huggingface.co/front/assets/huggingface_logo-noborder.svg (brand page: https://huggingface.co/brand). vLLM and Docling retain their original multicolor artwork.
 
 Curated display: Python, PyTorch, Hugging Face, FastAPI, PostgreSQL, Next.js. New marks: https://github.com/simple-icons/simple-icons/tree/develop/icons (python.svg, postgresql.svg, nextdotjs.svg), CC0; unchanged geometry with fills #3776AB, #4169E1, #000000. Other retained assets are not displayed.
+
+Slack: full-color mark from https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png, linked by the official https://slack.com/media-kit page. Added to the displayed stack at the owner's request; used for product identification.

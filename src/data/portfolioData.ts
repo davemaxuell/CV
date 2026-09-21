@@ -142,7 +142,8 @@ export const techStackPills = [
   { name: "Hugging Face", category: "Transformers and model training", icon: "huggingface.svg" },
   { name: "FastAPI", category: "Python APIs", icon: "fastapi.svg" },
   { name: "PostgreSQL", category: "Data and vector storage", icon: "postgresql.svg" },
-  { name: "Next.js", category: "Web applications", icon: "nextdotjs.svg" }
+  { name: "Next.js", category: "Web applications", icon: "nextdotjs.svg" },
+  { name: "Slack", category: "Team collaboration", icon: "slack.png" }
 ];
 
 export const experiences: Experience[] = [

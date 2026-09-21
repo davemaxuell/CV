@@ -400,7 +400,7 @@ textarea:focus-visible {
 }
 .resume-row {
   background: var(--surface);
-  border: 1px dashed var(--line);
+  border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -476,7 +476,7 @@ textarea:focus-visible {
   padding: 16px;
   font-size: 14px;
   line-height: 1.6;
-  border-top: 1px dashed var(--line);
+  border-top: 1px solid var(--line);
 }
 .resume-details > p {
   margin: 0 0 12px;
@@ -747,7 +747,7 @@ textarea:focus-visible {
 .dot-leader {
   min-width: 12px;
   flex: 1;
-  border-bottom: 1px dashed #bbb;
+  border-bottom: 1px solid #bbb;
 }
 .recognition-row p {
   font-size: 14px;
@@ -1209,9 +1209,10 @@ textarea:focus-visible {
   padding: 16px 0 30px;
 }
 .tech-set {
-  height: 48px;
+  min-height: 64px;
   align-items: center;
 }
+.tech-window.is-static { mask-image: none; }
 @media print {
   .cv-dialog > div > div:first-child {
     display: none !important;
@@ -1390,7 +1391,7 @@ textarea:focus-visible {
 .project-document ul { list-style: disc; padding-left: 20px; margin: 28px 0; }
 .project-document li + li { margin-top: 12px; }
 .project-document .document-meta { padding-right: 20px; font-size: 12px; margin: 0; }
-.project-document .document-tools { margin: 0; padding-top: 20px; border-top: 1px dashed var(--line); font-size: 12px; }
+.project-document .document-tools { margin: 0; padding-top: 20px; border-top: 1px solid var(--line); font-size: 12px; }
 .document-close { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 32px; height: 32px; border: 0; background: none; border-radius: 4px; }
 .document-close:hover { background: #eee; }
 @media (max-width: 809px) {
