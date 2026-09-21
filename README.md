@@ -19,7 +19,7 @@ npm run build
 npm run preview -- --host 127.0.0.1 --port 4173
 ```
 
-With Python Playwright installed and Microsoft Edge available, run `py -3.13 scripts/verify_ui.py` in another terminal. The check covers 320, 390, 810, 1000, and 1440px layouts, fonts, images, accordions, project navigation, dialogs, Markdown export, and reduced motion. Screenshots go to `.artifacts/ui/` (ignored by Git). Set `CV_TEST_URL` to check a deployed URL.
+With Python Playwright installed and Microsoft Edge available, run `py -3.13 scripts/verify_ui.py` in another terminal. The check covers 320, 390, 810, 1000, and 1440px layouts, fonts, images, accordions, project navigation, dialogs, Google Docs CV link, and reduced motion. Screenshots go to `.artifacts/ui/` (ignored by Git). Set `CV_TEST_URL` to check a deployed URL.
 
 ## Vercel
 
@@ -38,5 +38,5 @@ Settings are included in `vercel.json`: Vite, `npm ci`, `npm run build`, output 
 - Organization logos, tech marks, fonts, and Rive attribution: `public/*/SOURCES.md`.
 - Rive runtime loads when the visible pet is allowed to animate. Reduced motion uses a still preview with explicit Play. Offscreen/background animation is paused.
 - The tech strip moves at 30px/second, pauses on hover/focus and when offscreen, and has a pause control. Reduced motion shows a static list.
-- CV supports Markdown export and browser print/save-to-PDF. Dialogs support Escape, focus containment, and focus restoration.
+- View CV opens the owner-provided Google Doc in a new tab. Project dialogs support Escape, focus containment, and focus restoration.
 - `DESIGN.md` records measured typography, layout, breakpoints, and motion. `PRODUCT.md` records content constraints.

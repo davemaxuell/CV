@@ -18,12 +18,10 @@ import { LinksSection } from "./components/LinksSection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { ProjectModal } from "./components/ProjectModal";
-import { CVModal } from "./components/CVModal";
 import { RivePet } from "./components/RivePet";
 import type { Project } from "./types";
 export default function App() {
   const [project, setProject] = useState<Project | null>(null);
-  const [cvOpen, setCVOpen] = useState(false);
   const contact = () =>
     document
       .getElementById("contact")
@@ -38,7 +36,7 @@ export default function App() {
         Skip to CV
       </a>
       <main className="cv-shell">
-        <Sidebar onOpenCV={() => setCVOpen(true)} onScrollToContact={contact} />
+        <Sidebar onScrollToContact={contact} />
         <div className="cv-content">
           <AboutSection />
           <SkillsSection />
@@ -58,7 +56,6 @@ export default function App() {
         <RivePet />
       </aside>
       <ProjectModal project={project} onClose={() => setProject(null)} />
-      <CVModal isOpen={cvOpen} onClose={() => setCVOpen(false)} />
     </MotionConfig>
   );
 }

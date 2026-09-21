@@ -5,10 +5,8 @@ import { personalInfo } from "../data/portfolioData";
 import portrait from "../assets/images/dave_portrait_1789965082593.jpg";
 
 export const Sidebar = ({
-  onOpenCV,
   onScrollToContact,
 }: {
-  onOpenCV: () => void;
   onScrollToContact: () => void;
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,15 +28,17 @@ export const Sidebar = ({
         </a>
       </div>
       <div className="profile-actions">
-        <button
+        <a
           className="secondary-button"
+          href="https://docs.google.com/document/d/1UeQordLd55N3Tvdrse-tNfqrjUSfOBhcgXU6Df60-9c/edit?tab=t.0"
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={() => {
             setMenuOpen(false);
-            onOpenCV();
           }}
         >
-          Download CV
-        </button>
+          View CV
+        </a>
         <button
           className="primary-button"
           onClick={() => {

@@ -58,14 +58,10 @@ with sync_playwright() as p:
         if width < 810:
             page.get_by_role('button',name='Open profile menu').click()
             page.locator('#mobile-profile-menu').wait_for()
-        page.get_by_role('button',name='Download CV',exact=True).filter(visible=True).click()
-        page.get_by_role('dialog',name='Curriculum Vitae').wait_for()
-        with page.expect_download() as download:
-            page.get_by_title('Download .md',exact=True).click()
-        assert download.value.suggested_filename=='Dave_Maxuell_CV.md'
-        assert '# DAVE MAXUELL' in Path(download.value.path()).read_text(encoding='utf-8')
-        page.keyboard.press('Escape')
-        assert page.get_by_role('dialog').count()==0
+        cv_link=page.get_by_role('link',name='View CV',exact=True).filter(visible=True)
+        assert cv_link.get_attribute('href')=='https://docs.google.com/document/d/1UeQordLd55N3Tvdrse-tNfqrjUSfOBhcgXU6Df60-9c/edit?tab=t.0'
+        assert cv_link.get_attribute('target')=='_blank'
+        assert 'noopener' in cv_link.get_attribute('rel')
         assert page.locator('.contact-form').evaluate('(f)=>!f.checkValidity()')
         assert page.get_by_role('button',name='Open email draft',exact=True).count()==1
         page.evaluate('document.activeElement.blur(); window.scrollTo(0,0)')
@@ -73,7 +69,7 @@ with sync_playwright() as p:
         page.screenshot(path=str(OUT/f'viewport-{width}.png'))
         page.screenshot(path=str(OUT/f'page-{width}.png'),full_page=True)
         assert not errors, errors
-        print(json.dumps({'width':width,'layout':'pass','fonts':'pass','logos':'pass','accordion':'pass','carousel':'pass','dialogs':'pass','cv_download':'pass'}),flush=True)
+        print(json.dumps({'width':width,'layout':'pass','fonts':'pass','logos':'pass','accordion':'pass','carousel':'pass','dialogs':'pass','cv_link':'pass'}),flush=True)
         page.close()
     reduced=browser.new_page(reduced_motion='reduce',viewport={'width':390,'height':844})
     reduced.goto(URL,wait_until='networkidle')
