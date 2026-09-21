@@ -344,7 +344,7 @@ export const projects: Project[] = [
     title: "Korean Handwriting Feedback Agent",
     subtitle: "VLM Error Localization & Grammatical Correction",
     affiliation: "Nationwide AI Competition, Rookie Track | Team 나랏말싸미",
-    period: "May 2026 – Present",
+    period: "2026 · Completed",
     description: "Vision-Language Model agent recognizing student Korean handwriting, pinpointing subtle grammatical/orthographic errors, and providing automated step-by-step diagnostic feedback using Qwen-VL/InternVL and EXAONE 4.5.",
     highlights: [
       "Generated synthetic paired handwriting data using conditional diffusion and deliberate learner error injection.",
