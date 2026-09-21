@@ -1,0 +1,6 @@
+{
+  "name": "Dave Maxuell - Portfolio",
+  "description": "Portfolio of Dave Maxuell, AI Researcher & Engineer specializing in Multimodal, RAG, Foundation Models, and VLMs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
