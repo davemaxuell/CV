@@ -238,17 +238,17 @@ export const experiences: Experience[] = [
   },
   {
     id: "teaching-assistant",
-    company: "Machine Learning & Introductory Large Language Models",
+    company: "Introduction to Large Language Models",
     role: "Teaching Assistant",
     period: "Academic Semester",
     current: false,
     department: "Computer Science & AI",
     iconType: "ta",
     points: [
-      "Mentored students on foundational concepts in machine learning, loss functions, attention mechanisms, and prompt engineering.",
-      "Led laboratory hands-on coding sessions with PyTorch, Hugging Face Transformers, and fine-tuning exercises."
+      "Helped students understand LLM fundamentals, attention mechanisms, and prompt engineering.",
+      "Supported hands-on LLM coding and fine-tuning exercises using PyTorch and Hugging Face Transformers."
     ],
-    tools: ["Instruction", "PyTorch", "LLM Fundamentals"]
+    tools: ["LLM Fundamentals", "Prompt Engineering", "Hugging Face Transformers", "PyTorch"]
   }
 ];
 
