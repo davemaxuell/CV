@@ -19,17 +19,12 @@ import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { ProjectModal } from "./components/ProjectModal";
 import { RivePet } from "./components/RivePet";
+import { useSmoothScroll } from "./components/useSmoothScroll";
 import type { Project } from "./types";
 export default function App() {
   const [project, setProject] = useState<Project | null>(null);
-  const contact = () =>
-    document
-      .getElementById("contact")
-      ?.scrollIntoView({
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "instant"
-          : "smooth",
-      });
+  const scrollToSection = useSmoothScroll();
+  const contact = () => scrollToSection('contact');
   return (
     <MotionConfig reducedMotion="user">
       <a className="skip-link" href="#about">
