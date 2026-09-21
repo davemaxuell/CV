@@ -16,10 +16,10 @@ export const EducationSection: React.FC = () => {
 
   const getEduIcon = (id: string, type: string) => {
     if (id === 'bufs') {
-      return <InstitutionLogo id="bufs" company="Busan University of Foreign Studies" className="w-10 h-10" />;
+      return <InstitutionLogo id="bufs" company="Busan University of Foreign Studies" className="w-16 h-10" />;
     }
     if (id === 'sun-moon') {
-      return <InstitutionLogo id="sun-moon" company="Sun Moon University Korean Language Institute" className="w-10 h-10" />;
+      return <InstitutionLogo id="sun-moon" company="Sun Moon University Korean Language Institute" className="w-16 h-10" />;
     }
     switch (type) {
       case 'university':
@@ -64,12 +64,12 @@ export const EducationSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => toggleOpen(edu.id)}
-                className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 cursor-pointer focus:outline-hidden"
+                className="w-full text-left p-4 sm:p-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 cursor-pointer focus:outline-hidden"
               >
                 <div className="flex items-center gap-3.5 min-w-0">
                   {getEduIcon(edu.id, edu.iconType)}
                   <div className="min-w-0">
-                    <h3 className="text-sm sm:text-base font-bold text-neutral-900 truncate">
+                    <h3 className="text-sm sm:text-base font-bold text-neutral-900 sm:truncate">
                       {edu.institution}
                     </h3>
                     <p className="text-xs sm:text-sm text-neutral-500 font-medium">
@@ -83,7 +83,7 @@ export const EducationSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2.5 shrink-0">
+                <div className="flex items-center justify-end gap-2.5 shrink-0">
                   <span className="text-xs sm:text-sm font-medium text-neutral-500 whitespace-nowrap">
                     {edu.period}
                   </span>

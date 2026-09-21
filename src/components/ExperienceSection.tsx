@@ -30,12 +30,12 @@ export const ExperienceSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => toggleOpen(exp.id)}
-                className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 cursor-pointer focus:outline-hidden"
+                className="w-full text-left p-4 sm:p-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 cursor-pointer focus:outline-hidden"
               >
                 <div className="flex items-center gap-3.5 min-w-0">
-                  <InstitutionLogo id={exp.id} company={exp.company} className="w-10 h-10" />
+                  <InstitutionLogo id={exp.id} company={exp.company} className="w-16 h-10" />
                   <div className="min-w-0">
-                    <h3 className="text-sm sm:text-base font-bold text-neutral-900 truncate">
+                    <h3 className="text-sm sm:text-base font-bold text-neutral-900 sm:truncate">
                       {exp.company}
                     </h3>
                     <p className="text-xs sm:text-sm text-neutral-500 font-medium">
@@ -50,7 +50,7 @@ export const ExperienceSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2.5 shrink-0">
+                <div className="flex items-center justify-end gap-2.5 shrink-0">
                   <span className="text-xs sm:text-sm font-medium text-neutral-500 whitespace-nowrap">
                     {exp.period}
                   </span>
