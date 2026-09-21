@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { MapPin, Mail, Phone, Globe, Menu, X } from "lucide-react";
+import { MapPin, Mail, Phone, Menu, X } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
 import portrait from "../assets/images/dave_portrait_1789965082593.jpg";
 import { panelTransition } from './motionSettings';
@@ -16,24 +16,24 @@ export const Sidebar = ({
     <>
       <div className="profile-links">
         <a href={personalInfo.github} target="_blank" rel="noreferrer">
-          <Globe />
-          github.com/davemaxuell
+          <img className="profile-link-logo" src={`${import.meta.env.BASE_URL}links/github.svg`} alt="" width={14} height={14} />
+          <span>github.com/davemaxuell</span>
         </a>
         <a href={personalInfo.scholar} target="_blank" rel="noopener noreferrer">
           <img className="profile-link-logo" src={`${import.meta.env.BASE_URL}links/googlescholar.svg`} alt="" width={12} height={12} />
-          Google Scholar
+          <span>Google Scholar</span>
         </a>
         <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer">
           <img className="profile-link-logo" src={`${import.meta.env.BASE_URL}links/linkedin.svg`} alt="" width={12} height={12} />
-          LinkedIn
+          <span>LinkedIn</span>
         </a>
         <a href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, "")}`}>
           <Phone />
-          {personalInfo.phone}
+          <span>{personalInfo.phone}</span>
         </a>
         <a href={`mailto:${personalInfo.email}`}>
           <Mail />
-          {personalInfo.email}
+          <span>{personalInfo.email}</span>
         </a>
       </div>
       <div className="profile-actions">
@@ -73,8 +73,7 @@ export const Sidebar = ({
           />
           <div className="profile-copy">
             <h1>
-              Hello I’m
-              <br />
+              <span className="profile-greeting">Hello, I’m</span>
               {personalInfo.name}
             </h1>
             <p className="profile-role">{personalInfo.title}</p>

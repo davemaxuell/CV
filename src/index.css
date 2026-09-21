@@ -1496,3 +1496,39 @@ html { scrollbar-gutter: stable; }
 }
 .skill-detail > div { display: flow-root; }
 .project-dialog { animation: none; }
+
+/* Profile: consistent insets, a quieter greeting, and aligned contact rows. */
+.profile-card, .profile-contact { padding: 12px; }
+.profile-greeting {
+  display: block;
+  margin-bottom: 4px;
+  font-family: "Inter Display", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--body);
+}
+.profile-photo { margin-bottom: 16px; }
+.profile-copy h1 { margin-bottom: 12px; }
+.profile-tagline { margin-bottom: 16px; }
+.profile-location { gap: 8px; line-height: 1.5; }
+.profile-contact { margin-top: 12px; }
+.profile-links { gap: 4px; margin-bottom: 12px; }
+.profile-links a { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 8px; min-height: 28px; }
+.profile-links svg, .profile-link-logo, .profile-location svg { width: 14px; height: 14px; object-fit: contain; }
+.profile-actions .primary-button, .profile-actions .secondary-button { min-height: 44px; display: flex; align-items: center; justify-content: center; }
+@media (min-width: 810px) and (max-width: 1199px) {
+  .profile-contact { margin-top: 0; }
+  .profile-photo { margin-bottom: 0; }
+}
+@media (max-width: 809px) {
+  .profile-card { padding: 8px; }
+  .profile-photo { margin-bottom: 0; }
+  .profile-greeting { font-size: 0.75rem; margin-bottom: 2px; }
+  .profile-copy h1 { margin-bottom: 8px; }
+  .mobile-profile-contact .profile-links a { min-height: 36px; }
+}
+@media (min-width: 1200px) and (max-height: 850px) {
+  .profile-sticky { position: static; }
+}
