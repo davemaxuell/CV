@@ -12,9 +12,9 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/dave-maxuell-b39185224/",
   scholar: "https://scholar.google.com/citations?user=DpN3XPYAAAAJ&hl=en",
   aboutIntro: [
-    "I am an AI Researcher and Engineer based in Busan, South Korea, specializing in Multimodal Learning, Retrieval-Augmented Generation (RAG), Foundation Models, and Vision-Language-Action (VLA) systems.",
-    "With active research at Busan University of Foreign Studies and prior research at UNIST's Interactive Multimodal Machine Learning Lab, I focus on building robust reasoning agents, document understanding pipelines, and process-reward-guided vision-language models.",
-    "My work has been recognized with multiple Excellent Paper Awards at top Korean AI conferences (HCLT & KIISE)."
+    "I'm an AI researcher and engineer based in Busan, South Korea. Messy documents and tricky questions are my kind of problem. I build multimodal AI, retrieval-augmented generation (RAG) systems, and vision-language models that turn complex information into useful answers.",
+    "At Busan University of Foreign Studies, I work on model reasoning and document understanding, building on my research experience at UNIST's Interactive Multimodal Machine Learning Lab. I take ideas from experiments to working AI agents, then test how well they hold up.",
+    "My research has earned multiple Excellent Paper Awards at HCLT and KIISE conferences. Next up: more good questions, rigorous experiments, and useful things to build. I'm open to research collaborations and AI engineering opportunities."
   ]
 };
 
