@@ -20,9 +20,11 @@ import { Footer } from "./components/Footer";
 import { ProjectModal } from "./components/ProjectModal";
 import { RivePet } from "./components/RivePet";
 import { useSmoothScroll } from "./components/useSmoothScroll";
+import { MoreAboutPanel } from "./components/MoreAboutPanel";
 import type { Project } from "./types";
 export default function App() {
   const [project, setProject] = useState<Project | null>(null);
+  const [moreAboutOpen, setMoreAboutOpen] = useState(false);
   const scrollToSection = useSmoothScroll();
   const contact = () => scrollToSection('contact');
   return (
@@ -33,7 +35,7 @@ export default function App() {
       <main className="cv-shell">
         <Sidebar onScrollToContact={contact} />
         <div className="cv-content">
-          <AboutSection />
+          <AboutSection onMoreAbout={() => setMoreAboutOpen(true)} moreAboutOpen={moreAboutOpen} />
           <ExperienceSection />
           <PublicationsSection />
           <EducationSection />
@@ -52,6 +54,7 @@ export default function App() {
       </aside>
       <AnimatePresence>
         {project && <ProjectModal key={project.id} project={project} onClose={() => setProject(null)} />}
+        {moreAboutOpen && <MoreAboutPanel key="more-about" onClose={() => setMoreAboutOpen(false)} />}
       </AnimatePresence>
     </MotionConfig>
   );

@@ -88,3 +88,5 @@ Research: https://web.dev/articles/animations-guide and https://motion.dev/docs/
 Latest layout refinement: About uses one continuous column at every width. Organization logos occupy centered 48px squares (44px on mobile), inset 12px within row headers. Lenis smooths wheel and section-link scrolling with lerp 0.12; touch remains native, reduced motion destroys the instance, and dialog body locks pause it. Section offsets come from scroll-margin-top.
 
 Background: a static warm edge wash (#f2e6d9 / #f3e9df) fades into the neutral page center. It sits behind content, ignores pointer input, reduces opacity on mobile, and is omitted in print.
+
+More About Me uses a secondary, right-aligned text button beside the About navigation. It opens a plain 500px sheet from the right, filling the width on smaller screens. The close control remains visible while the content scrolls independently; the dialog traps and restores focus, supports Escape and backdrop dismissal, pauses page scrolling, and respects reduced motion.

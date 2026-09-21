@@ -27,3 +27,5 @@ Existing CV data and portrait/project images; public/logos/SOURCES.md; public/pe
 Audience prioritization beyond CV/portfolio visitors is not specified. Vercel account connection and production URL depend on available authentication.
 
 Positioning confirmed by the owner: undergraduate student actively researching AI, aspiring to pursue the field more deeply through graduate study. Current specialties: LLMs, NLP, VLMs, RAG. Broader research interests: foundation models, VLA/VLN, reinforcement learning, and post-training. Do not use AI Researcher & Engineer as the personal headline; preserve accurate historical role titles.
+
+More About Me is optional supporting content, opened from the right side of the About navigation. The owner describes a project-based approach focused on workflows and pipelines, effective training and reward methods, and future exploration of foundation models and model architecture. Keep these interests distinct from claims of established expertise.
