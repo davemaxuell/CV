@@ -480,6 +480,19 @@ textarea:focus-visible {
 .publication-list {
   width: 100%;
 }
+.resume-award {
+  align-self: flex-start;
+  max-width: 100%;
+  margin-top: 6px;
+  padding: 3px 7px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
 .publication-list .resume-trigger {
   padding: 6px 12px;
 }

@@ -11,6 +11,7 @@ export const PublicationsSection = () => (
           title={p.title}
           subtitle={`${p.conference} · ${p.authorRole}`}
           date={p.year}
+          award={p.award}
         >
           <p>{p.summary}</p>
           {p.award && <p>{p.award}</p>}
