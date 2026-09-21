@@ -2,11 +2,16 @@
 name: Dave Maxuell CV
 description: MonoCV reference adapted to Dave's research portfolio
 colors:
-  page: '#f6f6f6'
-  surface: '#fefefe'
-  ink: 'rgba(0,0,0,.94)'
-  body: 'rgba(0,0,0,.74)'
-  line: 'rgba(0,0,0,.12)'
+  page: '#f4f7f5'
+  surface: '#ffffff'
+  ink: '#23332e'
+  body: '#4a5b55'
+  line: '#d6e0da'
+  accent: '#23645a'
+  accentHover: '#184d46'
+  accentSoft: '#e7f0eb'
+  awardInk: '#745923'
+  awardSurface: '#fff5d6'
 typography:
   display:
     fontFamily: General Sans
@@ -32,7 +37,9 @@ User-pinned reference: https://monocv.framer.website/. Measured in Playwright on
 
 ## Colors
 
-Page #f6f6f6, surfaces #fefefe, primary text black at 94%, secondary text black at 74%, rules black at 12%. Restrained green marks availability and recognition. Original organization artwork keeps its own colors.
+User-requested restrained color palette: sage-white canvas #f4f7f5, white surfaces, green-gray ink #23332e and body #4a5b55. Deep teal #23645a owns primary actions, focus, section labels, and recognition rules; #184d46 is its hover shade and #e7f0eb its light selection surface. Paper awards use muted gold #745923 on #fff5d6. Borders are #d6e0da. Original organization artwork keeps its own colors.
+
+Palette direction informed by Radix's accent/neutral pairing guidance: https://www.radix-ui.com/themes/docs/theme/color. This color request supersedes the reference's monochrome palette while retaining its type, layout, and motion.
 
 ## Typography
 
@@ -42,7 +49,7 @@ General Sans 500: name 24px/1.2 (22px mobile), badges 14px/1.2 with .02em tracki
 
 Desktop at 1200px and above: centered shell up to 1240px wide with at least 40px outer gutters. A 240px profile and 48px gap precede a flexible content column. At 1440px, the shell spans x100 to x1340, and the reading column is 952px wide. About paragraphs are limited to 75ch; resume rows fill the column. The user requested broader use of horizontal space, superseding the reference's narrow column dimensions. Sections retain 56px gaps.
 
-Tablet 810?1199px: 32px outer gutters, full-width horizontal profile/contact header, flexible profile plus 240px contact column. Main content fills the same width beneath it.
+Tablet 810-1199px: 32px outer gutters, full-width horizontal profile/contact header, flexible profile plus 240px contact column. Main content fills the same width beneath it.
 
 Mobile below 810px: horizontal portrait/name card with a menu for contact links and actions. Single-column content with 14px gutters. The pet floats in a fixed bottom-right position outside the page layout, tracks pointer movement across the viewport, and scales down on mobile. Artwork lets clicks through; only its controls capture clicks. At 320px, row dates move below titles when necessary.
 

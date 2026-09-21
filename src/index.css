@@ -29,12 +29,17 @@
   font-display: swap;
 }
 :root {
-  --page: #f6f6f6;
-  --surface: #fefefe;
-  --ink: rgba(0, 0, 0, 0.94);
-  --body: rgba(0, 0, 0, 0.74);
-  --line: rgba(0, 0, 0, 0.12);
-  --shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.04);
+  --page: #f4f7f5;
+  --surface: #ffffff;
+  --ink: #23332e;
+  --body: #4a5b55;
+  --line: #d6e0da;
+  --accent: #23645a;
+  --accent-hover: #184d46;
+  --accent-soft: #e7f0eb;
+  --award-ink: #745923;
+  --award-surface: #fff5d6;
+  --shadow: 0 2px 8px 1px rgba(35, 51, 46, 0.04);
   --spring: linear(
     0,
     0.0235,
@@ -123,11 +128,11 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #333;
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
 ::selection {
-  background: #333;
+  background: var(--accent);
   color: #fff;
 }
 .cv-shell {
@@ -210,7 +215,7 @@ textarea:focus-visible {
   height: 7px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: #57b843;
+  background: var(--accent);
 
 }
 .profile-location {
@@ -277,22 +282,22 @@ textarea:focus-visible {
   letter-spacing: 0;
 }
 .primary-button {
-  background: #333;
+  background: var(--accent);
   color: #fefefe;
-  border: 1px solid #333;
+  border: 1px solid var(--accent);
   font-weight: 600;
 
 }
 .primary-button:hover {
-  background: #505050;
+  background: var(--accent-hover);
 }
 .secondary-button {
   background: #fff;
   border: 1px solid var(--line);
-  color: #000;
+  color: var(--accent);
 }
 .secondary-button:hover {
-  background: #eee;
+  background: var(--accent-soft);
 }
 .profile-menu,
 .mobile-profile-contact,
@@ -314,6 +319,7 @@ textarea:focus-visible {
   scroll-margin-top: 24px;
 }
 .section-badge {
+  color: var(--accent);
   display: table;
   font-size: 14px;
   line-height: 16.8px;
@@ -365,8 +371,8 @@ textarea:focus-visible {
 }
 .skill-chip:hover,
 .skill-chip[aria-expanded="true"] {
-  background: #eaeaea;
-  color: #111;
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 .skill-detail {
   overflow: hidden;
@@ -487,7 +493,7 @@ textarea:focus-visible {
 }
 .detail-tools {
   font-size: 12px;
-  color: #666;
+  color: var(--body);
   letter-spacing: 0;
 }
 .publication-list {
@@ -515,7 +521,8 @@ textarea:focus-visible {
   padding: 3px 7px;
   border: 1px solid var(--line);
   border-radius: 5px;
-  color: var(--ink);
+  color: var(--award-ink);
+  background: var(--award-surface);
   font-size: 12px;
   font-weight: 500;
   line-height: 1.4;
@@ -714,7 +721,7 @@ textarea:focus-visible {
   gap: 32px;
 }
 .recognition-row {
-  border-left: 1px solid #6fc858;
+  border-left: 1px solid var(--accent);
   padding-left: 8px;
 }
 .recognition-heading {
@@ -758,7 +765,8 @@ textarea:focus-visible {
   transition: background 0.2s;
 }
 .link-grid a:hover {
-  background: #eaeaea;
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 .link-grid svg {
   flex-shrink: 0;
@@ -806,11 +814,10 @@ textarea:focus-visible {
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #bbb;
+  border-color: var(--accent);
 }
 .contact-form > .primary-button {
   height: 50px;
-  background: #515151;
 }
 .form-note {
   font-size: 12px;
