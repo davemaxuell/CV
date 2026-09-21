@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Mail, Phone, Globe, ExternalLink, Download, Send, GraduationCap, Award, Sparkles } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
+import { RivePet } from './RivePet';
 
 interface SidebarProps {
   onOpenCV: () => void;
@@ -144,6 +145,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onOpenCV, onScrollToContact })
             <span>Contact Me</span>
           </button>
         </div>
+        <RivePet />
       </div>
     </aside>
   );
