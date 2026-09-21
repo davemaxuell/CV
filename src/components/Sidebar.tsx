@@ -18,6 +18,14 @@ export const Sidebar = ({
           <Globe />
           github.com/davemaxuell
         </a>
+        <a href={personalInfo.scholar} target="_blank" rel="noopener noreferrer">
+          <img className="profile-link-logo" src={`${import.meta.env.BASE_URL}links/googlescholar.svg`} alt="" width={12} height={12} />
+          Google Scholar
+        </a>
+        <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer">
+          <img className="profile-link-logo" src={`${import.meta.env.BASE_URL}links/linkedin.svg`} alt="" width={12} height={12} />
+          LinkedIn
+        </a>
         <a href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, "")}`}>
           <Phone />
           {personalInfo.phone}

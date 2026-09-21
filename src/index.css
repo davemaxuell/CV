@@ -254,7 +254,8 @@ textarea:focus-visible {
   letter-spacing: 0;
   overflow-wrap: anywhere;
 }
-.profile-links svg {
+.profile-links svg,
+.profile-link-logo {
   width: 12px;
   height: 12px;
   flex-shrink: 0;
