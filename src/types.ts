@@ -6,6 +6,7 @@ export interface Experience {
   period: string;
   current?: boolean;
   department?: string;
+  highlight?: string;
   points: string[];
   tools?: string[];
   iconBg?: string;
@@ -34,6 +35,7 @@ export interface Publication {
   conference: string;
   year: string;
   authorRole: 'First author' | 'Second author' | 'Co-author';
+  highlight?: string;
   award?: string;
   pages?: string;
   summary: string;

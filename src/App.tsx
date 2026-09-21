@@ -34,12 +34,12 @@ export default function App() {
         <Sidebar onScrollToContact={contact} />
         <div className="cv-content">
           <AboutSection />
-          <SkillsSection />
           <ExperienceSection />
-          <TechStackSection />
-          <ProjectsSection onSelectProject={setProject} />
-          <EducationSection />
           <PublicationsSection />
+          <EducationSection />
+          <ProjectsSection onSelectProject={setProject} />
+          <SkillsSection />
+          <TechStackSection />
           <RecognitionSection />
           <LanguageSkillsSection />
           <LinksSection />

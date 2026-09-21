@@ -3,7 +3,7 @@ import { Experience, Project, Publication, EducationItem, RecognitionItem, Skill
 export const personalInfo = {
   name: "Dave Maxuell",
   title: "AI Researcher & Engineer",
-  tagline: "Multimodal, RAG & Foundation Models",
+  tagline: "Multimodal AI, RAG & Model Reasoning",
   status: "Available for Research & Roles",
   location: "Busan, South Korea",
   email: "davemaxuell@gmail.com",
@@ -13,7 +13,7 @@ export const personalInfo = {
   scholar: "https://scholar.google.com/citations?user=DpN3XPYAAAAJ&hl=en",
   aboutIntro: [
     "I'm an AI researcher and engineer based in Busan, South Korea. Messy documents and tricky questions are my kind of problem. I build multimodal AI, retrieval-augmented generation (RAG) systems, and vision-language models that turn complex information into useful answers.",
-    "At Busan University of Foreign Studies, I work on model reasoning and document understanding, building on my research experience at UNIST's Interactive Multimodal Machine Learning Lab. I take ideas from experiments to working AI agents, then test how well they hold up.",
+    "I research model reasoning and document understanding at Busan University of Foreign Studies and currently intern at UNIST's Interactive Multimodal Machine Learning Lab. I take ideas from experiments to working AI agents, then test how well they hold up.",
     "My research has earned multiple Excellent Paper Awards at HCLT and KIISE conferences. Next up: more good questions, rigorous experiments, and useful things to build. I'm open to research collaborations and AI engineering opportunities."
   ]
 };
@@ -74,7 +74,7 @@ export const skillCategories: SkillCategory[] = [
     items: [
       "Supervised Fine-Tuning (SFT)",
       "LoRA & QLoRA",
-      "GRPO (Group Relative Policy Optimization)",
+      "GRPO (Group Relative Policy Optimization) — studying",
       "Mixture-of-Experts (MoE)",
       "PEFT (Parameter-Efficient Fine-Tuning)"
     ]
@@ -154,10 +154,11 @@ export const experiences: Experience[] = [
     period: "Present",
     current: true,
     department: "Academic & Laboratory Research",
+    highlight: "Multilingual RAG, document understanding, and Korean handwriting research.",
     iconType: "lab",
     points: [
       "Conduct research on multilingual retrieval-augmented generation (RAG), multimodal document understanding, and Korean handwriting analysis using vision-language models (VLMs).",
-      "Develop novel document-adaptive indexing and verification frameworks leading to state-of-the-art benchmark results in educational and administrative domain retrieval."
+      "Develop document-adaptive indexing and verification frameworks for educational and administrative document retrieval."
     ],
     tools: ["VLM", "Multilingual RAG", "Docling", "PEFT", "PyTorch"]
   },
@@ -168,6 +169,7 @@ export const experiences: Experience[] = [
     period: "Feb. 2026 – Present",
     current: true,
     department: "Multimodal AI & Robotics",
+    highlight: "Research on risk-aware VLMs and MoE routing for vision-language-action systems.",
     iconType: "lab",
     points: [
       "Investigated risk-aware VLM backbones for vision-language-action (VLA) systems using supervised fine-tuning (SFT) and subsequent GRPO training.",
@@ -183,6 +185,7 @@ export const experiences: Experience[] = [
     period: "Dec. 2025 – Mar. 2026",
     current: false,
     department: "Quality Assurance Team",
+    highlight: "Built regulatory intelligence workflows with retrieval across 22 regulatory and industry websites.",
     iconType: "pharma",
     points: [
       "Built an autonomous AI agent to monitor regulatory updates, summarize relevant information, filter results, and generate alerts using Model Context Protocol (MCP), n8n, LangChain, and FastAPI.",
@@ -198,6 +201,7 @@ export const experiences: Experience[] = [
     period: "Nov. 2025 – Jan. 2026",
     current: false,
     department: "Financial AI Research",
+    highlight: "Reported evaluation accuracy improved from 66% to 89% across approximately 40 financial documents.",
     iconType: "bank",
     points: [
       "Evaluated enterprise RAG performance across approximately 40 complex macroeconomic and financial documents.",
@@ -213,6 +217,7 @@ export const experiences: Experience[] = [
     period: "Sept. 2025 – Dec. 2025",
     current: false,
     department: "Global AI Service Initiative",
+    highlight: "Deployed a six-language chatbot reaching 600+ students; reported answer accuracy of 94%.",
     iconType: "global",
     points: [
       "Developed a six-language RAG chatbot combining document extraction, retrieval-based question answering, and LLM reasoning.",
@@ -228,6 +233,7 @@ export const experiences: Experience[] = [
     period: "Jul. 2025 – Aug. 2025",
     current: false,
     department: "Industrial Automation & Vision",
+    highlight: "Built a worker-detection safety system combining video, LiDAR, and crane operating constraints.",
     iconType: "industry",
     points: [
       "Developed a real-time worker-detection safety system using video streams and LiDAR sensors for heavy ship-crane operations.",
@@ -243,6 +249,7 @@ export const experiences: Experience[] = [
     period: "Academic Semester",
     current: false,
     department: "Computer Science & AI",
+    highlight: "Supported introductory LLM instruction, prompt engineering, and hands-on fine-tuning at BUFS.",
     iconType: "ta",
     points: [
       "Helped students understand LLM fundamentals, attention mechanisms, and prompt engineering.",
@@ -255,6 +262,7 @@ export const experiences: Experience[] = [
 export const publications: Publication[] = [
   {
     id: "pub-hclt-2026-1",
+    highlight: "Compared SFT and process-reward-guided GRPO using 50,000 synthetic handwriting images.",
     title: "Process-Reward-Guided Stepwise Verification for Grammatical Error Diagnosis and Correction in Korean Handwritten Text",
     conference: "HCLT 2026 (Human & Cognitive Language Technology)",
     year: "2026",
@@ -269,6 +277,7 @@ export const publications: Publication[] = [
   },
   {
     id: "pub-kiise-2026",
+    highlight: "Five-language benchmark spanning 353 pages; reported answer correctness gain of 10.46 percentage points.",
     title: "Multilingual Multimodal RAG System for International Student Support",
     conference: "KIISE 2026 (Korea Institute of Information Scientists and Engineers)",
     year: "2026",
@@ -276,14 +285,15 @@ export const publications: Publication[] = [
     award: "Excellent Paper Award 🏆",
     summary: "Developed an enterprise multilingual multimodal RAG system combining document-adaptive indexing, Document Virtual Structure (DVS), dual-query hybrid retrieval, cross-encoder reranking, and answer validation across a five-language benchmark covering 353 pages and 2,392 chunks.",
     metrics: [
-      { label: "Answer Correctness Gain", value: "+10.46%p" },
-      { label: "Answer Relevance Gain", value: "+12.15%p" },
-      { label: "Faithfulness Gain", value: "+11.65%p" }
+      { label: "Answer Correctness Gain", value: "+10.46 percentage points" },
+      { label: "Answer Relevance Gain", value: "+12.15 percentage points" },
+      { label: "Faithfulness Gain", value: "+11.65 percentage points" }
     ],
     tags: ["Multimodal RAG", "DVS", "Cross-Encoder", "Benchmarking", "Multi-turn"]
   },
   {
     id: "pub-hclt-2025",
+    highlight: "Built 6,000 dialogues in Korean, English, and Uzbek, including 275 out-of-domain safety cases.",
     title: "Building Multilingual Multi-turn Dataset for International Students Assisting Chatbot",
     conference: "HCLT 2025 (pp. 498–503)",
     year: "2025",
@@ -299,6 +309,7 @@ export const publications: Publication[] = [
   },
   {
     id: "pub-hclt-2026-2",
+    highlight: "Error preservation improved from 41.04% to 62.30%; over-correction fell from 39.78% to 22.63%.",
     title: "Synthetic Data Construction and VLM Over-Correction Mitigation for Preserving Learner Errors in Korean Handwriting Recognition",
     conference: "HCLT 2026",
     year: "2026",

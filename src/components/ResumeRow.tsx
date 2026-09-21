@@ -9,6 +9,7 @@ export const ResumeRow = ({
   date,
   icon,
   award,
+  summary,
   children,
 }: {
   title: string;
@@ -16,6 +17,7 @@ export const ResumeRow = ({
   date: string;
   icon?: ReactNode;
   award?: string;
+  summary?: string;
   children: ReactNode;
 }) => {
   const [open, setOpen] = useState(false);
@@ -34,6 +36,7 @@ export const ResumeRow = ({
           <span className="resume-title">{title}</span>
           <span className="resume-subtitle">{subtitle}</span>
           {award && <span className="resume-award">{award}</span>}
+          {summary && <span className="resume-summary">{summary}</span>}
         </span>
         <span className="resume-date">{date}</span>
         <ChevronDown className="resume-chevron" size={14} aria-hidden="true" />

@@ -627,21 +627,6 @@ textarea:focus-visible {
     transform: translateX(calc(-1 * var(--tech-set-width, 800px)));
   }
 }
-.project-carousel {
-  position: relative;
-}
-.project-track {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 0;
-  padding-bottom: 4px;
-}
-.project-track::-webkit-scrollbar {
-  display: none;
-}
 .project-card {
   width: 230px;
   flex: 0 0 230px;
@@ -695,33 +680,6 @@ textarea:focus-visible {
 }
 .project-link:hover {
   background: #eee;
-}
-.carousel-control {
-  position: absolute;
-  top: 45%;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  background: #3339;
-  color: #fff;
-  transition:
-    opacity 0.2s,
-    background 0.2s;
-}
-.carousel-control:hover {
-  background: #333;
-}
-.carousel-control:disabled {
-  opacity: 0;
-  pointer-events: none;
-}
-.carousel-control.previous {
-  left: 8px;
-}
-.carousel-control.next {
-  right: 8px;
 }
 .recognition-list {
   display: grid;
@@ -1531,4 +1489,23 @@ html { scrollbar-gutter: stable; }
 }
 @media (min-width: 1200px) and (max-height: 850px) {
   .profile-sticky { position: static; }
+}
+
+/* Let reviewers scan contribution, academic context, and project evidence. */
+.academic-context { margin: 20px 0 0; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.9375rem; color: var(--ink); }
+.cv-navigation { display: flex; flex-wrap: wrap; gap: 4px 24px; margin-top: 12px; }
+.cv-navigation a { padding: 6px 0; font-size: 0.875rem; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+.section-context { margin: -12px 0 24px; font-size: 0.875rem; line-height: 1.7; }
+.section-context a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.resume-title, .resume-subtitle { white-space: normal; overflow: visible; text-overflow: clip; }
+.resume-summary { display: block; margin-top: 6px; font-size: 0.875rem; line-height: 1.6; color: var(--body); }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.project-grid .project-card { width: auto; min-width: 0; }
+.project-grid .project-copy { padding: 20px; gap: 12px; }
+.project-grid .project-copy > p { display: block; overflow: visible; -webkit-line-clamp: unset; }
+.project-grid .project-tools { font-size: 0.8125rem; line-height: 1.6; }
+.project-grid .project-link { min-height: 36px; padding: 6px 10px; }
+@media (max-width: 600px) {
+  .project-grid { grid-template-columns: minmax(0, 1fr); }
+  .resume-summary { font-size: 0.8125rem; }
 }

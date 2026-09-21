@@ -13,6 +13,7 @@ export const EducationSection = () => (
           title={e.institution}
           subtitle={e.degree}
           date={e.period}
+          summary={e.gpa ? `GPA: ${e.gpa}` : undefined}
           icon={
             e.iconType === "scholarship" ? (
               <Award size={28} />

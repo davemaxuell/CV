@@ -1,5 +1,5 @@
 ﻿import { SectionBadge } from "./SectionBadge";
-import { personalInfo } from "../data/portfolioData";
+import { personalInfo, educationList } from "../data/portfolioData";
 export const AboutSection = () => (
   <section id="about" className="cv-section">
     <SectionBadge label="About" />
@@ -8,5 +8,14 @@ export const AboutSection = () => (
         <p key={p}>{p}</p>
       ))}
     </div>
+    <p className="academic-context">
+      {educationList[0].degree} · BUFS · GPA {educationList[0].gpa}
+    </p>
+    <nav className="cv-navigation" aria-label="CV sections">
+      <a href="#experience">Experience</a>
+      <a href="#publications">Research</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+    </nav>
   </section>
 );

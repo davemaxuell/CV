@@ -12,6 +12,7 @@ export const ExperienceSection = () => (
           title={e.company}
           subtitle={e.role}
           date={e.period}
+          summary={e.highlight}
           icon={
             <InstitutionLogo
               id={e.id}

@@ -1,9 +1,13 @@
 ﻿import { SectionBadge } from "./SectionBadge";
 import { ResumeRow } from "./ResumeRow";
-import { publications } from "../data/portfolioData";
+import { publications, personalInfo } from "../data/portfolioData";
 export const PublicationsSection = () => (
   <section id="publications" className="cv-section">
-    <SectionBadge label="Publications / Conferences" />
+    <SectionBadge label="Research / Publications" />
+    <p className="section-context">
+      {publications.filter(p => p.authorRole === 'First author').length} first-author works listed · {publications.filter(p => p.award).length} Excellent Paper Awards
+      {' · '}<a href={personalInfo.scholar} target="_blank" rel="noopener noreferrer">View Google Scholar ↗</a>
+    </p>
     <div className="resume-list publication-list">
       {publications.map((p) => (
         <ResumeRow
@@ -12,6 +16,7 @@ export const PublicationsSection = () => (
           subtitle={`${p.conference} · ${p.authorRole}`}
           date={p.year}
           award={p.award}
+          summary={p.highlight}
         >
           <p>{p.summary}</p>
           {p.award && <p>{p.award}</p>}

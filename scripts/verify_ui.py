@@ -46,10 +46,18 @@ with sync_playwright() as p:
         page.locator('#skill-detail').wait_for()
         page.locator('.skill-chip').first.click()
         page.locator('#projects').scroll_into_view_if_needed()
-        page.get_by_role('button',name='Next projects',exact=True).click()
-        page.wait_for_timeout(550)
-        assert page.locator('#projects-carousel').evaluate('(e)=>e.scrollLeft')>100
-        project_trigger=page.locator('.project-link').nth(1)
+        assert page.locator('.project-grid .project-card').count()==6
+        assert page.locator('.project-grid').evaluate('(e)=>e.scrollWidth<=e.clientWidth')
+        for title in page.locator('.resume-title').all():
+            assert title.evaluate('(e)=>e.scrollWidth<=e.clientWidth+1'), title.inner_text()
+        assert page.locator('#experience .resume-summary').count()==7
+        assert page.locator('#education .resume-summary').first.inner_text()=='GPA: 4.25 / 4.50'
+        assert '3 first-author works' in page.locator('#publications .section-context').inner_text()
+        for link in page.locator('.cv-navigation a').all():
+            assert page.locator(link.get_attribute('href')).count()==1
+        assert page.get_by_role('link',name='View project: PharmaAgent OS',exact=True).get_attribute('href')=='https://pharmaagent-os-ochre.vercel.app/'
+        assert page.get_by_role('link',name="View on GitHub: Factors Affecting Korea's Tourism Industry",exact=True).get_attribute('href')=='https://github.com/davemaxuell/korea-tourism-forecasting'
+        project_trigger=page.get_by_role('button',name='Read details: Silla Road Global',exact=True)
         project_trigger.click()
         dialog=page.get_by_role('dialog')
         dialog.wait_for()
@@ -70,7 +78,7 @@ with sync_playwright() as p:
         page.screenshot(path=str(OUT/f'viewport-{width}.png'))
         page.screenshot(path=str(OUT/f'page-{width}.png'),full_page=True)
         assert not errors, errors
-        print(json.dumps({'width':width,'layout':'pass','fonts':'pass','logos':'pass','accordion':'pass','carousel':'pass','dialogs':'pass','cv_link':'pass'}),flush=True)
+        print(json.dumps({'width':width,'layout':'pass','fonts':'pass','logos':'pass','accordion':'pass','project_grid':'pass','visible_evidence':'pass','dialogs':'pass','cv_link':'pass'}),flush=True)
         page.close()
     reduced=browser.new_page(reduced_motion='reduce',viewport={'width':390,'height':844})
     reduced.goto(URL,wait_until='networkidle')

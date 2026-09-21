@@ -59,7 +59,7 @@ Small surfaces use 0 2px 8px 1px rgba(0,0,0,.04). Expandable rows have a 1px sol
 
 ## Shapes
 
-8px card corners and outlined, unfilled section badges. Profile portrait is 180×193.55px desktop, 134×164px tablet, and 126×154px mobile. Project cards are 230px wide with a 10px carousel gap.
+8px card corners and outlined, unfilled section badges. Project cards use a two-column grid, stacking below 600px, with complete descriptions and direct links where available. No horizontal browsing is required to find a project.
 
 ## Components
 
