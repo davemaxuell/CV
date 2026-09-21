@@ -1,3 +1,3 @@
 ﻿export const SectionBadge = ({ label }: { label: string }) => (
-  <h2 className="section-badge">{label}</h2>
+  <h2 className="section-badge"><span>{label}</span></h2>
 );

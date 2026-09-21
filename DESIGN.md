@@ -59,7 +59,7 @@ Small surfaces use 0 2px 8px 1px rgba(0,0,0,.04). Expandable rows have a 1px sol
 
 ## Shapes
 
-8px card corners and outlined, unfilled section badges. Project cards use a two-column grid, stacking below 600px, with complete descriptions and direct links where available. No horizontal browsing is required to find a project.
+8px card corners. Section headings use General Sans medium in title case, 24px desktop / 20px mobile, orange text and a fine solid rule filling the remaining width; no enclosing badge. Inspired by the restrained heading hierarchy of paco.me and brittanychiang.com, adapted to the existing palette. Project cards use a two-column grid, stacking below 600px, with complete descriptions and direct links where available. No horizontal browsing is required to find a project.
 
 ## Components
 
