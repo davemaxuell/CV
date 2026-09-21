@@ -1408,20 +1408,8 @@ textarea:focus-visible {
   left: -110px;
   top: -65px;
 }
-.floating-pet .pet-caption { justify-content: center; gap: 12px; pointer-events: auto; }
-.pet-credits { position: relative; }
-.pet-credits summary { cursor: pointer; }
-.pet-credits > div {
-  position: absolute;
-  bottom: 28px;
-  right: 0;
-  width: 170px;
-  padding: 12px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-.pet-credits a { display: block; }
+.floating-pet .pet-caption { justify-content: center; pointer-events: none; }
+.floating-pet .pet-caption button { pointer-events: auto; }
 @media (max-width: 809px) {
   .floating-pet { width: 100px; right: 8px; bottom: 8px; }
   .floating-pet .pet-scene { width: 100px; height: 90px; }

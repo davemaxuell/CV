@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import type { Rive } from '@rive-app/canvas';
 import wasmUrl from '@rive-app/canvas/rive.wasm?url';
 
-const source = 'https://rive.app/marketplace/28334-53514-interactive-character-follow/';
 const assetBase = `${import.meta.env.BASE_URL}pet/interactive-character-follow`;
 
 export const RivePet = () => {
@@ -139,13 +138,6 @@ export const RivePet = () => {
         />
       </div>
       <figcaption className="pet-caption">
-        <details className="pet-credits">
-          <summary>Credits</summary>
-          <div>
-            <a href={source} target="_blank" rel="noreferrer">Character by alinazari</a>
-            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>
-          </div>
-        </details>
         {!failed && (
           <button type="button" onClick={() => setPaused(value => !value)}
             aria-label={paused ? 'Play pet animation' : 'Pause pet animation'}>
