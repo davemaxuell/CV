@@ -475,10 +475,17 @@ export const languageSkills: RecognitionItem[] = [
     badge: "Highest Tier"
   },
   {
-    id: "rec-english",
-    title: "TOEIC 955 / 990 & IELTS Academic 7.5",
-    issuer: "ETS & British Council",
-    year: "2023",
+    id: "rec-toeic",
+    title: "TOEIC 955 / 990",
+    issuer: "ETS",
+    year: "2026",
+    badge: "Proficiency"
+  },
+  {
+    id: "rec-ielts",
+    title: "IELTS Academic 7.5",
+    issuer: "British Council",
+    year: "2021",
     badge: "Proficiency"
   }
 ];
