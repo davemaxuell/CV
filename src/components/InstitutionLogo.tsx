@@ -10,7 +10,7 @@ type Logo = { file: string; name: string; dark?: boolean };
 
 // Original organization assets; provenance is recorded in public/logos/SOURCES.md.
 const bufs: Logo = { file: 'bufs.png', name: 'Busan University of Foreign Studies' };
-const sunmoon: Logo = { file: 'sunmoon.png', name: 'Sun Moon University', dark: true };
+const sunmoon: Logo = { file: 'sunmoon.png', name: 'Sun Moon University' };
 const logos: Record<string, Logo> = {
   bufs,
   'bufs-present': bufs,
