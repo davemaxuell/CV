@@ -14,6 +14,7 @@ const sunmoon: Logo = { file: 'sunmoon.png', name: 'Sun Moon University' };
 const logos: Record<string, Logo> = {
   bufs,
   'bufs-present': bufs,
+  'teaching-assistant': bufs,
   'unist-intern': { file: 'unist.png', name: 'UNIST' },
   'daewoong-pharma': { file: 'daewoong.svg', name: 'Daewoong Pharmaceutical' },
   'teddysum-bok': { file: 'teddysum.png', name: 'TeddySum' },
