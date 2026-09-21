@@ -13,7 +13,7 @@ import { ExperienceSection } from "./components/ExperienceSection";
 import { ProjectsSection } from "./components/ProjectsSection";
 import { PublicationsSection } from "./components/PublicationsSection";
 import { EducationSection } from "./components/EducationSection";
-import { RecognitionSection } from "./components/RecognitionSection";
+import { RecognitionSection, LanguageSkillsSection } from "./components/RecognitionSection";
 import { LinksSection } from "./components/LinksSection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
@@ -48,6 +48,7 @@ export default function App() {
           <EducationSection />
           <PublicationsSection />
           <RecognitionSection />
+          <LanguageSkillsSection />
           <LinksSection />
           <ContactSection />
           <div className="mobile-pet">

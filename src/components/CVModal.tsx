@@ -8,7 +8,7 @@ import {
   projects,
   educationList,
   skillCategories,
-  recognitions
+  languageSkills
 } from '../data/portfolioData';
 
 interface CVModalProps {
@@ -45,6 +45,9 @@ ${publications.map(pub => `### ${pub.title}\n*${pub.conference}, ${pub.year}*\n*
 
 ## EDUCATION
 ${educationList.map(edu => `### ${edu.institution}\n*${edu.period}*\n${edu.degree}${edu.gpa ? ` (GPA: ${edu.gpa})` : ''}\n${edu.details.map(d => `- ${d}`).join('\n')}`).join('\n\n')}
+
+## LANGUAGE SKILLS
+${languageSkills.map(skill => `- **${skill.title}** (${skill.year}) — ${skill.issuer}`).join('\n')}
 `;
   };
 
@@ -243,6 +246,23 @@ ${educationList.map(edu => `### ${edu.institution}\n*${edu.period}*\n${edu.degre
                     )}
                   </div>
                   <p className="text-neutral-600 mt-1 leading-relaxed">{pub.summary}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-sm font-bold tracking-wider uppercase border-b border-neutral-900 pb-1 mb-3 text-neutral-950">
+              Language Skills
+            </h2>
+            <div className="space-y-3">
+              {languageSkills.map((skill) => (
+                <div key={skill.id} className="text-xs sm:text-sm">
+                  <div className="flex flex-wrap justify-between items-baseline font-semibold text-neutral-900">
+                    <span>{skill.title}</span>
+                    <span className="text-neutral-500 font-normal">{skill.year}</span>
+                  </div>
+                  <p className="text-neutral-600">{skill.issuer}</p>
                 </div>
               ))}
             </div>

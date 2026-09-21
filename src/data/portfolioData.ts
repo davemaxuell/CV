@@ -446,7 +446,10 @@ export const recognitions: RecognitionItem[] = [
     issuer: "Busan Metropolitan City & BUFS",
     year: "2024",
     badge: "Merit Scholar"
-  },
+  }
+];
+
+export const languageSkills: RecognitionItem[] = [
   {
     id: "rec-topik",
     title: "TOPIK Level 6 (263 / 300 points)",
