@@ -415,17 +415,6 @@ export const educationList: EducationItem[] = [
       "Achieved maximum TOPIK Level 6 certification (263/300 points)."
     ],
     iconType: "language"
-  },
-  {
-    id: "busan-scholarship",
-    institution: "Busan Foreign Student Scholarship",
-    degree: "City Government Merit Scholar",
-    period: "Mar. 2024 – Nov. 2024",
-    details: [
-      "Awarded competitive municipal scholarship for outstanding academic and leadership achievements.",
-      "Contributed to civic youth engagement, population aging initiatives, and integration programs for international residents."
-    ],
-    iconType: "scholarship"
   }
 ];
 
