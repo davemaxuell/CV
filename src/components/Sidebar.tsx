@@ -1,9 +1,8 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { MapPin, Mail, Phone, Globe, Menu, X } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
 import portrait from "../assets/images/dave_portrait_1789965082593.jpg";
-import { RivePet } from "./RivePet";
 
 export const Sidebar = ({
   onOpenCV,
@@ -105,9 +104,6 @@ export const Sidebar = ({
             </motion.div>
           )}
         </AnimatePresence>
-        <div className="desktop-pet">
-          <RivePet />
-        </div>
       </div>
     </aside>
   );

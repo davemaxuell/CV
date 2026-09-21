@@ -1,4 +1,4 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
 @font-face {
   font-family: "General Sans";
@@ -209,7 +209,7 @@ textarea:focus-visible {
   flex-shrink: 0;
   border-radius: 50%;
   background: #57b843;
-  box-shadow: 0 0 0 3px #edf7e9;
+
 }
 .profile-location {
   display: flex;
@@ -277,9 +277,9 @@ textarea:focus-visible {
 .primary-button {
   background: #333;
   color: #fefefe;
-  border: 1px solid #555;
+  border: 1px solid #333;
   font-weight: 600;
-  box-shadow: inset 0 1px 2px #ffffff30;
+
 }
 .primary-button:hover {
   background: #505050;
@@ -604,38 +604,6 @@ textarea:focus-visible {
   flex-direction: column;
   box-shadow: var(--shadow);
 }
-.project-image {
-  display: block;
-  width: 100%;
-  height: 158px;
-  padding: 6px;
-  background: none;
-  border: 0;
-  overflow: hidden;
-}
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: opacity 0.25s;
-}
-.project-image:hover img {
-  opacity: 0.85;
-}
-.project-placeholder {
-  height: 100%;
-  display: grid;
-  place-items: center;
-  padding: 18px;
-  text-align: center;
-  background: #e8e8e8;
-  border-radius: 8px;
-  color: #565656;
-  font-family: "General Sans";
-  font-size: 18px;
-  line-height: 1.3;
-}
 .project-copy {
   padding: 12px;
   display: flex;
@@ -814,27 +782,6 @@ textarea:focus-visible {
 }
 .site-footer a:hover {
   text-decoration: underline;
-}
-.desktop-pet figure {
-  margin-top: 16px;
-}
-.desktop-pet figcaption {
-  font-size: 11px;
-  padding: 0;
-}
-.desktop-pet figcaption > div {
-  gap: 0;
-}
-.desktop-pet figcaption button {
-  font-size: 11px;
-}
-.desktop-pet figcaption > p {
-  font-size: 10px;
-  line-height: 1.5;
-}
-.desktop-pet figcaption span {
-  max-width: 145px;
-  line-height: 1.4;
 }
 .skip-link {
   position: fixed;
@@ -1319,4 +1266,71 @@ textarea:focus-visible {
     margin: auto;
     padding: 34px 0 90px;
   }
+}
+
+/* Reference correction: content first, no invented preview artwork or pet card. */
+.project-period {
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  color: var(--body);
+}
+.project-copy { padding: 16px 12px; }
+.project-copy > .project-period { display: block; }
+.mobile-pet {
+  display: block;
+  align-self: flex-start;
+  max-width: 200px;
+  width: 100%;
+}
+.pet-companion { margin: 0; }
+.pet-scene {
+  position: relative;
+  width: 160px;
+  height: 120px;
+  overflow: hidden;
+  mix-blend-mode: multiply;
+}
+.pet-caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.pet-caption a:hover { text-decoration: underline; }
+.pet-caption button { border: 0; background: none; padding: 8px 0; font-size: 11px; }
+.project-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #0006;
+}
+.project-document {
+  position: relative;
+  width: 550px;
+  max-width: 100%;
+  max-height: 90dvh;
+  overflow-y: auto;
+  padding: 40px 32px;
+  background: var(--surface);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.project-document h2 { font-size: 24px; margin: 20px 0 12px; }
+.project-document p { margin: 0 0 24px; }
+.project-document ul { list-style: disc; padding-left: 20px; margin: 28px 0; }
+.project-document li + li { margin-top: 12px; }
+.project-document .document-meta { padding-right: 20px; font-size: 12px; margin: 0; }
+.project-document .document-tools { margin: 0; padding-top: 20px; border-top: 1px dashed var(--line); font-size: 12px; }
+.document-close { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 32px; height: 32px; border: 0; background: none; border-radius: 4px; }
+.document-close:hover { background: #eee; }
+@media (max-width: 809px) {
+  .project-document { padding: 32px 20px; }
+  .project-document h2 { font-size: 22px; }
 }

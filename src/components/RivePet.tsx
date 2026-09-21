@@ -95,8 +95,8 @@ export const RivePet = () => {
   }, [visible, paused, ready]);
 
   return (
-    <figure className="mt-6 print:hidden" aria-label="Interactive character companion">
-      <div ref={sceneRef} className="relative aspect-4/3 overflow-hidden rounded-2xl bg-neutral-100">
+    <figure className="pet-companion print:hidden" aria-label="Interactive character companion">
+      <div ref={sceneRef} className="pet-scene">
         {(!ready || failed) && (
           <img src={`${assetBase}.png`} alt="A friendly illustrated character with round glasses" className="absolute inset-0 w-full h-full object-contain" width="800" height="600" />
         )}
@@ -107,25 +107,16 @@ export const RivePet = () => {
           className={`block w-full h-full ${!ready || failed ? 'invisible' : ''} ${paused ? 'pointer-events-none' : ''}`}
         />
       </div>
-      <figcaption className="px-1 pt-2 text-xs text-neutral-600">
-        <div className="flex items-center justify-between gap-2">
-          <span>{failed ? 'Meet my little companion.' : paused ? 'Taking a little break.' : 'Move your pointer or tap to say hello.'}</span>
-          {!failed && (
-            <button
-              type="button"
-              onClick={() => setPaused(value => !value)}
-              aria-label={paused ? 'Play pet animation' : 'Pause pet animation'}
-              className="min-h-11 min-w-11 shrink-0 rounded-lg px-2 font-medium text-neutral-800 hover:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-800"
-            >
-              {paused ? 'Play' : 'Pause'}
-            </button>
-          )}
-        </div>
-        <p className="text-[11px]">
-          <a href={source} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-neutral-900">Interactive Character Follow by alinazari</a>
-          {' · '}
-          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-neutral-900">CC BY 4.0</a>
-        </p>
+      <figcaption className="pet-caption">
+        <a href={source} target="_blank" rel="noreferrer">Character by alinazari</a>
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>
+        {!failed && (
+          <button type="button" onClick={() => setPaused(value => !value)}
+            aria-label={paused ? 'Play pet animation' : 'Pause pet animation'}>
+            {paused ? 'Play' : 'Pause'}
+          </button>
+        )}
+        {failed && <span>Animation unavailable</span>}
       </figcaption>
     </figure>
   );

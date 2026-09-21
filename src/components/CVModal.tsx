@@ -72,7 +72,7 @@ ${educationList.map(edu => `### ${edu.institution}\n*${edu.period}*\n${edu.degre
 
   return (
     <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Curriculum Vitae" className="cv-dialog fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/50" onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col border border-neutral-300 shadow-2xl overflow-hidden">
+      <div className="bg-white rounded-lg max-w-4xl w-full max-h-[92vh] flex flex-col border border-neutral-300 overflow-hidden">
         {/* Modal Top Bar */}
         <div className="px-6 py-4 border-b border-neutral-200 bg-neutral-50 flex items-center justify-between">
           <div>
@@ -88,7 +88,7 @@ ${educationList.map(edu => `### ${edu.institution}\n*${edu.period}*\n${edu.degre
             <button
               type="button"
               onClick={handleCopyMarkdown}
-              className="p-2 sm:px-3 sm:py-1.5 rounded-xl border border-neutral-200 bg-white hover:bg-neutral-100 text-neutral-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer shadow-2xs"
+              className="p-2 sm:px-3 sm:py-1.5 rounded-md border border-neutral-200 bg-white hover:bg-neutral-100 text-neutral-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
               title="Copy Markdown"
             >
               {copied ? (
@@ -107,7 +107,7 @@ ${educationList.map(edu => `### ${edu.institution}\n*${edu.period}*\n${edu.degre
             <button
               type="button"
               onClick={handleDownloadMarkdown}
-              className="p-2 sm:px-3 sm:py-1.5 rounded-xl border border-neutral-200 bg-white hover:bg-neutral-100 text-neutral-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer shadow-2xs"
+              className="p-2 sm:px-3 sm:py-1.5 rounded-md border border-neutral-200 bg-white hover:bg-neutral-100 text-neutral-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
               title="Download .md"
             >
               <Download className="w-4 h-4 text-neutral-600" />
@@ -117,7 +117,7 @@ ${educationList.map(edu => `### ${edu.institution}\n*${edu.period}*\n${edu.degre
             <button
               type="button"
               onClick={handlePrint}
-              className="p-2 sm:px-3 sm:py-1.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer shadow-2xs"
+              className="p-2 sm:px-3 sm:py-1.5 rounded-md bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
               title="Print / Save PDF"
             >
               <Printer className="w-4 h-4" />

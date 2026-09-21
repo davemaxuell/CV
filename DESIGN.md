@@ -1,4 +1,4 @@
-﻿---
+---
 name: Dave Maxuell CV
 description: MonoCV reference adapted to Dave's research portfolio
 colors:
@@ -44,7 +44,7 @@ Desktop at 1200px and above: max-width 1200px outer grid, 40% profile and 60% co
 
 Tablet 810–1199px: a centered 570px horizontal profile/contact header, columns 380px/180px with a 10px gap, 28px top inset. Centered 550px content begins 34px below the header. At 810px, content x130 matches the reference.
 
-Mobile below 810px: horizontal portrait/name card with a menu for contact links and actions. Single-column content with 14px gutters. Pet appears after the content on mobile/tablet and below the desktop profile. At 320px, row dates move below titles when necessary.
+Mobile below 810px: horizontal portrait/name card with a menu for contact links and actions. Single-column content with 14px gutters. Pet appears after the contact section on every screen size, without a surrounding card. At 320px, row dates move below titles when necessary.
 
 ## Elevation & Depth
 
@@ -59,7 +59,7 @@ Small surfaces use 0 2px 8px 1px rgba(0,0,0,.04). Expandable rows have a 1px das
 - Experience/education rows start closed, with an organization logo, title, role, date, and rotating chevron. Long names truncate only when closed; opening reveals the full name and all details.
 - Skills are simple white chips; selecting one expands the original category details.
 - Tech stack uses standalone real marks and moves at 30px/second, with hover/focus, visibility, and manual pause. Reduced motion shows a static list.
-- Projects scroll with touch or previous/next controls and open full details in dialogs.
+- Projects use plain text cards with dates, titles, descriptions, and a detail link. They scroll with touch or previous/next controls. No invented preview artwork or placeholder tiles. Details use a plain document layout with bullet lists, not icon boxes and tag pills.
 - Publications use the same expandable vocabulary; recognition has a thin green rule and dotted leaders.
 - Contact is an unboxed form that opens an email draft, explicitly avoiding a false delivery claim.
 - Page entrance is an opacity-only 400ms reveal with the reference's measured spring curve. Accordion height uses a 400ms spring; chevron rotation shares that curve. Hover changes stay small. Reduced motion suppresses nonessential animation.

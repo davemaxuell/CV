@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "motion/react";
 import { ArrowUpRight, ChevronRight, ChevronLeft } from "lucide-react";
 import { SectionBadge } from "./SectionBadge";
@@ -38,22 +38,10 @@ export const ProjectsSection = ({
       <SectionBadge label="Projects" />
       <div className="project-carousel">
         <div id="projects-carousel" ref={trackRef} className="project-track">
-          {projects.map((p, i) => (
+          {projects.map((p) => (
             <article className="project-card" key={p.id}>
-              <button
-                className="project-image"
-                onClick={() => onSelectProject(p)}
-                aria-label={`View ${p.title}`}
-              >
-                {p.image ? (
-                  <img src={p.image} alt="" loading="lazy" />
-                ) : (
-                  <div className="project-placeholder">
-                    <span>{p.subtitle || p.title}</span>
-                  </div>
-                )}
-              </button>
               <div className="project-copy">
+                <p className="project-period">{p.period}</p>
                 <h3>{p.title}</h3>
                 <p>{p.description}</p>
                 <button
