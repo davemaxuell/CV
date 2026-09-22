@@ -20,19 +20,21 @@ export const personalInfo = {
 
 // Short, authored thoughts from Dave; opinions stay in the first person.
 export const petThoughts = [
-  "I learn AI by building projects.",
-  "I think in workflows and pipelines.",
-  "LLMs, NLP, VLMs, RAG: that's my focus.",
-  "I'm curious about better training and rewards.",
-  "I want to dig deeper into post-training.",
-  "Reinforcement learning is on my learning list.",
-  "I want to explore foundation models and model architecture.",
-  "VLA and VLN have my curiosity, too.",
-  "I'm an undergrad. There's so much more to explore!",
-  "I want to take my AI research into graduate study.",
-  "I believe AI development should keep moving.",
-  "I believe AI won't replace humans.",
-  "I see recursive self-improvement (RSI) as dangerous.",
+  "I learn by building. The bugs are bonus lessons.",
+  "I think in pipelines. Even my side quests have workflows.",
+  "LLMs, NLP, VLMs, RAG. I brought the alphabet soup.",
+  "Better training, better rewards. Models need good study habits, too.",
+  "Post-training has my attention. Apparently, models get homework too.",
+  "Reinforcement learning is on my study list. Reward: understanding!",
+  "Foundation models and architecture? That's my next rabbit hole.",
+  "VLA and VLN caught my eye. Models with places to be!",
+  "Still an undergrad. Curiosity has no graduation date.",
+  "Next chapter, I hope: grad school. Same curiosity, bigger questions.",
+  "Keep AI moving, I say. Plenty left to figure out!",
+  "I don't think AI will replace us. Humans keep top billing.",
+  "Recursive self-improvement (RSI)? I see danger. This plot needs brakes.",
+  "Yes, I'm following your cursor. Call it field research.",
+  "Small avatar. Unreasonably large research interests.",
 ];
 
 export const skillCategories: SkillCategory[] = [
