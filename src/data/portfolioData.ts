@@ -2,8 +2,8 @@ import { Experience, Project, Publication, EducationItem, RecognitionItem, Skill
 
 export const personalInfo = {
   name: "Dave Maxuell",
-  title: "AI Researcher & Engineer",
-  tagline: "Multimodal, RAG & Foundation Models",
+  title: "Undergraduate Student",
+  tagline: "AI research · LLM, NLP, VLM & RAG",
   status: "Available for Research & Roles",
   location: "Busan, South Korea",
   email: "davemaxuell@gmail.com",
@@ -12,10 +12,30 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/dave-maxuell-b39185224/",
   scholar: "https://scholar.google.com/citations?user=DpN3XPYAAAAJ&hl=en",
   aboutIntro: [
-    "I am an AI Researcher and Engineer based in Busan, South Korea, specializing in Multimodal Learning, Retrieval-Augmented Generation (RAG), Foundation Models, and Vision-Language-Action (VLA) systems.",
-    "With active research at Busan University of Foreign Studies and prior research at UNIST's Interactive Multimodal Machine Learning Lab, I focus on building robust reasoning agents, document understanding pipelines, and process-reward-guided vision-language models. My work has been recognized with multiple Excellent Paper Awards at top Korean AI conferences (HCLT & KIISE)."
+    "I'm an undergraduate student based in Busan, South Korea, actively researching AI. Messy documents and tricky questions are my kind of problem. My current focus is large language models (LLMs), natural language processing (NLP), vision-language models (VLMs), and retrieval-augmented generation (RAG).",
+    "I conduct research at Busan University of Foreign Studies and currently intern at UNIST's Interactive Multimodal Machine Learning Lab. I take ideas from experiments to working systems, then test how well they hold up. My work has earned Excellent Paper Awards at HCLT and KIISE.",
+    "I want to pursue AI research more deeply through graduate study. Beyond my current focus, I'm interested in foundation models, vision-language-action (VLA), vision-language navigation (VLN), reinforcement learning, and post-training. I'm keen to keep learning, ask better questions, and contribute to research with practical value."
   ]
 };
+
+// Short, authored thoughts from Dave; opinions stay in the first person.
+export const petThoughts = [
+  "I learn by building. The bugs are bonus lessons.",
+  "I think in pipelines. Even my side quests have workflows.",
+  "LLMs, NLP, VLMs, RAG. I brought the alphabet soup.",
+  "Better training, better rewards. Models need good study habits, too.",
+  "Post-training has my attention. Apparently, models get homework too.",
+  "Reinforcement learning is on my study list. Reward: understanding!",
+  "Foundation models and architecture? That's my next rabbit hole.",
+  "VLA and VLN caught my eye. Models with places to be!",
+  "Still an undergrad. Curiosity has no graduation date.",
+  "Next chapter, I hope: grad school. Same curiosity, bigger questions.",
+  "Keep AI moving, I say. Plenty left to figure out!",
+  "I don't think AI will replace us. Humans keep top billing.",
+  "Recursive self-improvement (RSI)? I see danger. This plot needs brakes.",
+  "Yes, I'm following your cursor. Call it field research.",
+  "Small avatar. Unreasonably large research interests.",
+];
 
 export const skillCategories: SkillCategory[] = [
   {
@@ -51,10 +71,10 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     id: "robotics-vla",
-    title: "Embodied AI & Simulation",
-    shortTitle: "Embodied AI & VLA",
+    title: "Research Interests: Embodied AI & Simulation",
+    shortTitle: "VLA & VLN Interests",
     iconName: "Bot",
-    description: "VLA, vision-and-language navigation & simulators",
+    description: "Exploring VLA, vision-language navigation & simulation",
     items: [
       "Vision-Language-Action (VLA)",
       "Vision-Language Navigation (VLN)",
@@ -72,8 +92,10 @@ export const skillCategories: SkillCategory[] = [
     description: "Supervised fine-tuning, PEFT & reinforcement learning",
     items: [
       "Supervised Fine-Tuning (SFT)",
+      "Direct Preference Optimization (DPO)",
       "LoRA & QLoRA",
       "GRPO (Group Relative Policy Optimization)",
+      "Reasoning Distillation — experiments",
       "Mixture-of-Experts (MoE)",
       "PEFT (Parameter-Efficient Fine-Tuning)"
     ]
@@ -136,14 +158,13 @@ export const skillCategories: SkillCategory[] = [
 ];
 
 export const techStackPills = [
-  { name: "PyTorch", category: "Framework", iconName: "Flame" },
-  { name: "Hugging Face", category: "Ecosystem", iconName: "Cpu" },
-  { name: "vLLM", category: "Inference", iconName: "Zap" },
-  { name: "LangChain", category: "RAG Agent", iconName: "Link2" },
-  { name: "FastAPI", category: "Backend", iconName: "Server" },
-  { name: "Qdrant", category: "Vector DB", iconName: "Database" },
-  { name: "Isaac Sim", category: "Simulation", iconName: "Box" },
-  { name: "Docling / OCR", category: "Vision", iconName: "Eye" }
+  { name: "Python", category: "Primary language", icon: "python.svg" },
+  { name: "PyTorch", category: "Deep learning", icon: "pytorch.svg" },
+  { name: "Hugging Face", category: "Transformers and model training", icon: "huggingface.svg" },
+  { name: "FastAPI", category: "Python APIs", icon: "fastapi.svg" },
+  { name: "PostgreSQL", category: "Data and vector storage", icon: "postgresql.svg" },
+  { name: "Next.js", category: "Web applications", icon: "nextdotjs.svg" },
+  { name: "Slack", category: "Team collaboration", icon: "slack.png" }
 ];
 
 export const experiences: Experience[] = [
@@ -154,10 +175,11 @@ export const experiences: Experience[] = [
     period: "Present",
     current: true,
     department: "Academic & Laboratory Research",
+    highlight: "Multilingual RAG, document understanding, and Korean handwriting research.",
     iconType: "lab",
     points: [
       "Conduct research on multilingual retrieval-augmented generation (RAG), multimodal document understanding, and Korean handwriting analysis using vision-language models (VLMs).",
-      "Develop novel document-adaptive indexing and verification frameworks leading to state-of-the-art benchmark results in educational and administrative domain retrieval."
+      "Develop document-adaptive indexing and verification frameworks for educational and administrative document retrieval."
     ],
     tools: ["VLM", "Multilingual RAG", "Docling", "PEFT", "PyTorch"]
   },
@@ -165,9 +187,10 @@ export const experiences: Experience[] = [
     id: "unist-intern",
     company: "UNIST, Interactive Multimodal Machine Learning Lab",
     role: "Research Intern",
-    period: "Feb. 2026 – Aug. 2026",
-    current: false,
+    period: "Feb. 2026 – Present",
+    current: true,
     department: "Multimodal AI & Robotics",
+    highlight: "Research on risk-aware VLMs and MoE routing for vision-language-action systems.",
     iconType: "lab",
     points: [
       "Investigated risk-aware VLM backbones for vision-language-action (VLA) systems using supervised fine-tuning (SFT) and subsequent GRPO training.",
@@ -183,6 +206,7 @@ export const experiences: Experience[] = [
     period: "Dec. 2025 – Mar. 2026",
     current: false,
     department: "Quality Assurance Team",
+    highlight: "Built regulatory intelligence workflows with retrieval across 22 regulatory and industry websites.",
     iconType: "pharma",
     points: [
       "Built an autonomous AI agent to monitor regulatory updates, summarize relevant information, filter results, and generate alerts using Model Context Protocol (MCP), n8n, LangChain, and FastAPI.",
@@ -198,6 +222,7 @@ export const experiences: Experience[] = [
     period: "Nov. 2025 – Jan. 2026",
     current: false,
     department: "Financial AI Research",
+    highlight: "Reported evaluation accuracy improved from 66% to 89% across approximately 40 financial documents.",
     iconType: "bank",
     points: [
       "Evaluated enterprise RAG performance across approximately 40 complex macroeconomic and financial documents.",
@@ -213,6 +238,7 @@ export const experiences: Experience[] = [
     period: "Sept. 2025 – Dec. 2025",
     current: false,
     department: "Global AI Service Initiative",
+    highlight: "Deployed a six-language chatbot reaching 600+ students; reported answer accuracy of 94%.",
     iconType: "global",
     points: [
       "Developed a six-language RAG chatbot combining document extraction, retrieval-based question answering, and LLM reasoning.",
@@ -228,6 +254,7 @@ export const experiences: Experience[] = [
     period: "Jul. 2025 – Aug. 2025",
     current: false,
     department: "Industrial Automation & Vision",
+    highlight: "Built a worker-detection safety system combining video, LiDAR, and crane operating constraints.",
     iconType: "industry",
     points: [
       "Developed a real-time worker-detection safety system using video streams and LiDAR sensors for heavy ship-crane operations.",
@@ -238,23 +265,26 @@ export const experiences: Experience[] = [
   },
   {
     id: "teaching-assistant",
-    company: "Machine Learning & Introductory Large Language Models",
+    company: "Introduction to Large Language Models",
     role: "Teaching Assistant",
     period: "Academic Semester",
     current: false,
     department: "Computer Science & AI",
+    highlight: "Supported introductory LLM instruction, prompt engineering, and hands-on fine-tuning at BUFS.",
     iconType: "ta",
     points: [
-      "Mentored students on foundational concepts in machine learning, loss functions, attention mechanisms, and prompt engineering.",
-      "Led laboratory hands-on coding sessions with PyTorch, Hugging Face Transformers, and fine-tuning exercises."
+      "Helped students understand LLM fundamentals, attention mechanisms, and prompt engineering.",
+      "Supported hands-on LLM coding and fine-tuning exercises using PyTorch and Hugging Face Transformers."
     ],
-    tools: ["Instruction", "PyTorch", "LLM Fundamentals"]
+    tools: ["LLM Fundamentals", "Prompt Engineering", "Hugging Face Transformers", "PyTorch"]
   }
 ];
 
 export const publications: Publication[] = [
   {
     id: "pub-hclt-2026-1",
+    status: "Accepted for oral presentation",
+    highlight: "Compared SFT and process-reward-guided GRPO using 50,000 synthetic handwriting images.",
     title: "Process-Reward-Guided Stepwise Verification for Grammatical Error Diagnosis and Correction in Korean Handwritten Text",
     conference: "HCLT 2026 (Human & Cognitive Language Technology)",
     year: "2026",
@@ -269,6 +299,7 @@ export const publications: Publication[] = [
   },
   {
     id: "pub-kiise-2026",
+    highlight: "Five-language benchmark spanning 353 pages; reported answer correctness gain of 10.46 percentage points.",
     title: "Multilingual Multimodal RAG System for International Student Support",
     conference: "KIISE 2026 (Korea Institute of Information Scientists and Engineers)",
     year: "2026",
@@ -276,14 +307,16 @@ export const publications: Publication[] = [
     award: "Excellent Paper Award 🏆",
     summary: "Developed an enterprise multilingual multimodal RAG system combining document-adaptive indexing, Document Virtual Structure (DVS), dual-query hybrid retrieval, cross-encoder reranking, and answer validation across a five-language benchmark covering 353 pages and 2,392 chunks.",
     metrics: [
-      { label: "Answer Correctness Gain", value: "+10.46%p" },
-      { label: "Answer Relevance Gain", value: "+12.15%p" },
-      { label: "Faithfulness Gain", value: "+11.65%p" }
+      { label: "Answer Correctness Gain", value: "+10.46 percentage points" },
+      { label: "Answer Relevance Gain", value: "+12.15 percentage points" },
+      { label: "Faithfulness Gain", value: "+11.65 percentage points" }
     ],
     tags: ["Multimodal RAG", "DVS", "Cross-Encoder", "Benchmarking", "Multi-turn"]
   },
   {
     id: "pub-hclt-2025",
+    paperUrl: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DpN3XPYAAAAJ&citation_for_view=DpN3XPYAAAAJ:u5HHmVD_uO8C",
+    highlight: "Built 6,000 dialogues in Korean, English, and Uzbek, including 275 out-of-domain safety cases.",
     title: "Building Multilingual Multi-turn Dataset for International Students Assisting Chatbot",
     conference: "HCLT 2025 (pp. 498–503)",
     year: "2025",
@@ -299,6 +332,8 @@ export const publications: Publication[] = [
   },
   {
     id: "pub-hclt-2026-2",
+    status: "Accepted for oral presentation",
+    highlight: "Error preservation improved from 41.04% to 62.30%; over-correction fell from 39.78% to 22.63%.",
     title: "Synthetic Data Construction and VLM Over-Correction Mitigation for Preserving Learner Errors in Korean Handwriting Recognition",
     conference: "HCLT 2026",
     year: "2026",
@@ -315,6 +350,33 @@ export const publications: Publication[] = [
 
 export const projects: Project[] = [
   {
+    id: "malpyeong-writing-2026",
+    title: "Korean Essay Scoring — AI Malpyeong",
+    subtitle: "글쓰기 채점 능력 평가 · Training Pipeline Design",
+    affiliation: "National Institute of Korean Language | Team BUFS_NLP",
+    period: "Jul. 2026 – Aug. 2026",
+    result: "19th of 53 teams · Official leaderboard",
+    description: "Designed an SFT → DPO training pipeline for Korean essay scoring and rationale generation, with experiments in GRPO and reasoning distillation.",
+    highlights: [
+      "Designed a supervised fine-tuning (SFT) pipeline followed by direct preference optimization (DPO), and explored Group Relative Policy Optimization (GRPO) as another training approach.",
+      "Experimented with reasoning distillation as part of the post-training work on essay scoring and rationale generation.",
+      "The task required scores and supporting rationales across three dimensions: content, organization, and expression.",
+      "Team BUFS_NLP's malpyeong-writer ranked 19th among 53 teams. Official results: RMSE 0.4690, Spearman correlation 0.6950, and LLM-judge score 4.4837."
+    ],
+    tags: ["SFT → DPO", "GRPO", "Reasoning Distillation", "LLM Evaluation"],
+    leaderboardUrl: "https://kli.korean.go.kr/benchmark/taskOrdtm/taskLeaderBoard.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub04"
+  },
+  {
+    id: "pharmaagent-os",
+    title: "PharmaAgent OS",
+    period: "2026",
+    description: "AI research workspace for FDA drug warning letters, with source-cited briefs, conversational search, and English–Korean support.",
+    highlights: [],
+    tags: ["Next.js", "FastAPI", "RAG", "PostgreSQL", "pgvector"],
+    liveUrl: "https://pharmaagent-os-ochre.vercel.app/",
+    repositoryUrl: "https://github.com/its-davemaxuell/daewoong-PharmaAgentOS"
+  },
+  {
     id: "silla-road",
     title: "Silla Road Global",
     subtitle: "Multilingual Tourism Recommendation Service",
@@ -327,7 +389,6 @@ export const projects: Project[] = [
       "Collaborative GitHub architecture integrating maps, geolocation, and place recommendations."
     ],
     tags: ["RAG", "OpenAI API", "Vector Search", "Multilingual", "FastAPI", "Web Integration"],
-    image: "/src/assets/images/project_rag_system_1789965097574.jpg",
     linkText: "View Architecture"
   },
   {
@@ -335,7 +396,7 @@ export const projects: Project[] = [
     title: "Korean Handwriting Feedback Agent",
     subtitle: "VLM Error Localization & Grammatical Correction",
     affiliation: "Nationwide AI Competition, Rookie Track | Team 나랏말싸미",
-    period: "May 2026 – Present",
+    period: "May 2026 – Sept. 2026",
     description: "Vision-Language Model agent recognizing student Korean handwriting, pinpointing subtle grammatical/orthographic errors, and providing automated step-by-step diagnostic feedback using Qwen-VL/InternVL and EXAONE 4.5.",
     highlights: [
       "Generated synthetic paired handwriting data using conditional diffusion and deliberate learner error injection.",
@@ -343,7 +404,6 @@ export const projects: Project[] = [
       "Automated evaluation against Character Error Rate (CER), Error F1, and Correction Accuracy."
     ],
     tags: ["VLM", "Qwen-VL", "InternVL", "EXAONE 4.5", "LoRA", "Diffusion"],
-    image: "/src/assets/images/project_vlm_agent_1789965110812.jpg",
     linkText: "View Model Details"
   },
   {
@@ -388,7 +448,8 @@ export const projects: Project[] = [
       "Isolated shock volatility in geopolitical events and currency fluctuations with high statistical confidence."
     ],
     tags: ["Time-Series", "LSTM", "Anomaly Transformer", "SARIMAX", "Econometrics"],
-    linkText: "View Analysis"
+    linkText: "View Analysis",
+    repositoryUrl: "https://github.com/davemaxuell/korea-tourism-forecasting"
   }
 ];
 
@@ -400,6 +461,7 @@ export const educationList: EducationItem[] = [
     period: "Mar. 2023 – Present",
     current: true,
     gpa: "4.25 / 4.50",
+    expectedGraduation: "Feb. 2027",
     details: [
       "Double majors in Computer Science and Finance & Economics (8th semester).",
       "Core Research Focus: Foundation models, multilingual NLP, multimodal learning, RAG, and VLM/VLA systems.",
@@ -417,21 +479,18 @@ export const educationList: EducationItem[] = [
       "Achieved maximum TOPIK Level 6 certification (263/300 points)."
     ],
     iconType: "language"
-  },
-  {
-    id: "busan-scholarship",
-    institution: "Busan Foreign Student Scholarship",
-    degree: "City Government Merit Scholar",
-    period: "Mar. 2024 – Nov. 2024",
-    details: [
-      "Awarded competitive municipal scholarship for outstanding academic and leadership achievements.",
-      "Contributed to civic youth engagement, population aging initiatives, and integration programs for international residents."
-    ],
-    iconType: "scholarship"
   }
 ];
 
 export const recognitions: RecognitionItem[] = [
+  {
+    id: "rec-malpyeong-2026",
+    title: "AI Malpyeong — Korean Writing Assessment",
+    issuer: "National Institute of Korean Language · Team BUFS_NLP",
+    year: "2026",
+    badge: "19th of 53 teams on the leaderboard",
+    sourceUrl: "https://kli.korean.go.kr/benchmark/taskOrdtm/taskLeaderBoard.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub04"
+  },
   {
     id: "rec-kiise-2026",
     title: "Excellent Paper Award — Multilingual Multimodal RAG System",
@@ -461,6 +520,15 @@ export const recognitions: RecognitionItem[] = [
     badge: "Merit Scholar"
   },
   {
+    id: "rec-gks-u-2022",
+    title: "GKS-U Scholarship",
+    issuer: "Awardee",
+    year: "2022"
+  }
+];
+
+export const languageSkills: RecognitionItem[] = [
+  {
     id: "rec-topik",
     title: "TOPIK Level 6 (263 / 300 points)",
     issuer: "National Institute for International Education",
@@ -468,10 +536,17 @@ export const recognitions: RecognitionItem[] = [
     badge: "Highest Tier"
   },
   {
-    id: "rec-english",
-    title: "TOEIC 955 / 990 & IELTS Academic 7.5",
-    issuer: "ETS & British Council",
-    year: "2023",
+    id: "rec-toeic",
+    title: "TOEIC 955 / 990",
+    issuer: "ETS",
+    year: "2026",
+    badge: "Proficiency"
+  },
+  {
+    id: "rec-ielts",
+    title: "IELTS Academic 7.5",
+    issuer: "British Council",
+    year: "2021",
     badge: "Proficiency"
   }
 ];

@@ -1,79 +1,53 @@
-# Dave Maxuell - AI Researcher & Engineer Portfolio
+# Dave Maxuell — CV & Portfolio
 
-A clean, minimalist, high-performance personal portfolio website designed for **Dave Maxuell** (AI Researcher & Engineer specializing in Multimodal Learning, RAG, Foundation Models, and Vision-Language-Action systems).
+Interactive portfolio: [dave-maxuell-cv.vercel.app](https://dave-maxuell-cv.vercel.app).
 
-## ✨ Features
+Academic profile: [davemaxuell.github.io](https://davemaxuell.github.io/). Its [publishing repository](https://github.com/davemaxuell/davemaxuell.github.io) uses `npm run build:academic` on this repository's `fix/official-organization-logos` branch and checks for new revisions every 15 minutes. After pushing CV changes, publish immediately with `gh workflow run publish.yml --repo davemaxuell/davemaxuell.github.io`. Update the publishing workflow's `CV_REF` if the source branch changes; scheduling details are documented in that repository.
 
-- **Editorial Bento / CV Layout**: Modern aesthetic with a sticky sidebar, status indicator, and structured sections.
-- **Experience Accordions**: Expandable career and research timeline with institution badges, methodologies, and tool stacks.
-- **Academic Research & Publications**: Highlighted awards (*KIISE & HCLT Excellent Paper Awards*), quantitative benchmarks, and metric tags.
-- **Project Showcase**: Visual banners, architecture breakdown, and interactive modal views.
-- **Recognition & Honors**: Dotted leader line timeline for awards and scholarship distinctions.
-- **Interactive CV Viewer**: Built-in print-to-PDF, Markdown exporter, and full academic CV modal.
-- **Responsive & Accessible**: Optimized for mobile, tablet, and wide-desktop viewports.
+Two React/Vite presentations share `src/data/portfolioData.ts`, verified organization logos, and Dave's photograph. The Vercel portfolio follows [MonoCV](https://monocv.framer.website/) with profile cards, expandable résumé entries, a project grid, and an interactive Rive companion. The GitHub Pages academic profile follows the user-selected [Hoyeon Chang reference](https://hoyeonchang.github.io/): white canvas, Roboto, a portrait beside the biography, date-aligned entries, and open publication lists. Detailed evidence is accessible through native disclosures.
 
----
+## Run locally
 
-## 🚀 Quick Start (Local Development)
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
+```sh
+npm ci
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) in your browser.
+## Production check
 
----
-
-## 📦 How to Save to GitHub
-
-1. **Initialize Git repository** (if not already initialized):
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: Dave Maxuell portfolio website"
-   ```
-
-2. **Create a new repository on GitHub** (e.g., `dave-maxuell-portfolio`).
-
-3. **Link and push to your GitHub repository**:
-   ```bash
-   git branch -M main
-   git remote add origin https://github.com/YOUR_GITHUB_USERNAME/dave-maxuell-portfolio.git
-   git push -u origin main
-   ```
-
----
-
-## 🌐 How to Deploy to Vercel
-
-### Option 1: Vercel Dashboard (Recommended)
-1. Go to [vercel.com](https://vercel.com) and log in.
-2. Click **"Add New Project"** and import your GitHub repository.
-3. Vercel will automatically detect **Vite** as the framework:
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-   - **Install Command**: `npm install`
-4. Click **Deploy**. Your portfolio will be live with a free `.vercel.app` domain and automatic SSL!
-
-### Option 2: Vercel CLI
-```bash
-# Install Vercel CLI globally
-npm i -g vercel
-
-# Deploy directly from terminal
-vercel
+```sh
+npm run lint
+npm run build
+npm run preview -- --host 127.0.0.1 --port 4173
 ```
 
----
+With Python Playwright installed and Microsoft Edge available, run `py -3.13 scripts/verify_ui.py` in another terminal. The check covers 320, 390, 810, 1000, and 1440px layouts, fonts, images, accordions, project navigation, dialogs, Google Docs CV link, and reduced motion. Screenshots go to `.artifacts/ui/` (ignored by Git). Set `CV_TEST_URL` to check a deployed URL.
 
-## 🛠️ Tech Stack
+To check the academic version separately:
 
-- **Framework**: React 19 + Vite 8
-- **Styling**: Tailwind CSS v4
-- **Icons**: Lucide React
-- **Animations**: Motion
-- **Fonts**: Plus Jakarta Sans
+```sh
+npm run build:academic -- --outDir .artifacts/academic-dist
+npm run preview -- --host 127.0.0.1 --port 4174 --outDir .artifacts/academic-dist
+```
+
+Then run `py -3.13 scripts/verify_academic.py`. It checks six widths from 320 to 1440px, publication and project evidence, image loading, keyboard disclosures, mobile navigation, anchor positions, and reduced motion. Screenshots go to `.artifacts/academic/`. The academic design and content constraints are recorded in `src/academic/DESIGN.md` and `src/academic/PRODUCT.md`. The normal `npm run build` still produces the interactive portfolio for Vercel.
+
+## Vercel
+
+Import `davemaxuell/CV` into Vercel after merging the design changes, or deploy the current branch with the CLI:
+
+```sh
+vercel login
+vercel --prod
+```
+
+Settings are included in `vercel.json`: Vite, `npm ci`, `npm run build`, output `dist`. The Git repository root is the project root. No environment variables are required for the CV. The contact form opens an email draft; it does not use a mail-delivery backend or claim a message was delivered.
+
+## Assets and behavior
+
+- CV data: `src/data/portfolioData.ts`.
+- Organization logos, tech marks, fonts, and Rive attribution: `public/*/SOURCES.md`.
+- Rive runtime loads when the visible pet is allowed to animate. Reduced motion uses a still preview with explicit Play. Offscreen/background animation is paused.
+- The tech strip moves at 30px/second, pauses on hover/focus and when offscreen, and has a pause control. Reduced motion shows a static list.
+- View CV opens the owner-provided Google Doc in a new tab. Project dialogs support Escape, focus containment, and focus restoration.
+- `DESIGN.md` records measured typography, layout, breakpoints, and motion. `PRODUCT.md` records content constraints.

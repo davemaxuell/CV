@@ -1,42 +1,75 @@
-import React from 'react';
-import { SectionBadge } from './SectionBadge';
-import { techStackPills } from '../data/portfolioData';
-import { Flame, Cpu, Zap, Link2, Server, Database, Box, Eye } from 'lucide-react';
-
-export const TechStackSection: React.FC = () => {
-  const getIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'Flame': return <Flame className="w-5 h-5 text-neutral-800" />;
-      case 'Cpu': return <Cpu className="w-5 h-5 text-neutral-800" />;
-      case 'Zap': return <Zap className="w-5 h-5 text-neutral-800" />;
-      case 'Link2': return <Link2 className="w-5 h-5 text-neutral-800" />;
-      case 'Server': return <Server className="w-5 h-5 text-neutral-800" />;
-      case 'Database': return <Database className="w-5 h-5 text-neutral-800" />;
-      case 'Box': return <Box className="w-5 h-5 text-neutral-800" />;
-      case 'Eye': return <Eye className="w-5 h-5 text-neutral-800" />;
-      default: return <Cpu className="w-5 h-5 text-neutral-800" />;
-    }
-  };
-
+﻿import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "motion/react";
+import { SectionBadge } from "./SectionBadge";
+import { techStackPills } from "../data/portfolioData";
+import { Pause, Play } from "lucide-react";
+import type { CSSProperties } from "react";
+export const TechStackSection = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [running, setRunning] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const reduced = useReducedMotion();
+  useEffect(() => {
+    let visible = false;
+    const update = () => setRunning(visible && !document.hidden);
+    const observer = new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      update();
+    });
+    observer.observe(ref.current!);
+    document.addEventListener("visibilitychange", update);
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", update);
+    };
+  }, []);
   return (
-    <section id="tech-stack" className="mb-10">
-      <SectionBadge label="TECH STACK" />
-      <div className="flex flex-wrap items-center gap-3">
-        {techStackPills.map((tech) => (
-          <div
-            key={tech.name}
-            className="flex items-center gap-2.5 bg-white border border-neutral-200/90 rounded-2xl px-4 py-2.5 shadow-2xs hover:border-neutral-300 transition-all group"
-            title={`${tech.name} (${tech.category})`}
+    <section id="tech-stack" className="cv-section">
+      <SectionBadge label="Tech stack" />
+      <div ref={ref} className={`tech-window ${reduced ? "is-static" : ""}`}
+        style={{ '--tech-set-width': `${techStackPills.length * 100}px`, '--tech-duration': `${techStackPills.length * 100 / 30}s` } as CSSProperties}>
+        <div
+          className="tech-track"
+          style={{
+            willChange: running && !paused && !reduced ? "transform" : "auto",
+            animationPlayState:
+              running && !paused && !reduced ? "running" : "paused",
+          }}
+        >
+          {[0, 1, 2].map((copy) => (
+            <div className="tech-set" key={copy} aria-hidden={copy > 0}>
+              {techStackPills.map((t) => (
+                <div
+                  className="tech-item"
+                  key={t.name}
+                  title={`${t.name} · ${t.category}`}
+                >
+                  <img
+                    src={`${import.meta.env.BASE_URL}tech/${t.icon}`}
+                    alt=""
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                  <span>{t.name}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+        {!reduced && (
+          <button
+            className="tech-pause"
+            onClick={() => setPaused(!paused)}
+            aria-label={
+              paused
+                ? "Play tech stack animation"
+                : "Pause tech stack animation"
+            }
           >
-            <div className="w-7 h-7 rounded-xl bg-neutral-100 flex items-center justify-center group-hover:bg-neutral-200/80 transition-colors">
-              {getIcon(tech.iconName)}
-            </div>
-            <div>
-              <p className="text-xs sm:text-sm font-semibold text-neutral-800 leading-none">{tech.name}</p>
-              <p className="text-[10px] text-neutral-400 mt-0.5">{tech.category}</p>
-            </div>
-          </div>
-        ))}
+            {paused ? <Play size={12} /> : <Pause size={12} />}
+          </button>
+        )}
       </div>
     </section>
   );

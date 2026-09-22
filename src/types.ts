@@ -6,6 +6,7 @@ export interface Experience {
   period: string;
   current?: boolean;
   department?: string;
+  highlight?: string;
   points: string[];
   tools?: string[];
   iconBg?: string;
@@ -23,6 +24,10 @@ export interface Project {
   tags: string[];
   image?: string;
   linkText?: string;
+  liveUrl?: string;
+  repositoryUrl?: string;
+  result?: string;
+  leaderboardUrl?: string;
   award?: string;
 }
 
@@ -32,8 +37,11 @@ export interface Publication {
   conference: string;
   year: string;
   authorRole: 'First author' | 'Second author' | 'Co-author';
+  status?: string;
+  highlight?: string;
   award?: string;
   pages?: string;
+  paperUrl?: string;
   summary: string;
   metrics: { label: string; value: string }[];
   tags: string[];
@@ -46,6 +54,7 @@ export interface EducationItem {
   period: string;
   current?: boolean;
   gpa?: string;
+  expectedGraduation?: string;
   details: string[];
   iconType: 'university' | 'language' | 'scholarship';
 }
@@ -56,6 +65,7 @@ export interface RecognitionItem {
   issuer: string;
   year: string;
   badge?: string;
+  sourceUrl?: string;
 }
 
 export interface SkillCategory {
