@@ -1,10 +1,10 @@
 # Dave Maxuell — CV & Portfolio
 
-Live website: [dave-maxuell-cv.vercel.app](https://dave-maxuell-cv.vercel.app).
+Interactive portfolio: [dave-maxuell-cv.vercel.app](https://dave-maxuell-cv.vercel.app).
 
-GitHub Pages: [davemaxuell.github.io](https://davemaxuell.github.io/). Its [publishing repository](https://github.com/davemaxuell/davemaxuell.github.io) builds this repository's `fix/official-organization-logos` branch and checks for new revisions every 15 minutes. After pushing CV changes, publish immediately with `gh workflow run publish.yml --repo davemaxuell/davemaxuell.github.io`. Update the publishing workflow's `CV_REF` if the source branch changes; scheduling details are documented in that repository.
+Academic profile: [davemaxuell.github.io](https://davemaxuell.github.io/). Its [publishing repository](https://github.com/davemaxuell/davemaxuell.github.io) uses `npm run build:academic` on this repository's `fix/official-organization-logos` branch and checks for new revisions every 15 minutes. After pushing CV changes, publish immediately with `gh workflow run publish.yml --repo davemaxuell/davemaxuell.github.io`. Update the publishing workflow's `CV_REF` if the source branch changes; scheduling details are documented in that repository.
 
-A React/Vite CV with a visual system measured against [MonoCV](https://monocv.framer.website/): General Sans headings, Inter Display body text, compact profile cards, expandable résumé entries, a tech-logo marquee, and a horizontal project carousel. Dave's original CV content, verified organization logos, and attributed Rive companion are retained.
+Two React/Vite presentations share `src/data/portfolioData.ts`, verified organization logos, and Dave's photograph. The Vercel portfolio follows [MonoCV](https://monocv.framer.website/) with profile cards, expandable résumé entries, a project grid, and an interactive Rive companion. The GitHub Pages academic profile follows the user-selected [Hoyeon Chang reference](https://hoyeonchang.github.io/): white canvas, Roboto, a portrait beside the biography, date-aligned entries, and open publication lists. Detailed evidence is accessible through native disclosures.
 
 ## Run locally
 
@@ -22,6 +22,15 @@ npm run preview -- --host 127.0.0.1 --port 4173
 ```
 
 With Python Playwright installed and Microsoft Edge available, run `py -3.13 scripts/verify_ui.py` in another terminal. The check covers 320, 390, 810, 1000, and 1440px layouts, fonts, images, accordions, project navigation, dialogs, Google Docs CV link, and reduced motion. Screenshots go to `.artifacts/ui/` (ignored by Git). Set `CV_TEST_URL` to check a deployed URL.
+
+To check the academic version separately:
+
+```sh
+npm run build:academic -- --outDir .artifacts/academic-dist
+npm run preview -- --host 127.0.0.1 --port 4174 --outDir .artifacts/academic-dist
+```
+
+Then run `py -3.13 scripts/verify_academic.py`. It checks six widths from 320 to 1440px, publication and project evidence, image loading, keyboard disclosures, mobile navigation, anchor positions, and reduced motion. Screenshots go to `.artifacts/academic/`. The academic design and content constraints are recorded in `src/academic/DESIGN.md` and `src/academic/PRODUCT.md`. The normal `npm run build` still produces the interactive portfolio for Vercel.
 
 ## Vercel
 

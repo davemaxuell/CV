@@ -33,6 +33,8 @@ spacing:
 
 ## Overview
 
+This file describes the interactive portfolio (default build). The separate GitHub Pages academic build follows `src/academic/DESIGN.md` and the user's newer reference, https://hoyeonchang.github.io/.
+
 User-pinned reference: https://monocv.framer.website/. Measured in Playwright on 2026-09-21. Dave's content, portrait, official organization logos, and requested Rive pet are retained. The reference is the visual authority, not the prior oversized dashboard styling.
 
 ## Colors

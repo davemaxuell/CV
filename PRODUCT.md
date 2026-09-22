@@ -16,7 +16,7 @@ Preserve the content in src/data/portfolioData.ts, CV download/print workflow, p
 
 ## Brand Commitments
 
-The user explicitly requires the visual design, fonts, and animations to follow https://monocv.framer.website/. Personal content and images remain Dave's.
+The interactive Vercel portfolio follows https://monocv.framer.website/ with the owner's later refinements. The GitHub Pages academic profile now follows https://hoyeonchang.github.io/; its scope and design are documented in src/academic/PRODUCT.md and src/academic/DESIGN.md. Both use the same personal content and images.
 
 ## Evidence on Hand
 
