@@ -2,6 +2,8 @@
 
 Live website: [dave-maxuell-cv.vercel.app](https://dave-maxuell-cv.vercel.app).
 
+GitHub Pages: [davemaxuell.github.io](https://davemaxuell.github.io/). Its [publishing repository](https://github.com/davemaxuell/davemaxuell.github.io) builds this repository's `fix/official-organization-logos` branch and checks for new revisions every 15 minutes. After pushing CV changes, publish immediately with `gh workflow run publish.yml --repo davemaxuell/davemaxuell.github.io`. Update the publishing workflow's `CV_REF` if the source branch changes; scheduling details are documented in that repository.
+
 A React/Vite CV with a visual system measured against [MonoCV](https://monocv.framer.website/): General Sans headings, Inter Display body text, compact profile cards, expandable résumé entries, a tech-logo marquee, and a horizontal project carousel. Dave's original CV content, verified organization logos, and attributed Rive companion are retained.
 
 ## Run locally
