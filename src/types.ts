@@ -41,6 +41,7 @@ export interface Publication {
   highlight?: string;
   award?: string;
   pages?: string;
+  paperUrl?: string;
   summary: string;
   metrics: { label: string; value: string }[];
   tags: string[];

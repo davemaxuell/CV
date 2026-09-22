@@ -18,6 +18,7 @@ export const PublicationsSection = () => (
           award={p.award}
           status={p.status}
           summary={p.highlight}
+          action={p.paperUrl && <a href={p.paperUrl} target="_blank" rel="noopener noreferrer" aria-label={`View paper on Google Scholar: ${p.title}`}>View paper on Google Scholar ↗</a>}
         >
           <p>{p.summary}</p>
           {p.award && <p>{p.award}</p>}

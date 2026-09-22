@@ -11,6 +11,7 @@ export const ResumeRow = ({
   award,
   summary,
   status,
+  action,
   children,
 }: {
   title: string;
@@ -20,6 +21,7 @@ export const ResumeRow = ({
   award?: string;
   summary?: string;
   status?: string;
+  action?: ReactNode;
   children: ReactNode;
 }) => {
   const [open, setOpen] = useState(false);
@@ -44,6 +46,7 @@ export const ResumeRow = ({
         <span className="resume-date">{date}</span>
         <ChevronDown className="resume-chevron" size={14} aria-hidden="true" />
       </button>
+      {action && <div className="resume-action">{action}</div>}
       <AnimatePresence initial={false}>
         {open && (
           <motion.div

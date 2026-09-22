@@ -19,7 +19,7 @@ The playful About voice, orange palette, official organization logos, solid bord
 ## Details still worth supplying
 
 - Precise degree/major structure. Expected graduation is February 2027, confirmed by the owner and displayed in About and Education.
-- Direct DOI, proceedings, or preprint links for each research work. Both HCLT 2026 handwriting papers are accepted for oral presentation, confirmed by the owner and labeled visibly; acceptance does not imply that the proceedings are already published. Google Scholar is a profile link, not a substitute for a paper-specific source.
+- Direct DOI, proceedings, or preprint links for the remaining research works. The owner-supplied Google Scholar citation for the HCLT 2025 multilingual multi-turn dataset paper was verified and linked directly from its collapsed publication row. Both HCLT 2026 handwriting papers are accepted for oral presentation, confirmed by the owner and labeled visibly; acceptance does not imply that the proceedings are already published.
 - Evaluation protocol, baseline, held-out test size, and contribution ownership for reported results. Document counts are not represented as test-question counts; satisfaction is not represented as model accuracy.
 - Dates for the BUFS research appointment and teaching assignment, plus public artifacts or supervisor details where appropriate.
 

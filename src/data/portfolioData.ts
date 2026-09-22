@@ -315,6 +315,7 @@ export const publications: Publication[] = [
   },
   {
     id: "pub-hclt-2025",
+    paperUrl: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DpN3XPYAAAAJ&citation_for_view=DpN3XPYAAAAJ:u5HHmVD_uO8C",
     highlight: "Built 6,000 dialogues in Korean, English, and Uzbek, including 275 out-of-domain safety cases.",
     title: "Building Multilingual Multi-turn Dataset for International Students Assisting Chatbot",
     conference: "HCLT 2025 (pp. 498–503)",
