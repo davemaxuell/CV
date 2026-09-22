@@ -46,7 +46,7 @@ with sync_playwright() as p:
         page.locator('#skill-detail').wait_for()
         page.locator('.skill-chip').first.click()
         page.locator('#projects').scroll_into_view_if_needed()
-        assert page.locator('.project-grid .project-card').count()==6
+        assert page.locator('.project-grid .project-card').count()==7
         assert page.locator('.project-grid').evaluate('(e)=>e.scrollWidth<=e.clientWidth')
         for title in page.locator('.resume-title').all():
             assert title.evaluate('(e)=>e.scrollWidth<=e.clientWidth+1'), title.inner_text()

@@ -25,6 +25,13 @@ The playful About voice, orange palette, official organization logos, solid bord
 
 These are credibility improvements requiring facts from the owner, not copywriting guesses. No missing details are shown as warnings to site visitors.
 
+## AI Malpyeong competition addition (September 22, 2026)
+
+- Official task: [2026 글쓰기 채점 능력 평가](https://kli.korean.go.kr/benchmark/taskOrdtm/taskList.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub01), July 1–August 25, 2026, National Institute of Korean Language.
+- The [official leaderboard](https://kli.korean.go.kr/benchmark/taskOrdtm/taskLeaderBoard.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub04), last evaluated September 1, lists BUFS_NLP / malpyeong-writer at 19th among 53 teams. It reports RMSE 0.4690, Spearman 0.6950, and LLM Judge 4.4837. These are team results; do not call this an award or imply this is the combined final judging rank.
+- Owner confirmed the training-pipeline role, SFT followed by DPO (correcting the original DDPO wording), GRPO experimentation, and thinking/reasoning distillation. Other post-training methods are not established by the leaderboard and have not been invented for the CV.
+- The project card surfaces the rank and contribution; its detail dialog and Recognition entry link to the public evidence. GRPO is now listed as hands-on experience in Skills based on this confirmed work.
+
 ## Reference guidance
 
 - Stanford Career Education, resume guidance: https://careered.stanford.edu/sites/g/files/sbiybj22801/files/media/file/resume-and-cover-letter-examples.pdf

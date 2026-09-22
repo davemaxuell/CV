@@ -16,6 +16,7 @@ export const ProjectsSection = ({
               <div className="project-copy">
                 <p className="project-period">{p.period}</p>
                 <h3>{p.title}</h3>
+                {p.result && <p className="project-result">{p.result}</p>}
                 <p>{p.description}</p>
                 <p className="project-tools">{p.tags.slice(0, 4).join(' · ')}</p>
                 {p.liveUrl || p.repositoryUrl ? (
@@ -29,13 +30,17 @@ export const ProjectsSection = ({
                       </a>
                     )}
                   </div>
-                ) : <button
+                ) : <div className="project-actions"><button
                   className="project-link"
                   onClick={() => onSelectProject(p)}
                   aria-label={`Read details: ${p.title}`}
                 >
                   Read details <ArrowUpRight size={12} />
-                </button>}
+                </button>
+                  {p.leaderboardUrl && <a className="project-link" href={p.leaderboardUrl} target="_blank" rel="noopener noreferrer" aria-label={`Official leaderboard: ${p.title}`}>
+                    Leaderboard <ArrowUpRight size={12} />
+                  </a>}
+                </div>}
               </div>
             </article>
           ))}

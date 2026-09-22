@@ -18,10 +18,12 @@ export const ProjectModal = ({ project, onClose }: { project: Project | null; on
         <button className="document-close" onClick={onClose} aria-label="Close modal"><X size={18} /></button>
         <p className="document-meta">{project.period}{project.affiliation && ` · ${project.affiliation}`}</p>
         <h2>{project.title}</h2>
+        {project.result && <p className="project-result">{project.result}</p>}
         {project.subtitle && <p>{project.subtitle}</p>}
         <p>{project.description}</p>
         {project.highlights.length > 0 && <ul>{project.highlights.map((item) => <li key={item}>{item}</li>)}</ul>}
         <p className="document-tools">{project.tags.join(' · ')}</p>
+        {project.leaderboardUrl && <a className="project-link" href={project.leaderboardUrl} target="_blank" rel="noopener noreferrer">Official leaderboard ↗</a>}
       </div>
     </motion.div>
   );

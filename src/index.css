@@ -1541,6 +1541,8 @@ html { scrollbar-gutter: stable; }
 .project-grid .project-card { width: auto; min-width: 0; }
 .project-grid .project-copy { padding: 20px; gap: 12px; }
 .project-grid .project-copy > p { display: block; overflow: visible; -webkit-line-clamp: unset; }
+.project-result { color: var(--accent); font-weight: 500; }
+.recognition-source { display: inline-block; margin-top: 6px; padding: 6px 0; font-size: 0.8125rem; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .project-grid .project-tools { font-size: 0.8125rem; line-height: 1.6; }
 .project-grid .project-link { min-height: 36px; padding: 6px 10px; }
 @media (max-width: 600px) {

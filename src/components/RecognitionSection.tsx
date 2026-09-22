@@ -16,6 +16,7 @@ const CredentialSection = ({ id, label, items }: { id: string; label: string; it
             {r.issuer}
             {r.badge ? ` · ${r.badge}` : ""}
           </p>
+          {r.sourceUrl && <a className="recognition-source" href={r.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={`Official leaderboard: ${r.title}`}>Official leaderboard ↗</a>}
         </article>
       ))}
     </div>

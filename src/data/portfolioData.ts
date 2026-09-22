@@ -92,8 +92,10 @@ export const skillCategories: SkillCategory[] = [
     description: "Supervised fine-tuning, PEFT & reinforcement learning",
     items: [
       "Supervised Fine-Tuning (SFT)",
+      "Direct Preference Optimization (DPO)",
       "LoRA & QLoRA",
-      "GRPO (Group Relative Policy Optimization) — studying",
+      "GRPO (Group Relative Policy Optimization)",
+      "Reasoning Distillation — experiments",
       "Mixture-of-Experts (MoE)",
       "PEFT (Parameter-Efficient Fine-Tuning)"
     ]
@@ -347,6 +349,23 @@ export const publications: Publication[] = [
 
 export const projects: Project[] = [
   {
+    id: "malpyeong-writing-2026",
+    title: "Korean Essay Scoring — AI Malpyeong",
+    subtitle: "글쓰기 채점 능력 평가 · Training Pipeline Design",
+    affiliation: "National Institute of Korean Language | Team BUFS_NLP",
+    period: "Jul. 2026 – Aug. 2026",
+    result: "19th of 53 teams · Official leaderboard",
+    description: "Designed an SFT → DPO training pipeline for Korean essay scoring and rationale generation, with experiments in GRPO and reasoning distillation.",
+    highlights: [
+      "Designed a supervised fine-tuning (SFT) pipeline followed by direct preference optimization (DPO), and explored Group Relative Policy Optimization (GRPO) as another training approach.",
+      "Experimented with reasoning distillation as part of the post-training work on essay scoring and rationale generation.",
+      "The task required scores and supporting rationales across three dimensions: content, organization, and expression.",
+      "Team BUFS_NLP's malpyeong-writer ranked 19th among 53 teams. Official results: RMSE 0.4690, Spearman correlation 0.6950, and LLM-judge score 4.4837."
+    ],
+    tags: ["SFT → DPO", "GRPO", "Reasoning Distillation", "LLM Evaluation"],
+    leaderboardUrl: "https://kli.korean.go.kr/benchmark/taskOrdtm/taskLeaderBoard.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub04"
+  },
+  {
     id: "pharmaagent-os",
     title: "PharmaAgent OS",
     period: "2026",
@@ -463,6 +482,14 @@ export const educationList: EducationItem[] = [
 ];
 
 export const recognitions: RecognitionItem[] = [
+  {
+    id: "rec-malpyeong-2026",
+    title: "AI Malpyeong — Korean Writing Assessment",
+    issuer: "National Institute of Korean Language · Team BUFS_NLP",
+    year: "2026",
+    badge: "19th of 53 teams on the leaderboard",
+    sourceUrl: "https://kli.korean.go.kr/benchmark/taskOrdtm/taskLeaderBoard.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub04"
+  },
   {
     id: "rec-kiise-2026",
     title: "Excellent Paper Award — Multilingual Multimodal RAG System",
