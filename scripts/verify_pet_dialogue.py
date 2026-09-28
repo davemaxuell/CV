@@ -32,7 +32,7 @@ def bubble(page):
     return page.locator('.pet-thought')
 
 
-def expect_topic(page, topic, timeout=4500):
+def expect_topic(page, topic, timeout=1000):
     expect(bubble(page)).to_have_attribute('data-topic', topic, timeout=timeout)
     return bubble(page).locator('p').inner_text()
 
@@ -67,9 +67,10 @@ with sync_playwright() as playwright:
     load(page, desktop_errors)
 
     def idle():
-        expect(bubble(page)).to_have_attribute('data-topic', 'idle', timeout=6500)
-        assert bubble(page).locator('p').inner_text().strip()
-    check('initial idle dialogue', idle)
+        page.mouse.move(5, 5)
+        page.wait_for_timeout(5000)
+        expect(bubble(page)).to_have_count(0)
+    check('no dialogue appears while idle away from content', idle)
 
     def coverage():
         source = (ROOT / 'src' / 'data' / 'avatarDialogues.ts').read_text(encoding='utf-8-sig')
@@ -92,22 +93,34 @@ with sync_playwright() as playwright:
         assert any(word in text.lower() for word in ('oriental', 'research assistant', 'crane'))
         assert 'ai engineer intern' not in text.lower()
         seen.append(text)
+        expect(bubble(page)).to_have_css('opacity', '1')
         page.screenshot(path=str(OUT / 'pet-context-desktop.png'))
     check('stable hover identifies research assistant experience', contextual_hover)
 
+    def persistent_hover():
+        before = hover_topic(page, ORIENTAL)
+        # Cross the former reading timeout. Use real time so Motion's native
+        # animation clock and the page's requestAnimationFrame stay in sync.
+        page.wait_for_timeout(12000)
+        expect(bubble(page)).to_have_attribute('data-topic', ORIENTAL)
+        expect(bubble(page).locator('p')).to_have_text(before)
+    check('stationary hover keeps the same dialogue without a timer', persistent_hover)
+
     def flyby():
-        before = bubble(page).locator('p').inner_text()
         other = target(page, NEIGHBOR).bounding_box()
         assert other and 0 < other['y'] < 950, 'Neighbor must be visible for a true flyby'
         page.mouse.move(other['x'] + 30, other['y'] + 30)
         page.wait_for_timeout(100)
         page.mouse.move(5, 5)
-        page.wait_for_timeout(650)
-        assert bubble(page).locator('p').inner_text() == before
-    check('brief flyby preserves readable dialogue', flyby)
+        expect(bubble(page)).to_have_count(0, timeout=500)
+        # Stay outside longer than the old maximum idle chatter interval.
+        page.wait_for_timeout(35000)
+        expect(bubble(page)).to_have_count(0)
+    check('moving away hides dialogue immediately and stays quiet', flyby)
 
     def child_hover():
         before = hover_topic(page, ORIENTAL)
+        seen.append(before)
         target(page, ORIENTAL).locator('.resume-title').hover()
         page.wait_for_timeout(700)
         assert bubble(page).locator('p').inner_text() == before
@@ -130,6 +143,19 @@ with sync_playwright() as playwright:
         assert len(set(seen[:3])) == 3, f'Expected all three lines before reuse: {seen}'
     check('revisits shuffle relevant lines without immediate repeats', variety)
 
+    def leave_viewport():
+        hover_topic(page, ORIENTAL)
+        page.mouse.move(-10, -10)
+        expect(bubble(page)).to_have_count(0, timeout=500)
+        hover_topic(page, ORIENTAL)
+    check('leaving the browser viewport hides dialogue and reentry works', leave_viewport)
+
+    def scroll_away():
+        hover_topic(page, ORIENTAL)
+        page.evaluate('window.scrollTo(0, 0)')
+        expect(bubble(page)).not_to_have_attribute('data-topic', ORIENTAL, timeout=1000)
+    check('scrolling reevaluates the content under a stationary pointer', scroll_away)
+
     def keyboard():
         page.mouse.move(5, 5)
         first = page.locator('.cv-navigation a[href="#experience"]')
@@ -145,6 +171,12 @@ with sync_playwright() as playwright:
         expect(announcement).to_have_text(f'{label}: {text}')
         assert 'undefined' not in announcement.inner_text()
     check('keyboard navigation provides contextual dialogue', keyboard)
+
+    def focus_away():
+        page.get_by_role('button', name='Mute pet thoughts', exact=True).focus()
+        expect(bubble(page)).to_have_count(0, timeout=500)
+        expect(page.locator('.pet-caption [role="status"]')).to_have_text('')
+    check('moving keyboard focus to avatar controls hides dialogue', focus_away)
 
     def mute():
         page.get_by_role('button', name='Mute pet thoughts', exact=True).click()
@@ -232,12 +264,7 @@ with sync_playwright() as playwright:
         cdp.detach()
         mobile.wait_for_timeout(1600)
         assert abs(mobile.evaluate('scrollY') - scroll_before) > 20, 'Native drag must scroll the page'
-        expect(bubble(mobile)).to_have_attribute('data-topic', ORIENTAL)
-        assert bubble(mobile).locator('p').inner_text() == touch_state['first_text']
-        # Real time avoids coupling this check to Motion's native animation clock.
-        # Wait through the reading window and quiet interval to catch stale topics.
-        expect(bubble(mobile)).to_have_count(0, timeout=10000)
-        expect_topic(mobile, 'idle', timeout=32000)
+        expect(bubble(mobile)).to_have_count(0, timeout=500)
         expect(mobile.locator('.pet-caption [role="status"]')).to_have_text('')
         neighbor.scroll_into_view_if_needed()
         mobile.wait_for_timeout(250)
@@ -245,6 +272,11 @@ with sync_playwright() as playwright:
         mobile.touchscreen.tap(rect['x'] + 30, rect['y'] + 30)
         expect_topic(mobile, NEIGHBOR)
     check('touch scrolling stays quiet and clears the previous topic', touch_scroll)
+
+    def touch_away():
+        mobile.touchscreen.tap(2, 2)
+        expect(bubble(mobile)).to_have_count(0, timeout=500)
+    check('tapping outside content dismisses touch dialogue', touch_away)
     if touch_errors:
         FAILURES.append({'check': 'touch runtime errors', 'error': touch_errors})
     mobile.close()

@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { avatarDialogues } from '../data/avatarDialogues';
-import { petThoughts } from '../data/portfolioData';
 
 const targetSelector = '[data-avatar-context]';
-const hoverDelay = 450;
 const proximity = 18;
 
 export interface PetDialogue {
@@ -76,71 +74,33 @@ export function usePetDialogue(enabled: boolean) {
   const draw = useRef(createDialogueDeck());
 
   useEffect(() => {
-    let dwellTimer: ReturnType<typeof setTimeout> | undefined;
-    let hideTimer: ReturnType<typeof setTimeout> | undefined;
-    let idleTimer: ReturnType<typeof setTimeout> | undefined;
     let frame = 0;
     let candidate: string | null = null;
     let candidateKeyboard = false;
-    let lastTopic: string | null = null;
-    let lastSpokenAt = 0;
     let pointer: { x: number; y: number } | null = null;
     let touchStart: { x: number; y: number } | null = null;
     const available = () => enabled && !document.hidden && document.hasFocus();
 
-    const scheduleIdle = (initial = false) => {
-      clearTimeout(idleTimer);
-      if (!available()) return;
-      idleTimer = setTimeout(() => {
-        if (!available()) return;
-        if (pointer) {
-          const topic = nearbyTopic(pointer.x, pointer.y);
-          if (topic !== candidate) { select(topic); return; }
-        }
-        // A resting cursor gets another relevant line; idle chatter resumes off-topic.
-        speak(candidate ?? 'idle', candidateKeyboard);
-      }, initial ? 3000 + Math.random() * 1500 : 18000 + Math.random() * 12000);
-    };
-
-    const speak = (topic: string, keyboard: boolean) => {
-      const entry = avatarDialogues[topic];
-      const text = draw.current(topic, entry?.lines ?? petThoughts);
-      if (!text || !available()) return;
-      clearTimeout(hideTimer);
-      clearTimeout(idleTimer);
-      lastTopic = topic;
-      lastSpokenAt = Date.now();
-      setDialogue({ text, topic, label: entry?.label, keyboard });
-      // Leave enough time to read the full sentence, then let the page breathe.
-      hideTimer = setTimeout(() => {
-        setDialogue(null);
-        scheduleIdle();
-      }, Math.max(6500, Math.min(10000, text.split(/\s+/).length * 280 + 2000)));
-    };
-
     const select = (topic: string | null, keyboard = false) => {
-      if (candidate === topic) return;
-      candidate = topic;
-      candidateKeyboard = keyboard && topic !== null;
-      clearTimeout(dwellTimer);
-      clearTimeout(idleTimer);
-      if (!topic) {
-        scheduleIdle();
-        return;
-      }
-      // Moving within one card or briefly brushing its edge should not restart it.
-      if (topic === lastTopic && Date.now() - lastSpokenAt < 8000) {
-        scheduleIdle();
-        return;
-      }
-      const readingDelay = lastTopic && lastTopic !== 'idle' ? Math.max(0, 1400 - (Date.now() - lastSpokenAt)) : 0;
-      dwellTimer = setTimeout(() => {
-        if (pointer) {
-          const currentTopic = nearbyTopic(pointer.x, pointer.y);
-          if (currentTopic !== topic) { select(currentTopic); return; }
+      if (!available()) topic = null;
+      keyboard = keyboard && topic !== null;
+      // Keep the same line while nearby, including when switching input methods.
+      if (candidate === topic) {
+        if (candidateKeyboard !== keyboard) {
+          candidateKeyboard = keyboard;
+          setDialogue(current => current ? { ...current, keyboard } : null);
         }
-        if (available() && candidate === topic) speak(topic, keyboard);
-      }, Math.max(hoverDelay, readingDelay));
+        return;
+      }
+      candidate = topic;
+      candidateKeyboard = keyboard;
+      if (!topic) {
+        setDialogue(null);
+        return;
+      }
+      const entry = avatarDialogues[topic];
+      const text = draw.current(topic, entry.lines);
+      setDialogue(text ? { text, topic, label: entry.label, keyboard } : null);
     };
 
     const updatePointer = () => {
@@ -167,17 +127,20 @@ export function usePetDialogue(enabled: boolean) {
     };
     const focus = (event: FocusEvent) => {
       const target = event.target instanceof Element ? event.target : null;
-      if (!target?.matches(':focus-visible') || target.closest('[data-avatar-ignore]')) return;
+      if (!target?.matches(':focus-visible')) return;
       pointer = null;
-      select(topicFor(target), true);
+      select(target.closest('[data-avatar-ignore], [role="dialog"]') ? null : topicFor(target), true);
     };
     const blur = (event: FocusEvent) => {
       if (pointer) return;
       const next = event.relatedTarget instanceof Element ? event.relatedTarget : null;
-      select(next?.closest('[data-avatar-ignore]') ? null : topicFor(next), true);
+      select(next?.closest('[data-avatar-ignore], [role="dialog"]') ? null : topicFor(next), true);
     };
     const down = (event: PointerEvent) => {
-      if (event.pointerType === 'touch') touchStart = { x: event.clientX, y: event.clientY };
+      if (event.pointerType !== 'touch') return;
+      pointer = null;
+      touchStart = { x: event.clientX, y: event.clientY };
+      select(null);
     };
     const up = (event: PointerEvent) => {
       if (event.pointerType !== 'touch' || !touchStart) return;
@@ -185,15 +148,11 @@ export function usePetDialogue(enabled: boolean) {
       touchStart = null;
       if (!tapped) return;
       const target = event.target instanceof Element ? event.target : null;
-      if (target?.closest('[data-avatar-ignore]')) return;
       pointer = null;
-      select(topicFor(target));
+      select(target?.closest('[data-avatar-ignore], [role="dialog"]') ? null : topicFor(target));
     };
     const cancelTouch = () => { touchStart = null; };
     const reset = () => {
-      clearTimeout(dwellTimer);
-      clearTimeout(hideTimer);
-      clearTimeout(idleTimer);
       cancelAnimationFrame(frame);
       frame = 0;
       candidate = null;
@@ -201,7 +160,6 @@ export function usePetDialogue(enabled: boolean) {
       pointer = null;
       touchStart = null;
       setDialogue(null);
-      scheduleIdle(true);
     };
 
     reset();
@@ -219,9 +177,6 @@ export function usePetDialogue(enabled: boolean) {
     window.addEventListener('resize', schedulePointer);
     window.addEventListener('scroll', scroll, { passive: true });
     return () => {
-      clearTimeout(dwellTimer);
-      clearTimeout(hideTimer);
-      clearTimeout(idleTimer);
       cancelAnimationFrame(frame);
       document.removeEventListener('pointermove', move);
       document.documentElement.removeEventListener('pointerleave', leave);

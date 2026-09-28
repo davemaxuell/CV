@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 import { MessageCircle, MessageCircleOff } from 'lucide-react';
 import { usePetDialogue } from './usePetDialogue';
 
@@ -25,15 +25,13 @@ export const PetThoughts = ({ active }: { active: boolean }) => {
     <span className="sr-only" role="status" aria-live="polite" aria-atomic="true">
       {thought?.keyboard ? `${thought.label ? `${thought.label}: ` : ''}${thought.text}` : ''}
     </span>
-    <AnimatePresence mode="wait">
-      {thought && <motion.div className="pet-thought" key={thought.text} data-topic={thought.topic}
-        aria-label={thought.label ? `Dave on ${thought.label}` : "Dave's thoughts"} aria-live="off"
-        initial={{ opacity: 0, y: reduced || thought.keyboard ? 0 : 4 }} animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: reduced || thought.keyboard ? 0 : 2 }} transition={{ duration: reduced || thought.keyboard ? 0 : 0.18 }}>
-        {thought.label && <span className="pet-thought-topic">{thought.label}</span>}
-        <p>{thought.text}</p>
-      </motion.div>}
-    </AnimatePresence>
+    {thought && <motion.div className="pet-thought" key={thought.topic} data-topic={thought.topic}
+      aria-label={thought.label ? `Dave on ${thought.label}` : "Dave's thoughts"} aria-live="off"
+      initial={{ opacity: 0, y: reduced || thought.keyboard ? 0 : 4 }} animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: reduced || thought.keyboard ? 0 : 0.18 }}>
+      {thought.label && <span className="pet-thought-topic">{thought.label}</span>}
+      <p>{thought.text}</p>
+    </motion.div>}
     <button className="pet-thought-toggle" type="button" onClick={toggle}
       aria-label={muted ? 'Show pet thoughts' : 'Mute pet thoughts'}
       title={muted ? 'Show thoughts' : 'Mute thoughts'}>
