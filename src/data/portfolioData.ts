@@ -224,7 +224,7 @@ export const experiences: Experience[] = [
   {
     id: "oriental-precision",
     company: "Oriental Precision & Engineering Co., Ltd.",
-    role: "AI Engineer Intern",
+    role: "Research Assistant",
     period: "Jul. 2025 – Aug. 2025",
     current: false,
     department: "Industrial Automation & Vision",
@@ -402,8 +402,7 @@ export const educationList: EducationItem[] = [
     gpa: "4.25 / 4.50",
     details: [
       "Double majors in Computer Science and Finance & Economics (8th semester).",
-      "Core Research Focus: Foundation models, multilingual NLP, multimodal learning, RAG, and VLM/VLA systems.",
-      "High academic honor standing throughout undergraduate studies."
+      "Core Research Focus: Foundation models, multilingual NLP, multimodal learning, RAG, and VLM/VLA systems."
     ],
     iconType: "university"
   },
@@ -413,7 +412,7 @@ export const educationList: EducationItem[] = [
     degree: "Intensive Korean Language Program",
     period: "2022 – 2023",
     details: [
-      "Completed a rigorous 1-year immersion program before undergraduate studies in South Korea.",
+      "Attended a Korean language institute.",
       "Achieved maximum TOPIK Level 6 certification (263/300 points)."
     ],
     iconType: "language"
