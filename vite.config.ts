@@ -3,9 +3,16 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [react(), tailwindcss(), {
+      name: 'academic-font-preload',
+      transformIndexHtml(html) {
+        if (mode !== 'academic') return html;
+        return html.replace(/    <link rel="preload"[^\n]+\n/g, '')
+          .replace('</head>', '  <link rel="preload" href="/fonts/roboto-latin.woff2" as="font" type="font/woff2" crossorigin>\n  </head>');
+      },
+    }],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
