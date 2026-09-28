@@ -48,7 +48,7 @@ export default function App() {
       </main>
       <Footer />
       <aside className="floating-pet" aria-label="Website pet">
-        <RivePet />
+        <RivePet thoughtsActive={!project} />
       </aside>
       <AnimatePresence>
         {project && <ProjectModal key={project.id} project={project} onClose={() => setProject(null)} />}

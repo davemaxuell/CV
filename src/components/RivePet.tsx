@@ -5,7 +5,7 @@ import { PetThoughts } from './PetThoughts';
 
 const assetBase = `${import.meta.env.BASE_URL}pet/interactive-character-follow`;
 
-export const RivePet = () => {
+export const RivePet = ({ thoughtsActive = true }: { thoughtsActive?: boolean }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<Rive | null>(null);
@@ -152,7 +152,7 @@ export const RivePet = () => {
   }, [ready, paused, failed]);
 
   return (
-    <figure className="pet-companion print:hidden" aria-label="Interactive character companion">
+    <figure className="pet-companion print:hidden" aria-label="Interactive character companion" data-avatar-ignore>
       <svg width="0" height="0" className="pet-filter" aria-hidden="true" focusable="false">
         <defs>
           <filter id="pet-ink" colorInterpolationFilters="sRGB">
@@ -173,7 +173,7 @@ export const RivePet = () => {
         />
       </div>
       <figcaption className="pet-caption">
-        <PetThoughts active={visible} />
+        <PetThoughts active={visible && thoughtsActive} />
         {!failed && (
           <button type="button" onClick={() => setPaused(value => !value)}
             aria-label={paused ? 'Play pet animation' : 'Pause pet animation'}>

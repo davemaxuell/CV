@@ -2,7 +2,7 @@
 import { ResumeRow } from "./ResumeRow";
 import { publications, personalInfo } from "../data/portfolioData";
 export const PublicationsSection = () => (
-  <section id="publications" className="cv-section">
+  <section id="publications" data-avatar-context="publications" className="cv-section">
     <SectionBadge label="Research / Publications" />
     <p className="section-context">
       {publications.filter(p => p.authorRole === 'First author').length} first-author works listed · {publications.filter(p => p.award).length} Excellent Paper Awards
@@ -12,6 +12,7 @@ export const PublicationsSection = () => (
       {publications.map((p) => (
         <ResumeRow
           key={p.id}
+          avatarContext={`publication:${p.id}`}
           title={p.title}
           subtitle={`${p.conference} · ${p.authorRole}`}
           date={p.year}

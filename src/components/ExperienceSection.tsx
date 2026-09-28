@@ -3,12 +3,13 @@ import { ResumeRow } from "./ResumeRow";
 import { InstitutionLogo } from "./InstitutionLogo";
 import { experiences } from "../data/portfolioData";
 export const ExperienceSection = () => (
-  <section id="experience" className="cv-section">
+  <section id="experience" data-avatar-context="experience" className="cv-section">
     <SectionBadge label="Experience" />
     <div className="resume-list">
       {experiences.map((e) => (
         <ResumeRow
           key={e.id}
+          avatarContext={`experience:${e.id}`}
           title={e.company}
           subtitle={e.role}
           date={e.period}

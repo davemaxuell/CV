@@ -4,12 +4,13 @@ import { ResumeRow } from "./ResumeRow";
 import { InstitutionLogo } from "./InstitutionLogo";
 import { educationList } from "../data/portfolioData";
 export const EducationSection = () => (
-  <section id="education" className="cv-section">
+  <section id="education" data-avatar-context="education" className="cv-section">
     <SectionBadge label="Education" />
     <div className="resume-list">
       {educationList.map((e) => (
         <ResumeRow
           key={e.id}
+          avatarContext={`education:${e.id}`}
           title={e.institution}
           subtitle={e.degree}
           date={e.period}

@@ -8,11 +8,11 @@ export const ProjectsSection = ({
   onSelectProject: (p: Project) => void;
 }) => {
   return (
-    <section id="projects" className="cv-section">
+    <section id="projects" data-avatar-context="projects" className="cv-section">
       <SectionBadge label="Projects" />
         <div className="project-grid">
           {projects.map((p) => (
-            <article className="project-card" key={p.id}>
+            <article className="project-card" key={p.id} data-avatar-context={`project:${p.id}`}>
               <div className="project-copy">
                 <p className="project-period">{p.period}</p>
                 <h3>{p.title}</h3>

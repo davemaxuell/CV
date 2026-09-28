@@ -1416,6 +1416,7 @@ textarea:focus-visible {
 }
 .pet-thought::after { content: ''; position: absolute; right: 34px; bottom: -5px; width: 8px; height: 8px; background: var(--surface); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transform: rotate(45deg); }
 .pet-thought p { margin: 0; font-size: 14px; line-height: 1.5; }
+.pet-thought-topic { display: block; margin-bottom: 5px; font-size: 11px; line-height: 1.4; font-weight: 600; color: var(--accent); }
 @media (max-width: 809px) {
   .floating-pet { width: 100px; right: 8px; bottom: 8px; }
   .floating-pet .pet-scene { width: 100px; height: 90px; }

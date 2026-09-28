@@ -12,7 +12,7 @@ export const ContactSection = () => {
     setOpened(true);
   };
   return (
-    <section id="contact" className="cv-section">
+    <section id="contact" data-avatar-context="contact" className="cv-section">
       <SectionBadge label="Contact me" />
       <form className="contact-form" onSubmit={submit}>
         <label>

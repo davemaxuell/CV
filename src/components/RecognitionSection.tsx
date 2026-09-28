@@ -2,11 +2,11 @@
 import { recognitions, languageSkills } from "../data/portfolioData";
 import type { RecognitionItem } from "../types";
 const CredentialSection = ({ id, label, items }: { id: string; label: string; items: RecognitionItem[] }) => (
-  <section id={id} className="cv-section">
+  <section id={id} data-avatar-context={id === 'language-skills' ? 'skills' : 'recognition'} className="cv-section">
     <SectionBadge label={label} />
     <div className="recognition-list">
       {items.map((r) => (
-        <article key={r.id} className="recognition-row">
+        <article key={r.id} data-avatar-context={`recognition:${r.id}`} className="recognition-row">
           <div className="recognition-heading">
             <h3>{r.title}</h3>
             <span className="dot-leader" />

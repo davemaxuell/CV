@@ -24,7 +24,7 @@ export const TechStackSection = () => {
     };
   }, []);
   return (
-    <section id="tech-stack" className="cv-section">
+    <section id="tech-stack" data-avatar-context="tech-stack" className="cv-section">
       <SectionBadge label="Tech stack" />
       <div ref={ref} className={`tech-window ${reduced ? "is-static" : ""}`}
         style={{ '--tech-set-width': `${techStackPills.length * 100}px`, '--tech-duration': `${techStackPills.length * 100 / 30}s` } as CSSProperties}>
@@ -42,6 +42,7 @@ export const TechStackSection = () => {
                 <div
                   className="tech-item"
                   key={t.name}
+                  data-avatar-context={`tech:${t.name}`}
                   title={`${t.name} · ${t.category}`}
                 >
                   <img

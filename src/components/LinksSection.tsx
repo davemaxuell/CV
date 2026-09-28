@@ -2,7 +2,7 @@ import { ArrowUpRight, Mail } from "lucide-react";
 import { SectionBadge } from "./SectionBadge";
 import { personalInfo } from "../data/portfolioData";
 export const LinksSection = () => (
-  <section id="links" className="cv-section">
+  <section id="links" data-avatar-context="links" className="cv-section">
     <SectionBadge label="Links" />
     <div className="link-grid">
       {[

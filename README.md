@@ -23,6 +23,8 @@ npm run preview -- --host 127.0.0.1 --port 4173
 
 With Python Playwright installed and Microsoft Edge available, run `py -3.13 scripts/verify_ui.py` in another terminal. The check covers 320, 390, 810, 1000, and 1440px layouts, fonts, images, accordions, project navigation, dialogs, Google Docs CV link, and reduced motion. Screenshots go to `.artifacts/ui/` (ignored by Git). Set `CV_TEST_URL` to check a deployed URL.
 
+For the avatar guide, run `npx tsx scripts/verify_pet_data.ts` to check topic coverage and dialogue variety, and `py -3.13 scripts/verify_pet_dialogue.py` against the running preview to check hover, proximity, keyboard, touch, mute, and modal behavior.
+
 To check the academic version separately:
 
 ```sh
@@ -48,6 +50,7 @@ Settings are included in `vercel.json`: Vite, `npm ci`, `npm run build`, output 
 - CV data: `src/data/portfolioData.ts`.
 - Organization logos, tech marks, fonts, and Rive attribution: `public/*/SOURCES.md`.
 - Rive runtime loads when the visible pet is allowed to animate. Reduced motion uses a still preview with explicit Play. Offscreen/background animation is paused.
+- The pet introduces nearby cards after a brief hover, or when a visitor focuses their controls or taps them. `src/data/avatarDialogues.ts` contains three authored lines per topic; `data-avatar-context` attributes connect content to those topics. Lines shuffle without immediate repeats. Existing idle thoughts resume between topics, and the thoughts toggle mutes both. Reduced motion starts thoughts muted, with an explicit opt-in. Project dialogs temporarily silence the guide.
 - The tech strip moves at 30px/second, pauses on hover/focus and when offscreen, and has a pause control. Reduced motion shows a static list.
 - View CV opens the owner-provided Google Doc in a new tab. Project dialogs support Escape, focus containment, and focus restoration.
 - `DESIGN.md` records measured typography, layout, breakpoints, and motion. `PRODUCT.md` records content constraints.

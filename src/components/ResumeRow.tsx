@@ -12,6 +12,7 @@ export const ResumeRow = ({
   summary,
   status,
   action,
+  avatarContext,
   children,
 }: {
   title: string;
@@ -22,13 +23,14 @@ export const ResumeRow = ({
   summary?: string;
   status?: string;
   action?: ReactNode;
+  avatarContext?: string;
   children: ReactNode;
 }) => {
   const [open, setOpen] = useState(false);
   const id = useId();
   const reduced = useReducedMotion();
   return (
-    <article className={`resume-row ${open ? "is-open" : ""}`}>
+    <article data-avatar-context={avatarContext} className={`resume-row ${open ? "is-open" : ""}`}>
       <button
         className="resume-trigger"
         aria-expanded={open}

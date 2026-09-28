@@ -14,7 +14,7 @@ export const Sidebar = ({
   const reduced = useReducedMotion();
   const contact = (
     <>
-      <div className="profile-links">
+      <div data-avatar-context="links" className="profile-links">
         <a href={personalInfo.github} target="_blank" rel="noreferrer">
           <img className="profile-link-logo" src={`${import.meta.env.BASE_URL}links/github.svg`} alt="" width={14} height={14} />
           <span>github.com/davemaxuell</span>
@@ -27,11 +27,11 @@ export const Sidebar = ({
           <img className="profile-link-logo" src={`${import.meta.env.BASE_URL}links/linkedin.svg`} alt="" width={12} height={12} />
           <span>LinkedIn</span>
         </a>
-        <a href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, "")}`}>
+        <a data-avatar-context="contact" href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, "")}`}>
           <Phone />
           <span>{personalInfo.phone}</span>
         </a>
-        <a href={`mailto:${personalInfo.email}`}>
+        <a data-avatar-context="contact" href={`mailto:${personalInfo.email}`}>
           <Mail />
           <span>{personalInfo.email}</span>
         </a>
@@ -50,6 +50,7 @@ export const Sidebar = ({
         </a>
         <button
           className="primary-button"
+          data-avatar-context="contact"
           onClick={() => {
             setMenuOpen(false);
             onScrollToContact();
@@ -61,7 +62,7 @@ export const Sidebar = ({
     </>
   );
   return (
-    <aside className="profile-column">
+    <aside data-avatar-context="profile" className="profile-column">
       <div className="profile-sticky">
         <div className="profile-card">
           <div className="profile-photo-frame">

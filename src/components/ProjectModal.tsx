@@ -14,7 +14,7 @@ export const ProjectModal = ({ project, onClose }: { project: Project | null; on
       transition={{ duration: reduced ? 0 : 0.18, ease: gentleEase }}
       className="project-dialog cv-dialog"
       onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
-      <div className="project-document">
+      <div data-avatar-context={`project:${project.id}`} className="project-document">
         <button className="document-close" onClick={onClose} aria-label="Close modal"><X size={18} /></button>
         <p className="document-meta">{project.period}{project.affiliation && ` · ${project.affiliation}`}</p>
         <h2>{project.title}</h2>

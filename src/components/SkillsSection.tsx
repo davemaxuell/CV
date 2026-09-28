@@ -7,12 +7,13 @@ export const SkillsSection = () => {
   const [selected, setSelected] = useState<string | null>(null);
   const group = skillCategories.find((g) => g.title === selected);
   return (
-    <section id="skills" className="cv-section">
+    <section id="skills" data-avatar-context="skills" className="cv-section">
       <SectionBadge label="Skills" />
       <div className="skill-chips">
         {skillCategories.map((g) => (
           <button
             key={g.title}
+            data-avatar-context={`skill:${g.id || g.title}`}
             className="skill-chip"
             aria-expanded={selected === g.title}
             aria-controls="skill-detail"
@@ -25,7 +26,7 @@ export const SkillsSection = () => {
       </div>
       <SmoothHeight id="skill-detail" hidden={!group}>
         {group && (
-            <div className="skill-detail-content">
+            <div data-avatar-context={`skill:${group.id || group.title}`} className="skill-detail-content">
               <h3>{group.title}</h3>
               <p>{group.description}</p>
               <ul>
