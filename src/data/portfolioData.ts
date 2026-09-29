@@ -348,6 +348,22 @@ export const publications: Publication[] = [
 
 export const projects: Project[] = [
   {
+    id: "sgis-dongne-type",
+    title: "SGIS Dongne Type — Neighborhood Explorer",
+    subtitle: "우리 동네는 어떤 타입? · Neighborhood Statistics & Similarity Search",
+    period: "Sept. 2026",
+    result: "Nationwide coverage · 3,559 neighborhoods",
+    description: "Built an interactive map that turns SGIS population, household, and business statistics into 16 neighborhood types, with nationwide similarity search, region comparisons, and shareable results.",
+    highlights: [
+      "Built a data collection and validation pipeline covering 3,559 neighborhoods across all 17 first-level regions of South Korea, using 2024 statistics and 2025 administrative boundaries.",
+      "Classified 3,551 neighborhoods along four demographic and economic axes; enabled similarity search across 3,532 neighborhoods using 10 shared indicators.",
+      "Implemented map exploration, comparisons of up to three neighborhoods, share links tied to a fixed data release, and Korea Tourism Organization TourAPI event discovery."
+    ],
+    tags: ["Next.js", "TypeScript", "FastAPI", "MapLibre GL", "Python", "SGIS OpenAPI"],
+    liveUrl: "https://sgis-dongne-type.vercel.app/geotype?viewport=128.24059%2C35.71320%2C6.55",
+    repositoryUrl: "https://github.com/mjeon01/sgis-dongne-type"
+  },
+  {
     id: "malpyeong-writing-2026",
     title: "Korean Essay Scoring — AI Malpyeong",
     subtitle: "글쓰기 채점 능력 평가 · Training Pipeline Design",

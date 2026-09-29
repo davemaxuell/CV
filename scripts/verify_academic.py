@@ -43,7 +43,7 @@ with sync_playwright() as p:
         assert page.locator('#publications article').count() == 4
         publication_years = [int(re.search(r'20\d{2}', venue).group()) for venue in page.locator('.academic-venue').all_text_contents()]
         assert publication_years == sorted(publication_years, reverse=True)
-        assert page.locator('#projects article').count() == 7
+        assert page.locator('#projects article').count() == 8
         assert page.locator('#recognition article').count() == 6
         assert page.get_by_text('Accepted for oral presentation', exact=True).count() == 2
         assert page.locator('#publications .academic-result').filter(has_text='Excellent Paper Award').count() == 2
@@ -72,7 +72,7 @@ with sync_playwright() as p:
         assert disclosure.locator('dl').is_visible()
         page.keyboard.press('Enter')
         assert disclosure.get_attribute('open') is None
-        project = page.locator('#projects article').first
+        project = page.locator('#projects article').filter(has=page.get_by_role('heading', name='Korean Essay Scoring — AI Malpyeong', exact=True))
         project.locator('summary').click()
         assert 'DPO' in project.inner_text() and 'distillation' in project.inner_text().lower()
         project.locator('summary').click()

@@ -150,6 +150,14 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
       "My teaching assistant role supported introductory LLM instruction at BUFS. Plenty of ideas to turn into working code!",
     ],
   },
+  'project:sgis-dongne-type': {
+    label: 'SGIS Dongne Type',
+    lines: [
+      "I built SGIS Dongne Type to explore South Korean neighborhoods through population, household, and business statistics.",
+      "My neighborhood explorer uses 16 types and ten shared indicators to help people discover and compare statistically similar places.",
+      "The project combines Next.js, MapLibre maps, and FastAPI. You can explore the live site or read the code from this card.",
+    ],
+  },
   'project:malpyeong-writing-2026': {
     label: 'Korean essay scoring',
     lines: [
