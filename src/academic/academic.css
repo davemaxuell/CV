@@ -60,6 +60,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .academic-links { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 7px; font-size: 14px; }
 .academic-links:empty { display: none; }
 .academic-links a { padding: 3px 0; text-decoration: underline; }
+.academic-links .academic-github-link { display: inline-flex; align-items: center; justify-content: center; width: 40px; min-height: 40px; padding: 0; text-decoration: none; }
 .academic-details { margin-top: 5px; font-size: 14px; }
 .academic-details summary { color: #626262; cursor: pointer; width: fit-content; padding: 4px 0; }
 .academic-details summary:hover { color: var(--academic-accent); }

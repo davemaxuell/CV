@@ -21,12 +21,14 @@ export const ProjectsSection = ({
                 <p className="project-tools">{p.tags.slice(0, 4).join(' · ')}</p>
                 {p.liveUrl || p.repositoryUrl ? (
                   <div className="project-actions">
-                    <a className="project-link" href={p.liveUrl || p.repositoryUrl} target="_blank" rel="noopener noreferrer" aria-label={`${p.liveUrl ? 'View project' : 'View on GitHub'}: ${p.title}`}>
-                      {p.liveUrl ? 'View project' : 'View on GitHub'} <ArrowUpRight size={12} />
-                    </a>
-                    {p.liveUrl && p.repositoryUrl && (
-                      <a className="project-link" href={p.repositoryUrl} target="_blank" rel="noopener noreferrer" aria-label={`GitHub: ${p.title}`}>
-                        GitHub <ArrowUpRight size={12} />
+                    {p.liveUrl && (
+                      <a className="project-link" href={p.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View project: ${p.title}`}>
+                        View project <ArrowUpRight size={12} aria-hidden="true" />
+                      </a>
+                    )}
+                    {p.repositoryUrl && (
+                      <a className="project-link project-link--github" href={p.repositoryUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${p.title} on GitHub`} title="View on GitHub">
+                        <img src={`${import.meta.env.BASE_URL}links/github.svg`} alt="" width={18} height={18} />
                       </a>
                     )}
                   </div>

@@ -57,7 +57,10 @@ with sync_playwright() as p:
         for link in page.locator('.cv-navigation a').all():
             assert page.locator(link.get_attribute('href')).count()==1
         assert page.get_by_role('link',name='View project: PharmaAgent OS',exact=True).get_attribute('href')=='https://pharmaagent-os-ochre.vercel.app/'
-        assert page.get_by_role('link',name="View on GitHub: Factors Affecting Korea's Tourism Industry",exact=True).get_attribute('href')=='https://github.com/davemaxuell/korea-tourism-forecasting'
+        assert page.get_by_role('link',name="View Factors Affecting Korea's Tourism Industry on GitHub",exact=True).get_attribute('href')=='https://github.com/davemaxuell/korea-tourism-forecasting'
+        sgis_github=page.get_by_role('link',name='View SGIS Dongne Type — Neighborhood Explorer on GitHub',exact=True)
+        assert sgis_github.get_attribute('href')=='https://github.com/mjeon01/sgis-dongne-type'
+        assert sgis_github.locator('img[src$="/links/github.svg"]').count()==1
         project_trigger=page.get_by_role('button',name='Read details: Silla Road Global',exact=True)
         project_trigger.click()
         dialog=page.get_by_role('dialog')
