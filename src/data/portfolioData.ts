@@ -173,11 +173,11 @@ export const experiences: Experience[] = [
     period: "Present",
     current: true,
     department: "Academic & Laboratory Research",
-    highlight: "Multilingual RAG, document understanding, and Korean handwriting research.",
+    highlight: "Developing document indexing and answer verification for multilingual RAG; studying Korean handwriting with VLMs.",
     iconType: "lab",
     points: [
-      "Conduct research on multilingual retrieval-augmented generation (RAG), multimodal document understanding, and Korean handwriting analysis using vision-language models (VLMs).",
-      "Develop document-adaptive indexing and verification frameworks for educational and administrative document retrieval."
+      "Investigate multilingual RAG, multimodal document understanding, and Korean handwriting analysis using vision-language models (VLMs).",
+      "Develop document-adaptive indexing and answer-verification methods for retrieving educational and administrative information."
     ],
     tools: ["VLM", "Multilingual RAG", "Docling", "PEFT", "PyTorch"]
   },
@@ -188,12 +188,12 @@ export const experiences: Experience[] = [
     period: "Feb. 2026 – Present",
     current: true,
     department: "Multimodal AI & Robotics",
-    highlight: "Research on risk-aware VLMs and MoE routing for vision-language-action systems.",
+    highlight: "Designed MoE routing and a research plan for risk-aware vision-language-action systems.",
     iconType: "lab",
     points: [
-      "Investigated risk-aware VLM backbones for vision-language-action (VLA) systems using supervised fine-tuning (SFT) and subsequent GRPO training.",
-      "Designed mixture-of-experts (MoE) routing for spatial reasoning, hazard awareness, affordance understanding, and action feasibility.",
-      "Prepared an experimental plan for VLM research and an architecture specification for an MoE-based VLA system using PyTorch, Matterport3D, R2R, RxR, and NVIDIA Isaac Sim."
+      "Investigated risk-aware VLM backbones for vision-language-action (VLA) systems, including supervised fine-tuning (SFT) and GRPO training.",
+      "Designed mixture-of-experts (MoE) routing to address spatial reasoning, hazard awareness, affordances, and action feasibility.",
+      "Prepared a VLM experiment plan and MoE-based VLA architecture specification using PyTorch, Matterport3D, R2R, RxR, and NVIDIA Isaac Sim."
     ],
     tools: ["GRPO", "MoE", "VLA Systems", "Matterport3D", "Isaac Sim", "PyTorch"]
   },
@@ -204,12 +204,12 @@ export const experiences: Experience[] = [
     period: "Dec. 2025 – Mar. 2026",
     current: false,
     department: "Quality Assurance Team",
-    highlight: "Built regulatory intelligence workflows with retrieval across 22 regulatory and industry websites.",
+    highlight: "Built a regulatory-monitoring agent and retrieval pipelines across 22 websites; operations reported 88% employee satisfaction.",
     iconType: "pharma",
     points: [
-      "Built an autonomous AI agent to monitor regulatory updates, summarize relevant information, filter results, and generate alerts using Model Context Protocol (MCP), n8n, LangChain, and FastAPI.",
-      "Designed retrieval pipelines for Good Manufacturing Practice (GMP) requirements and FDA-related information across 22 regulatory and industry websites.",
-      "Achieved an employee satisfaction rate of 88% across regulatory intelligence operations."
+      "Built an AI agent that monitors regulatory updates, filters and summarizes relevant information, and generates alerts using Model Context Protocol (MCP), n8n, LangChain, and FastAPI.",
+      "Designed retrieval pipelines for GMP requirements and FDA-related information across 22 regulatory and industry websites.",
+      "Supported regulatory intelligence operations that reported 88% employee satisfaction."
     ],
     tools: ["MCP", "n8n", "LangChain", "FastAPI", "Regulatory NLP"]
   },
@@ -220,12 +220,12 @@ export const experiences: Experience[] = [
     period: "Nov. 2025 – Jan. 2026",
     current: false,
     department: "Financial AI Research",
-    highlight: "Reported evaluation accuracy improved from 66% to 89% across approximately 40 financial documents.",
+    highlight: "Diagnosed retrieval failures and refined reranking across about 40 financial documents; reported accuracy rose from 66% to 89%.",
     iconType: "bank",
     points: [
-      "Evaluated enterprise RAG performance across approximately 40 complex macroeconomic and financial documents.",
-      "Diagnosed hallucinations and retrieval failures under dense tabular structures, refining cross-encoder reranking algorithms.",
-      "Improved the reported evaluation accuracy score substantially from 66% to 89%."
+      "Evaluated enterprise RAG answers across approximately 40 macroeconomic and financial documents, including dense tables.",
+      "Traced hallucinations and retrieval failures to improve cross-encoder reranking.",
+      "Raised the reported evaluation accuracy score from 66% to 89%."
     ],
     tools: ["Reranking", "Hallucination Mitigation", "Evaluation", "FAISS"]
   },
@@ -236,12 +236,12 @@ export const experiences: Experience[] = [
     period: "Sept. 2025 – Dec. 2025",
     current: false,
     department: "Global AI Service Initiative",
-    highlight: "Deployed a six-language chatbot reaching 600+ students; reported answer accuracy of 94%.",
+    highlight: "Developed and deployed a six-language chatbot for 600+ students; reported 94% answer accuracy and 84% satisfaction.",
     iconType: "global",
     points: [
-      "Developed a six-language RAG chatbot combining document extraction, retrieval-based question answering, and LLM reasoning.",
-      "Deployed the service to reach more than 600 international students, delivering 84% reported satisfaction and 94% answer accuracy.",
-      "Utilized LangChain, Qdrant, Docling, Qwen, and DeepSeek-R1 with automated RAGAS evaluation."
+      "Developed a six-language RAG chatbot by connecting document extraction, retrieval, and LLM-based question answering.",
+      "Deployed the chatbot for more than 600 international students; the service reported 84% satisfaction and 94% answer accuracy.",
+      "Integrated LangChain, Qdrant, Docling, Qwen, and DeepSeek-R1, and used RAGAS to automate answer evaluation."
     ],
     tools: ["LangChain", "Qdrant", "Docling", "Qwen", "DeepSeek-R1", "RAGAS"]
   },
@@ -252,12 +252,12 @@ export const experiences: Experience[] = [
     period: "Jul. 2025 – Aug. 2025",
     current: false,
     department: "Industrial Automation & Vision",
-    highlight: "Built a worker-detection safety system combining video, LiDAR, and crane operating constraints.",
+    highlight: "Built video and LiDAR worker detection with crane-aware hazard logic for shipyard safety.",
     iconType: "industry",
     points: [
-      "Developed a real-time worker-detection safety system using video streams and LiDAR sensors for heavy ship-crane operations.",
-      "Incorporated mechanical crane velocity and lever-control safety constraints into hazard-aware decision logic.",
-      "Worked with C, YOLOv8, and CAD spatial coordinates for real-time edge deployment."
+      "Developed real-time worker detection from video streams and LiDAR sensors for heavy ship-crane operations.",
+      "Added crane velocity and lever-control constraints to the hazard decision logic.",
+      "Used C, YOLOv8, and CAD spatial coordinates to support real-time edge deployment."
     ],
     tools: ["C", "YOLOv8", "LiDAR", "Computer Vision", "Industrial Safety"]
   },
@@ -268,11 +268,11 @@ export const experiences: Experience[] = [
     period: "Academic Semester",
     current: false,
     department: "Computer Science & AI",
-    highlight: "Supported introductory LLM instruction, prompt engineering, and hands-on fine-tuning at BUFS.",
+    highlight: "Guided students through LLM concepts and supported hands-on PyTorch and Transformers exercises.",
     iconType: "ta",
     points: [
-      "Helped students understand LLM fundamentals, attention mechanisms, and prompt engineering.",
-      "Supported hands-on LLM coding and fine-tuning exercises using PyTorch and Hugging Face Transformers."
+      "Explained LLM fundamentals, attention mechanisms, and prompt engineering to students.",
+      "Guided hands-on LLM coding and fine-tuning exercises using PyTorch and Hugging Face Transformers."
     ],
     tools: ["LLM Fundamentals", "Prompt Engineering", "Hugging Face Transformers", "PyTorch"]
   }
@@ -297,7 +297,7 @@ export const publications: Publication[] = [
   },
   {
     id: "pub-kiise-2026",
-    highlight: "Five-language benchmark spanning 353 pages; reported answer correctness gain of 10.46 percentage points.",
+    highlight: "Benchmarked multilingual retrieval across 353 pages in five languages; reported answer correctness rose by 10.46 percentage points.",
     title: "Multilingual Multimodal RAG System for International Student Support",
     conference: "KIISE 2026 (Korea Institute of Information Scientists and Engineers)",
     year: "2026",
@@ -353,11 +353,11 @@ export const projects: Project[] = [
     subtitle: "우리 동네는 어떤 타입? · Neighborhood Statistics & Similarity Search",
     period: "Sept. 2026",
     result: "Nationwide coverage · 3,559 neighborhoods",
-    description: "Built an interactive map that turns SGIS population, household, and business statistics into 16 neighborhood types, with nationwide similarity search, region comparisons, and shareable results.",
+    description: "Built and validated a nationwide SGIS data pipeline, then turned the results into an interactive map with 16 neighborhood types, similarity search, and comparisons.",
     highlights: [
       "Built a data collection and validation pipeline covering 3,559 neighborhoods across all 17 first-level regions of South Korea, using 2024 statistics and 2025 administrative boundaries.",
       "Classified 3,551 neighborhoods along four demographic and economic axes; enabled similarity search across 3,532 neighborhoods using 10 shared indicators.",
-      "Implemented map exploration, comparisons of up to three neighborhoods, share links tied to a fixed data release, and Korea Tourism Organization TourAPI event discovery."
+      "Implemented map exploration, comparisons of up to three neighborhoods, share links tied to a fixed data release, and TourAPI event discovery."
     ],
     tags: ["Next.js", "TypeScript", "FastAPI", "MapLibre GL", "Python", "SGIS OpenAPI"],
     liveUrl: "https://sgis-dongne-type.vercel.app/geotype?viewport=128.24059%2C35.71320%2C6.55",
@@ -370,12 +370,12 @@ export const projects: Project[] = [
     affiliation: "National Institute of Korean Language | Team BUFS_NLP",
     period: "Jul. 2026 – Aug. 2026",
     result: "19th of 53 teams · Official leaderboard",
-    description: "Designed an SFT → DPO training pipeline for Korean essay scoring and rationale generation, with experiments in GRPO and reasoning distillation.",
+    description: "Designed the SFT → DPO training pipeline for Korean essay scoring and rationales, and experimented with GRPO and reasoning distillation.",
     highlights: [
       "Designed a supervised fine-tuning (SFT) pipeline followed by direct preference optimization (DPO), and explored Group Relative Policy Optimization (GRPO) as another training approach.",
       "Experimented with reasoning distillation as part of the post-training work on essay scoring and rationale generation.",
-      "The task required scores and supporting rationales across three dimensions: content, organization, and expression.",
-      "Team BUFS_NLP's malpyeong-writer ranked 19th among 53 teams. Official results: RMSE 0.4690, Spearman correlation 0.6950, and LLM-judge score 4.4837."
+      "Developed the approach around scores and supporting rationales for content, organization, and expression.",
+      "Contributed to Team BUFS_NLP's 19th-place result among 53 teams. Official results: RMSE 0.4690, Spearman correlation 0.6950, and LLM-judge score 4.4837."
     ],
     tags: ["SFT → DPO", "GRPO", "Reasoning Distillation", "LLM Evaluation"],
     leaderboardUrl: "https://kli.korean.go.kr/benchmark/taskOrdtm/taskLeaderBoard.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub04"
@@ -384,7 +384,7 @@ export const projects: Project[] = [
     id: "pharmaagent-os",
     title: "PharmaAgent OS",
     period: "2026",
-    description: "AI research workspace for FDA drug warning letters, with source-cited briefs, conversational search, and English–Korean support.",
+    description: "Built a bilingual research workspace that helps users examine FDA warning letters through source-cited briefs and conversational search.",
     highlights: [],
     tags: ["Next.js", "FastAPI", "RAG", "PostgreSQL", "pgvector"],
     liveUrl: "https://pharmaagent-os-ochre.vercel.app/",
@@ -396,11 +396,11 @@ export const projects: Project[] = [
     subtitle: "Multilingual Tourism Recommendation Service",
     affiliation: "2026 Tourism Data Utilization Competition | Team KTC",
     period: "2026",
-    description: "End-to-end RAG pipeline for an intelligent multilingual Gyeongju tourism assistant, ingesting Korea Tourism Organization OpenAPI data and serving source-grounded answers in Korean, English, Chinese, and Japanese.",
+    description: "Built retrieval around Korea Tourism Organization data for a Gyeongju assistant that gives source-grounded tourism answers in four languages.",
     highlights: [
-      "Custom vector embedding & retrieval pipeline connecting real-time KTO tourist databases.",
-      "Multilingual responses with grounded source citations and itinerary-aware personalized routes.",
-      "Collaborative GitHub architecture integrating maps, geolocation, and place recommendations."
+      "Created a vector embedding and retrieval pipeline connected to Korea Tourism Organization tourism data.",
+      "Added source citations and itinerary-aware routes to Korean, English, Chinese, and Japanese responses.",
+      "Contributed to the team's GitHub-based integration of maps, geolocation, and place recommendations."
     ],
     tags: ["RAG", "OpenAI API", "Vector Search", "Multilingual", "FastAPI", "Web Integration"],
     linkText: "View Architecture"
@@ -411,11 +411,11 @@ export const projects: Project[] = [
     subtitle: "VLM Error Localization & Grammatical Correction",
     affiliation: "Nationwide AI Competition, Rookie Track | Team 나랏말싸미",
     period: "May 2026 – Sept. 2026",
-    description: "Vision-Language Model agent recognizing student Korean handwriting, pinpointing subtle grammatical/orthographic errors, and providing automated step-by-step diagnostic feedback using Qwen-VL/InternVL and EXAONE 4.5.",
+    description: "Built a VLM-based Korean handwriting feedback agent and created synthetic training data to locate learner errors and explain corrections step by step.",
     highlights: [
       "Generated synthetic paired handwriting data using conditional diffusion and deliberate learner error injection.",
       "Constructed PEFT / LoRA fine-tuning workflows with Hugging Face Transformers.",
-      "Automated evaluation against Character Error Rate (CER), Error F1, and Correction Accuracy."
+      "Automated separate evaluations of handwriting recognition, error detection, and correction using Character Error Rate (CER), Error F1, and Correction Accuracy."
     ],
     tags: ["VLM", "Qwen-VL", "InternVL", "EXAONE 4.5", "LoRA", "Diffusion"],
     linkText: "View Model Details"
@@ -426,7 +426,7 @@ export const projects: Project[] = [
     subtitle: "Explainable AI & Hallucination Mitigation in LLMs",
     affiliation: "Independent Research & Editorial",
     period: "2026",
-    description: "Comprehensive white paper and hands-on tutorial examining causes of hallucination in LLM-based structured information extraction and proven mitigation techniques.",
+    description: "Authored a white paper and hands-on tutorial analyzing LLM hallucinations in structured information extraction and ways to mitigate them.",
     highlights: [
       "Analyzed token probability divergence and factual inconsistency in zero-shot vs grounded RAG contexts.",
       "Authored accessible tutorials on feature attribution, attention visualization, and explainability frameworks.",
@@ -441,11 +441,11 @@ export const projects: Project[] = [
     subtitle: "Low-latency Assistance for Foreign Residents",
     affiliation: "KIRD Challenge",
     period: "Jun. 2025 – Sept. 2025",
-    description: "Designed a lightweight, resource-efficient multilingual RAG architecture tailored for local foreign residents needing rapid access to regional welfare and legal policies.",
+    description: "Designed a CPU-oriented multilingual RAG workflow to help foreign residents find regional welfare and legal information quickly.",
     highlights: [
       "Implemented compact quantized embeddings for rapid CPU-inference edge servers.",
-      "End-to-end workflow from document parsing, hybrid BM25 + dense retrieval, to answer generation.",
-      "Completed rigorous blind evaluation with international resident user groups."
+      "Connected document parsing, hybrid BM25 and dense retrieval, and answer generation in one workflow.",
+      "Evaluated the chatbot with international resident user groups using a blind assessment."
     ],
     tags: ["Lightweight LLM", "Quantization", "RAG", "Public Service"],
     linkText: "View Overview"
@@ -456,7 +456,7 @@ export const projects: Project[] = [
     subtitle: "Econometric & Deep Time-Series Analysis",
     affiliation: "Advanced Data Analysis Project",
     period: "May 2025 – Jun. 2025",
-    description: "Investigated macroeconomic drivers, exchange rates, presidential statements, and search trends on international tourist arrivals across seven distinct time-series modeling approaches.",
+    description: "Benchmarked seven time-series approaches to study how economic conditions, exchange rates, public statements, and search trends relate to tourist arrivals in Korea.",
     highlights: [
       "Benchmarked SARIMAX, XGBoost, LSTM, OLS, VAR, ARIMA residual analysis, and Anomaly Transformer.",
       "Isolated shock volatility in geopolitical events and currency fluctuations with high statistical confidence."
