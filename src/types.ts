@@ -26,6 +26,7 @@ export interface Project {
   linkText?: string;
   liveUrl?: string;
   repositoryUrl?: string;
+  modelUrl?: string;
   result?: string;
   leaderboardUrl?: string;
   award?: string;

@@ -43,7 +43,7 @@ with sync_playwright() as p:
         assert page.locator('#publications article').count() == 4
         publication_years = [int(re.search(r'20\d{2}', venue).group()) for venue in page.locator('.academic-venue').all_text_contents()]
         assert publication_years == sorted(publication_years, reverse=True)
-        assert page.locator('#projects article').count() == 8
+        assert page.locator('#projects article').count() == 9
         assert page.locator('#recognition article').count() == 6
         assert page.get_by_text('Accepted for oral presentation', exact=True).count() == 2
         assert page.locator('#publications .academic-result').filter(has_text='Excellent Paper Award').count() == 2
@@ -62,6 +62,8 @@ with sync_playwright() as p:
         sgis_github = page.get_by_role('link', name='View SGIS Dongne Type — Neighborhood Explorer on GitHub', exact=True)
         assert sgis_github.get_attribute('href') == 'https://github.com/mjeon01/sgis-dongne-type'
         assert sgis_github.locator('img[src$="/links/github.svg"]').count() == 1
+        assert page.get_by_role('link', name='View SCG-LM V2 — 46M Language Model on GitHub', exact=True).get_attribute('href') == 'https://github.com/davemaxuell/Global-Innovation-Build-Challenge-V2'
+        assert page.get_by_role('link', name='View SCG-LM V2 — 46M Language Model on Hugging Face', exact=True).get_attribute('href') == 'https://huggingface.co/davemaxuellkr/scglm-v2-46m'
         paper_link = page.get_by_role('link', name='View paper on Google Scholar:', exact=False)
         assert 'citation_for_view=DpN3XPYAAAAJ:u5HHmVD_uO8C' in paper_link.get_attribute('href')
         for link in page.locator('a[target="_blank"]').all():

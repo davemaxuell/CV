@@ -348,6 +348,22 @@ export const publications: Publication[] = [
 
 export const projects: Project[] = [
   {
+    id: "scg-lm-v2",
+    title: "SCG-LM V2 — 46M Language Model",
+    subtitle: "From-scratch English language model · Global Innovation Build Challenge V2",
+    period: "Sept. 2026",
+    result: "46.3M parameters · 45B training tokens",
+    description: "Trained a 46.3M-parameter language model from random initialization on 45B English tokens using one H100, and published the code, model weights, and evaluation records.",
+    highlights: [
+      "Built a 12-layer decoder-only transformer and 16,384-token byte-level BPE tokenizer without pretrained weights or distillation.",
+      "Curated 22.45B unique tokens from six text sources with deduplication and benchmark-overlap controls; completed pretraining in 31.9 hours on one H100.",
+      "Recorded a 23.85 WikiText-103 validation perplexity and 47.12% mean zero-shot accuracy across HellaSwag, ARC-Easy, PIQA, and WinoGrande."
+    ],
+    tags: ["LLM Pretraining", "PyTorch", "Transformers", "Data Curation"],
+    repositoryUrl: "https://github.com/davemaxuell/Global-Innovation-Build-Challenge-V2",
+    modelUrl: "https://huggingface.co/davemaxuellkr/scglm-v2-46m"
+  },
+  {
     id: "sgis-dongne-type",
     title: "SGIS Dongne Type — Neighborhood Explorer",
     subtitle: "우리 동네는 어떤 타입? · Neighborhood Statistics & Similarity Search",

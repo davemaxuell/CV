@@ -19,7 +19,7 @@ export const ProjectsSection = ({
                 {p.result && <p className="project-result">{p.result}</p>}
                 <p>{p.description}</p>
                 <p className="project-tools">{p.tags.slice(0, 4).join(' · ')}</p>
-                {p.liveUrl || p.repositoryUrl ? (
+                {p.liveUrl || p.repositoryUrl || p.modelUrl ? (
                   <div className="project-actions">
                     {p.liveUrl && (
                       <a className="project-link" href={p.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View project: ${p.title}`}>
@@ -29,6 +29,11 @@ export const ProjectsSection = ({
                     {p.repositoryUrl && (
                       <a className="project-link project-link--github" href={p.repositoryUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${p.title} on GitHub`} title="View on GitHub">
                         <img src={`${import.meta.env.BASE_URL}links/github.svg`} alt="" width={18} height={18} />
+                      </a>
+                    )}
+                    {p.modelUrl && (
+                      <a className="project-link" href={p.modelUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${p.title} on Hugging Face`}>
+                        View model <ArrowUpRight size={12} aria-hidden="true" />
                       </a>
                     )}
                   </div>

@@ -38,7 +38,7 @@ ${skillCategories.map(c => `**${c.title}:** ${c.items.join(', ')}`).join('\n\n')
 ${experiences.map(e => `### ${e.company}\n*${e.period}*\n**${e.role}**\n${e.points.map(p => `- ${p}`).join('\n')}`).join('\n\n')}
 
 ## PROJECTS
-${projects.map(p => `### ${p.title} | ${p.subtitle || ''}\n*${p.period}*\n**${p.affiliation || ''}**\n- ${p.description}\n${p.highlights.map(h => `- ${h}`).join('\n')}`).join('\n\n')}
+${projects.map(p => `### ${p.title} | ${p.subtitle || ''}\n*${p.period}*\n**${p.affiliation || ''}**\n- ${p.description}\n${p.highlights.map(h => `- ${h}`).join('\n')}${p.repositoryUrl ? `\n- Code: ${p.repositoryUrl}` : ''}${p.modelUrl ? `\n- Model: ${p.modelUrl}` : ''}`).join('\n\n')}
 
 ## PUBLICATIONS / CONFERENCES
 ${publications.map(pub => `### ${pub.title}\n*${pub.conference}, ${pub.year}*\n**${pub.authorRole}${pub.award ? ` | ${pub.award}` : ''}**\n${pub.summary}`).join('\n\n')}
@@ -219,6 +219,12 @@ ${languageSkills.map(skill => `- **${skill.title}** (${skill.year}) — ${skill.
                       <li key={i}>{h}</li>
                     ))}
                   </ul>
+                  {(proj.repositoryUrl || proj.modelUrl) && (
+                    <div className="flex flex-wrap gap-x-3 mt-1 text-neutral-700">
+                      {proj.repositoryUrl && <a href={proj.repositoryUrl} target="_blank" rel="noopener noreferrer">Code ↗</a>}
+                      {proj.modelUrl && <a href={proj.modelUrl} target="_blank" rel="noopener noreferrer">Model ↗</a>}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

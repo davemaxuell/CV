@@ -49,7 +49,7 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
   projects: {
     label: 'Things I have worked on',
     lines: [
-      "My projects range from Korean handwriting feedback to tourism recommendations. Pick one and I'll introduce it.",
+      "My projects range from training a small language model to Korean handwriting feedback. Pick one and I'll introduce it.",
       "I work on both research ideas and usable services. These cards show some of the results.",
       "I've explored language learning, public information, and tourism here. The project details explain how each system works.",
     ],
@@ -148,6 +148,14 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
       "As a teaching assistant, I helped students explore attention mechanisms, prompt engineering, and the basics of language models.",
       "I supported coding and fine-tuning exercises with PyTorch and Hugging Face Transformers. This work involved explaining as well as implementing.",
       "My teaching assistant role supported introductory LLM instruction at BUFS. Plenty of ideas to turn into working code!",
+    ],
+  },
+  'project:scg-lm-v2': {
+    label: 'SCG-LM V2',
+    lines: [
+      "I trained SCG-LM V2 from scratch: 46.3 million parameters and 45 billion English training tokens.",
+      "The base model trained for 31.9 hours on one H100. Its weights and evaluation records are public.",
+      "This is a text-completion model, not a chat assistant. The card links to both the code and the base model.",
     ],
   },
   'project:sgis-dongne-type': {

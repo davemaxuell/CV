@@ -46,7 +46,7 @@ with sync_playwright() as p:
         page.locator('#skill-detail').wait_for()
         page.locator('.skill-chip').first.click()
         page.locator('#projects').scroll_into_view_if_needed()
-        assert page.locator('.project-grid .project-card').count()==8
+        assert page.locator('.project-grid .project-card').count()==9
         assert page.locator('.project-grid').evaluate('(e)=>e.scrollWidth<=e.clientWidth')
         for title in page.locator('.resume-title').all():
             assert title.evaluate('(e)=>e.scrollWidth<=e.clientWidth+1'), title.inner_text()
@@ -61,6 +61,8 @@ with sync_playwright() as p:
         sgis_github=page.get_by_role('link',name='View SGIS Dongne Type — Neighborhood Explorer on GitHub',exact=True)
         assert sgis_github.get_attribute('href')=='https://github.com/mjeon01/sgis-dongne-type'
         assert sgis_github.locator('img[src$="/links/github.svg"]').count()==1
+        assert page.get_by_role('link',name='View SCG-LM V2 — 46M Language Model on GitHub',exact=True).get_attribute('href')=='https://github.com/davemaxuell/Global-Innovation-Build-Challenge-V2'
+        assert page.get_by_role('link',name='View SCG-LM V2 — 46M Language Model on Hugging Face',exact=True).get_attribute('href')=='https://huggingface.co/davemaxuellkr/scglm-v2-46m'
         project_trigger=page.get_by_role('button',name='Read details: Silla Road Global',exact=True)
         project_trigger.click()
         dialog=page.get_by_role('dialog')
