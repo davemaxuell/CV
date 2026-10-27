@@ -32,6 +32,13 @@ These are credibility improvements requiring facts from the owner, not copywriti
 - Owner confirmed the training-pipeline role, SFT followed by DPO (correcting the original DDPO wording), GRPO experimentation, and thinking/reasoning distillation. Other post-training methods are not established by the leaderboard and have not been invented for the CV.
 - The project card surfaces the rank and contribution; its detail dialog and Recognition entry link to the public evidence. GRPO is now listed as hands-on experience in Skills based on this confirmed work.
 
+## Global Innovation Build Challenge V2 award (October 27, 2026)
+
+- The [public Devpost submission](https://devpost.com/software/slm_v1) identifies Dave Maxuell as its creator and lists **SLM_v2.1** as a winner of **Bronze (one per track)**. The [official project gallery](https://gibc-v2.devpost.com/project-gallery) also marks it as a winner.
+- Devpost's October 26, 2026 winner notification confirms **Track 01 — Foundational LLM Development**. This is a track Bronze award, not the overall Grand Champion award. Private email contents and account-specific links are not included in the repository.
+- The project entry now distinguishes the SCG-LM V2 pretraining-only base from the winning V2.1 submission. The [V2.1 model card](https://huggingface.co/davemaxuellkr/Global-Innovation-Build-Challenge-V2) documents benchmark-training-split fine-tuning and its evaluation limitations. The 52.76% four-task mean is task-tuned, not a pretraining-only comparison; the V2 baseline remains 47.12%.
+- Certificates were not attached to the notification. Organizers said distribution would begin one week after the announcement. The CV links to the public award listing as evidence.
+
 ## Reference guidance
 
 - Stanford Career Education, resume guidance: https://careered.stanford.edu/sites/g/files/sbiybj22801/files/media/file/resume-and-cover-letter-examples.pdf

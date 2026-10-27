@@ -61,8 +61,10 @@ with sync_playwright() as p:
         sgis_github=page.get_by_role('link',name='View SGIS Dongne Type — Neighborhood Explorer on GitHub',exact=True)
         assert sgis_github.get_attribute('href')=='https://github.com/mjeon01/sgis-dongne-type'
         assert sgis_github.locator('img[src$="/links/github.svg"]').count()==1
-        assert page.get_by_role('link',name='View SCG-LM V2 — 46M Language Model on GitHub',exact=True).get_attribute('href')=='https://github.com/davemaxuell/Global-Innovation-Build-Challenge-V2'
-        assert page.get_by_role('link',name='View SCG-LM V2 — 46M Language Model on Hugging Face',exact=True).get_attribute('href')=='https://huggingface.co/davemaxuellkr/scglm-v2-46m'
+        assert page.get_by_role('link',name='View SLM_v2.1 — 46M Language Model on GitHub',exact=True).get_attribute('href')=='https://github.com/davemaxuell/Global-Innovation-Build-Challenge-V2'
+        assert page.get_by_role('link',name='View SLM_v2.1 — 46M Language Model on Hugging Face',exact=True).get_attribute('href')=='https://huggingface.co/davemaxuellkr/Global-Innovation-Build-Challenge-V2'
+        assert page.get_by_role('link',name='View SLM_v2.1 — 46M Language Model on Devpost',exact=True).get_attribute('href')=='https://devpost.com/software/slm_v1'
+        assert 'Bronze · Track 01: Foundational LLM Development' in page.locator('#recognition').inner_text()
         project_trigger=page.get_by_role('button',name='Read details: Silla Road Global',exact=True)
         project_trigger.click()
         dialog=page.get_by_role('dialog')

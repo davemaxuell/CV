@@ -151,11 +151,11 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
     ],
   },
   'project:scg-lm-v2': {
-    label: 'SCG-LM V2',
+    label: 'SLM_v2.1',
     lines: [
       "I trained SCG-LM V2 from scratch: 46.3 million parameters and 45 billion English training tokens.",
       "The base model trained for 31.9 hours on one H100. Its weights and evaluation records are public.",
-      "This is a text-completion model, not a chat assistant. The card links to both the code and the base model.",
+      "My SLM_v2.1 submission won Bronze in the Foundational LLM Development track at Global Innovation Build Challenge V2. The Devpost link shows the award.",
     ],
   },
   'project:sgis-dongne-type': {
@@ -268,6 +268,14 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
       "I attended Sun Moon University's Korean language institute before studying at BUFS. That's this part of my education.",
       "I studied Korean at Sun Moon University in 2022–2023. You'll also find my TOPIK certification on this page.",
       "I went through a Korean language institute before my undergraduate studies. Korean is one of the languages I work with today.",
+    ],
+  },
+  'recognition:rec-gibc-2026': {
+    label: 'GIBC V2 Bronze award',
+    lines: [
+      "I won Bronze in the Foundational LLM Development track at Global Innovation Build Challenge V2 with SLM_v2.1.",
+      "My winning SLM_v2.1 submission builds on SCG-LM V2, a 46.3-million-parameter model I trained from scratch.",
+      "The award is listed on Devpost. You can follow the link here to see my winning submission and its training records.",
     ],
   },
   'recognition:rec-malpyeong-2026': {

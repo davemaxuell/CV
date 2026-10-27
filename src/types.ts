@@ -27,6 +27,7 @@ export interface Project {
   liveUrl?: string;
   repositoryUrl?: string;
   modelUrl?: string;
+  submissionUrl?: string;
   result?: string;
   leaderboardUrl?: string;
   award?: string;
@@ -67,6 +68,7 @@ export interface RecognitionItem {
   year: string;
   badge?: string;
   sourceUrl?: string;
+  sourceLabel?: string;
 }
 
 export interface SkillCategory {

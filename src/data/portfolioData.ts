@@ -349,19 +349,22 @@ export const publications: Publication[] = [
 export const projects: Project[] = [
   {
     id: "scg-lm-v2",
-    title: "SCG-LM V2 — 46M Language Model",
-    subtitle: "From-scratch English language model · Global Innovation Build Challenge V2",
-    period: "Sept. 2026",
-    result: "46.3M parameters · 45B training tokens",
-    description: "Trained a 46.3M-parameter language model from random initialization on 45B English tokens using one H100, and published the code, model weights, and evaluation records.",
+    title: "SLM_v2.1 — 46M Language Model",
+    subtitle: "SCG-LM V2 pretraining and V2.1 task tuning · Global Innovation Build Challenge V2",
+    period: "Sept. – Oct. 2026",
+    result: "Bronze · Foundational LLM Development",
+    description: "Won Bronze in Track 01 of Global Innovation Build Challenge V2 with SLM_v2.1. Trained its 46.3M-parameter SCG-LM V2 base from scratch on 45B English tokens using one H100, then fine-tuned it for benchmark question answering.",
     highlights: [
       "Built a 12-layer decoder-only transformer and 16,384-token byte-level BPE tokenizer without pretrained weights or distillation.",
       "Curated 22.45B unique tokens from six text sources with deduplication and benchmark-overlap controls; completed pretraining in 31.9 hours on one H100.",
-      "Recorded a 23.85 WikiText-103 validation perplexity and 47.12% mean zero-shot accuracy across HellaSwag, ARC-Easy, PIQA, and WinoGrande."
+      "The pretraining-only V2 base recorded 23.85 WikiText-103 validation perplexity and 47.12% mean accuracy across HellaSwag, ARC-Easy, PIQA, and WinoGrande.",
+      "Fine-tuned V2.1 on 79,425 benchmark training-split questions with pretraining-text replay; recorded 52.76% four-task mean accuracy and 25.46 WikiText-103 perplexity. These are task-tuned results; evaluation splits were excluded from training.",
+      "Published code, checkpoints, and evaluation records; the winning submission is listed as SLM_v2.1 on Devpost."
     ],
     tags: ["LLM Pretraining", "PyTorch", "Transformers", "Data Curation"],
     repositoryUrl: "https://github.com/davemaxuell/Global-Innovation-Build-Challenge-V2",
-    modelUrl: "https://huggingface.co/davemaxuellkr/scglm-v2-46m"
+    modelUrl: "https://huggingface.co/davemaxuellkr/Global-Innovation-Build-Challenge-V2",
+    submissionUrl: "https://devpost.com/software/slm_v1"
   },
   {
     id: "sgis-dongne-type",
@@ -512,6 +515,15 @@ export const educationList: EducationItem[] = [
 ];
 
 export const recognitions: RecognitionItem[] = [
+  {
+    id: "rec-gibc-2026",
+    title: "Global Innovation Build Challenge V2 — SLM_v2.1",
+    issuer: "GIBC Organizing Team",
+    year: "Oct. 2026",
+    badge: "Bronze · Track 01: Foundational LLM Development",
+    sourceUrl: "https://devpost.com/software/slm_v1",
+    sourceLabel: "Award on Devpost"
+  },
   {
     id: "rec-malpyeong-2026",
     title: "AI Malpyeong — Korean Writing Assessment",
