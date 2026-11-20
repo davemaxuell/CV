@@ -45,7 +45,13 @@ with sync_playwright() as p:
         assert publication_years == sorted(publication_years, reverse=True)
         assert page.locator('#projects article').count() == 9
         assert page.locator('#recognition article').count() == 7
-        assert page.get_by_text('Accepted for oral presentation', exact=True).count() == 2
+        assert page.get_by_text('Published in proceedings', exact=True).count() == 2
+        hclt_links = page.get_by_role('link', name='View paper on KoreaScience:', exact=False)
+        assert hclt_links.count() == 2
+        assert {link.get_attribute('href') for link in hclt_links.all()} == {
+            'https://koreascience.kr/article/CFKO202630154054759.do',
+            'https://koreascience.kr/article/CFKO202630057630354.page?lang=ko',
+        }
         assert page.locator('#publications .academic-result').filter(has_text='Excellent Paper Award').count() == 2
         assert '3 first-author works listed' in page.locator('#publications').inner_text()
         assert '19th of 53 teams' in page.locator('#projects').inner_text()

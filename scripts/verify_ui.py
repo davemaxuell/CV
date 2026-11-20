@@ -52,7 +52,13 @@ with sync_playwright() as p:
             assert title.evaluate('(e)=>e.scrollWidth<=e.clientWidth+1'), title.inner_text()
         assert page.locator('#experience .resume-summary').count()==7
         assert page.locator('#education .resume-summary').first.inner_text()=='GPA: 4.25 / 4.50 · Expected graduation: Feb. 2027'
-        assert page.locator('#publications .resume-status').all_text_contents()==['Accepted for oral presentation']*2
+        assert page.locator('#publications .resume-status').all_text_contents()==['Published in proceedings']*2
+        hclt_links = page.get_by_role('link', name='View paper on KoreaScience:', exact=False)
+        assert hclt_links.count() == 2
+        assert {link.get_attribute('href') for link in hclt_links.all()} == {
+            'https://koreascience.kr/article/CFKO202630154054759.do',
+            'https://koreascience.kr/article/CFKO202630057630354.page?lang=ko',
+        }
         assert '3 first-author works' in page.locator('#publications .section-context').inner_text()
         for link in page.locator('.cv-navigation a').all():
             assert page.locator(link.get_attribute('href')).count()==1

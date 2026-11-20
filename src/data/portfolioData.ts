@@ -281,10 +281,13 @@ export const experiences: Experience[] = [
 export const publications: Publication[] = [
   {
     id: "pub-hclt-2026-1",
-    status: "Accepted for oral presentation",
+    status: "Published in proceedings",
+    paperUrl: "https://koreascience.kr/article/CFKO202630154054759.do",
+    paperSource: "KoreaScience",
+    pages: "624–629",
     highlight: "Compared SFT and process-reward-guided GRPO using 50,000 synthetic handwriting images.",
     title: "Process-Reward-Guided Stepwise Verification for Grammatical Error Diagnosis and Correction in Korean Handwritten Text",
-    conference: "HCLT 2026 (Human & Cognitive Language Technology)",
+    conference: "HCLT 2026 (Annual Conference on Human and Language Technology)",
     year: "2026",
     authorRole: "First author",
     summary: "Proposed a VLM framework integrating handwriting transcription, reference-sentence restoration, and structured grammatical error diagnosis over 50,000 synthetic handwriting images. Compared answer-only SFT, stepwise-verification SFT, and process-reward-model-guided GRPO.",
@@ -330,7 +333,10 @@ export const publications: Publication[] = [
   },
   {
     id: "pub-hclt-2026-2",
-    status: "Accepted for oral presentation",
+    status: "Published in proceedings",
+    paperUrl: "https://koreascience.kr/article/CFKO202630057630354.page?lang=ko",
+    paperSource: "KoreaScience",
+    pages: "241–246",
     highlight: "Error preservation improved from 41.04% to 62.30%; over-correction fell from 39.78% to 22.63%.",
     title: "Synthetic Data Construction and VLM Over-Correction Mitigation for Preserving Learner Errors in Korean Handwriting Recognition",
     conference: "HCLT 2026",

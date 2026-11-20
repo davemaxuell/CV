@@ -106,7 +106,7 @@ export default function AcademicPage() {
           {paper.status && <p className="academic-result">{paper.status}</p>}
           {paper.award && <p className="academic-result">{paper.award.replace(' 🏆', '')}</p>}
           {paper.highlight && <p className="academic-publication-summary">{paper.highlight}</p>}
-          {paper.paperUrl && <div className="academic-links"><a href={paper.paperUrl} {...external} aria-label={`View paper on Google Scholar: ${paper.title}`}>Paper on Google Scholar ↗</a></div>}
+          {paper.paperUrl && <div className="academic-links"><a href={paper.paperUrl} {...external} aria-label={`View paper on ${paper.paperSource ?? "Google Scholar"}: ${paper.title}`}>Paper on {paper.paperSource ?? "Google Scholar"} ↗</a></div>}
           <details className="academic-details"><summary>Abstract & results</summary>
             <p>{paper.summary}</p>
             {paper.pages && <p>Pages: {paper.pages}</p>}
