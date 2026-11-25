@@ -171,7 +171,7 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
     lines: [
       "I designed a training pipeline for scoring Korean essays and explaining the scores, reaching top 19 out of 148 model submissions.",
       "My AI Malpyeong work combined supervised fine-tuning and preference training, with experiments in GRPO and reasoning distillation.",
-      "I worked on essay scores and supporting explanations across content, organization, and expression. Giving a number was only part of the task.",
+      "I worked on essay scores and supporting explanations across content, organization, and expression, and published the writer model on Hugging Face.",
     ],
   },
   'project:pharmaagent-os': {

@@ -404,6 +404,7 @@ export const projects: Project[] = [
       "Contributed to Team BUFS_NLP's top 19 result out of 148 model submissions. Official results: RMSE 0.4690, Spearman correlation 0.6950, and LLM-judge score 4.4837."
     ],
     tags: ["SFT → DPO", "GRPO", "Reasoning Distillation", "LLM Evaluation"],
+    modelUrl: "https://huggingface.co/davemaxuellkr/260814-writer-model",
     leaderboardUrl: "https://kli.korean.go.kr/benchmark/taskOrdtm/taskLeaderBoard.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub04"
   },
   {

@@ -11,16 +11,31 @@ export const ProjectsSection = ({
     <section id="projects" data-avatar-context="projects" className="cv-section">
       <SectionBadge label="Projects" />
         <div className="project-grid">
-          {projects.map((p) => (
-            <article className="project-card" key={p.id} data-avatar-context={`project:${p.id}`}>
-              <div className="project-copy">
-                <p className="project-period">{p.period}</p>
-                <h3>{p.title}</h3>
-                {p.result && <p className="project-result">{p.result}</p>}
-                <p>{p.description}</p>
-                <p className="project-tools">{p.tags.slice(0, 4).join(' · ')}</p>
-                {p.liveUrl || p.repositoryUrl || p.modelUrl || p.submissionUrl || p.certificateUrl ? (
+          {projects.map((p) => {
+            const showDetailsButton =
+              p.highlights.length > 0 &&
+              !p.liveUrl &&
+              !p.repositoryUrl &&
+              !p.submissionUrl &&
+              !p.certificateUrl;
+            return (
+              <article className="project-card" key={p.id} data-avatar-context={`project:${p.id}`}>
+                <div className="project-copy">
+                  <p className="project-period">{p.period}</p>
+                  <h3>{p.title}</h3>
+                  {p.result && <p className="project-result">{p.result}</p>}
+                  <p>{p.description}</p>
+                  <p className="project-tools">{p.tags.slice(0, 4).join(' · ')}</p>
                   <div className="project-actions">
+                    {showDetailsButton && (
+                      <button
+                        className="project-link"
+                        onClick={() => onSelectProject(p)}
+                        aria-label={`Read details: ${p.title}`}
+                      >
+                        Read details <ArrowUpRight size={12} aria-hidden="true" />
+                      </button>
+                    )}
                     {p.liveUrl && (
                       <a className="project-link" href={p.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View project: ${p.title}`}>
                         View project <ArrowUpRight size={12} aria-hidden="true" />
@@ -46,21 +61,16 @@ export const ProjectsSection = ({
                         Certificate <ArrowUpRight size={12} aria-hidden="true" />
                       </a>
                     )}
+                    {p.leaderboardUrl && (
+                      <a className="project-link" href={p.leaderboardUrl} target="_blank" rel="noopener noreferrer" aria-label={`Official leaderboard: ${p.title}`}>
+                        Leaderboard <ArrowUpRight size={12} aria-hidden="true" />
+                      </a>
+                    )}
                   </div>
-                ) : <div className="project-actions"><button
-                  className="project-link"
-                  onClick={() => onSelectProject(p)}
-                  aria-label={`Read details: ${p.title}`}
-                >
-                  Read details <ArrowUpRight size={12} />
-                </button>
-                  {p.leaderboardUrl && <a className="project-link" href={p.leaderboardUrl} target="_blank" rel="noopener noreferrer" aria-label={`Official leaderboard: ${p.title}`}>
-                    Leaderboard <ArrowUpRight size={12} />
-                  </a>}
-                </div>}
-              </div>
-            </article>
-          ))}
+                </div>
+              </article>
+            );
+          })}
         </div>
     </section>
   );
