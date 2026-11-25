@@ -526,7 +526,7 @@ export const recognitions: RecognitionItem[] = [
     title: "Global Innovation Build Challenge V2 — SLM_v2.1",
     issuer: "GIBC Organizing Team",
     year: "Oct. 2026",
-    badge: "Bronze · Track 01: Foundational LLM Development",
+    badge: "3rd Place (Bronze) · Track 01: Foundational LLM Development",
     sourceUrl: "https://devpost.com/software/slm_v1",
     sourceLabel: "Award on Devpost"
   },
