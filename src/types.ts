@@ -28,6 +28,7 @@ export interface Project {
   repositoryUrl?: string;
   modelUrl?: string;
   submissionUrl?: string;
+  certificateUrl?: string;
   result?: string;
   leaderboardUrl?: string;
   award?: string;
@@ -70,6 +71,8 @@ export interface RecognitionItem {
   badge?: string;
   sourceUrl?: string;
   sourceLabel?: string;
+  certificateUrl?: string;
+  certificateLabel?: string;
 }
 
 export interface SkillCategory {

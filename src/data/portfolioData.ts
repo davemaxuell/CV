@@ -358,7 +358,7 @@ export const projects: Project[] = [
     title: "SLM_v2.1 — 46M Language Model",
     subtitle: "SCG-LM V2 pretraining and V2.1 task tuning · Global Innovation Build Challenge V2",
     period: "Sept. – Oct. 2026",
-    result: "Bronze · Foundational LLM Development",
+    result: "Bronze (3rd Place) · Foundational LLM Development",
     description: "Won Bronze in Track 01 of Global Innovation Build Challenge V2 with SLM_v2.1. Trained its 46.3M-parameter SCG-LM V2 base from scratch on 45B English tokens using one H100, then fine-tuned it for benchmark question answering.",
     highlights: [
       "Built a 12-layer decoder-only transformer and 16,384-token byte-level BPE tokenizer without pretrained weights or distillation.",
@@ -370,7 +370,8 @@ export const projects: Project[] = [
     tags: ["LLM Pretraining", "PyTorch", "Transformers", "Data Curation"],
     repositoryUrl: "https://github.com/davemaxuell/Global-Innovation-Build-Challenge-V2",
     modelUrl: "https://huggingface.co/davemaxuellkr/Global-Innovation-Build-Challenge-V2",
-    submissionUrl: "https://devpost.com/software/slm_v1"
+    submissionUrl: "https://devpost.com/software/slm_v1",
+    certificateUrl: "/certificates/GIBC_V2_SLM_v2_1_Bronze_Dave_Maxuell.pdf"
   },
   {
     id: "sgis-dongne-type",
@@ -394,13 +395,13 @@ export const projects: Project[] = [
     subtitle: "글쓰기 채점 능력 평가 · Training Pipeline Design",
     affiliation: "National Institute of Korean Language | Team BUFS_NLP",
     period: "Jul. 2026 – Aug. 2026",
-    result: "19th of 53 teams · Official leaderboard",
+    result: "Top 19 out of 148 model submissions · Official leaderboard",
     description: "Designed the SFT → DPO training pipeline for Korean essay scoring and rationales, and experimented with GRPO and reasoning distillation.",
     highlights: [
       "Designed a supervised fine-tuning (SFT) pipeline followed by direct preference optimization (DPO), and explored Group Relative Policy Optimization (GRPO) as another training approach.",
       "Experimented with reasoning distillation as part of the post-training work on essay scoring and rationale generation.",
       "Developed the approach around scores and supporting rationales for content, organization, and expression.",
-      "Contributed to Team BUFS_NLP's 19th-place result among 53 teams. Official results: RMSE 0.4690, Spearman correlation 0.6950, and LLM-judge score 4.4837."
+      "Contributed to Team BUFS_NLP's top 19 result out of 148 model submissions. Official results: RMSE 0.4690, Spearman correlation 0.6950, and LLM-judge score 4.4837."
     ],
     tags: ["SFT → DPO", "GRPO", "Reasoning Distillation", "LLM Evaluation"],
     leaderboardUrl: "https://kli.korean.go.kr/benchmark/taskOrdtm/taskLeaderBoard.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub04"
@@ -527,15 +528,17 @@ export const recognitions: RecognitionItem[] = [
     issuer: "GIBC Organizing Team",
     year: "Oct. 2026",
     badge: "3rd Place (Bronze) · Track 01: Foundational LLM Development",
-    sourceUrl: "https://drive.google.com/file/d/1e1Mr9KybD5GiCZdkcXQ0HNd9Cyi05got/view",
-    sourceLabel: "View Bronze certificate"
+    sourceUrl: "https://devpost.com/software/slm_v1",
+    sourceLabel: "Award on Devpost",
+    certificateUrl: "/certificates/GIBC_V2_SLM_v2_1_Bronze_Dave_Maxuell.pdf",
+    certificateLabel: "Certificate (PDF)"
   },
   {
     id: "rec-malpyeong-2026",
     title: "AI Malpyeong — Korean Writing Assessment",
     issuer: "National Institute of Korean Language · Team BUFS_NLP",
     year: "2026",
-    badge: "19th of 53 teams on the leaderboard",
+    badge: "Top 19 out of 148 model submissions on the leaderboard",
     sourceUrl: "https://kli.korean.go.kr/benchmark/taskOrdtm/taskLeaderBoard.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub04"
   },
   {

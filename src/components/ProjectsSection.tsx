@@ -19,7 +19,7 @@ export const ProjectsSection = ({
                 {p.result && <p className="project-result">{p.result}</p>}
                 <p>{p.description}</p>
                 <p className="project-tools">{p.tags.slice(0, 4).join(' · ')}</p>
-                {p.liveUrl || p.repositoryUrl || p.modelUrl || p.submissionUrl ? (
+                {p.liveUrl || p.repositoryUrl || p.modelUrl || p.submissionUrl || p.certificateUrl ? (
                   <div className="project-actions">
                     {p.liveUrl && (
                       <a className="project-link" href={p.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View project: ${p.title}`}>
@@ -39,6 +39,11 @@ export const ProjectsSection = ({
                     {p.submissionUrl && (
                       <a className="project-link" href={p.submissionUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${p.title} on Devpost`}>
                         Award on Devpost <ArrowUpRight size={12} aria-hidden="true" />
+                      </a>
+                    )}
+                    {p.certificateUrl && (
+                      <a className="project-link" href={p.certificateUrl} target="_blank" rel="noopener noreferrer" aria-label={`View certificate for ${p.title}`}>
+                        Certificate <ArrowUpRight size={12} aria-hidden="true" />
                       </a>
                     )}
                   </div>

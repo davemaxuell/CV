@@ -155,7 +155,7 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
     lines: [
       "I trained SCG-LM V2 from scratch: 46.3 million parameters and 45 billion English training tokens.",
       "The base model trained for 31.9 hours on one H100. Its weights and evaluation records are public.",
-      "My SLM_v2.1 submission won Bronze in the Foundational LLM Development track at Global Innovation Build Challenge V2. The Devpost link shows the award.",
+      "My SLM_v2.1 submission placed 3rd for Bronze in the Foundational LLM Development track at Global Innovation Build Challenge V2. Both the Devpost award and certificate are linked.",
     ],
   },
   'project:sgis-dongne-type': {
@@ -169,7 +169,7 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
   'project:malpyeong-writing-2026': {
     label: 'Korean essay scoring',
     lines: [
-      "I designed a training pipeline for scoring Korean essays and explaining the scores. Our team placed 19th among 53 teams.",
+      "I designed a training pipeline for scoring Korean essays and explaining the scores, reaching top 19 out of 148 model submissions.",
       "My AI Malpyeong work combined supervised fine-tuning and preference training, with experiments in GRPO and reasoning distillation.",
       "I worked on essay scores and supporting explanations across content, organization, and expression. Giving a number was only part of the task.",
     ],
@@ -275,13 +275,13 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
     lines: [
       "I won Bronze in the Foundational LLM Development track at Global Innovation Build Challenge V2 with SLM_v2.1.",
       "My winning SLM_v2.1 submission builds on SCG-LM V2, a 46.3-million-parameter model I trained from scratch.",
-      "The award is listed on Devpost. You can follow the link here to see my winning submission and its training records.",
+      "The Bronze certificate and Devpost award are both linked here, along with my winning submission details.",
     ],
   },
   'recognition:rec-malpyeong-2026': {
     label: 'AI Malpyeong result',
     lines: [
-      "My team, BUFS_NLP, ranked 19th among 53 teams in AI Malpyeong's Korean writing assessment. The official leaderboard is linked here.",
+      "My team, BUFS_NLP, reached top 19 out of 148 model submissions in AI Malpyeong's Korean writing assessment. The official leaderboard is linked here.",
       "I worked on training for Korean essay scoring in this competition. Our system produced both scores and supporting explanations.",
       "My AI Malpyeong result connects to the essay-scoring project. The project card has the training approach and evaluation details.",
     ],

@@ -54,7 +54,7 @@ with sync_playwright() as p:
         }
         assert page.locator('#publications .academic-result').filter(has_text='Excellent Paper Award').count() == 2
         assert '3 first-author works listed' in page.locator('#publications').inner_text()
-        assert '19th of 53 teams' in page.locator('#projects').inner_text()
+        assert 'Top 19 out of 148 model submissions' in page.locator('#projects').inner_text()
         assert 'GKS-U Scholarship' in page.locator('#recognition').inner_text()
         language_text = page.locator('#languages').inner_text()
         assert all(s in language_text for s in ('TOEIC 955', '2026', 'IELTS Academic 7.5', '2021'))
@@ -71,7 +71,9 @@ with sync_playwright() as p:
         assert page.get_by_role('link', name='View SLM_v2.1 — 46M Language Model on GitHub', exact=True).get_attribute('href') == 'https://github.com/davemaxuell/Global-Innovation-Build-Challenge-V2'
         assert page.get_by_role('link', name='View SLM_v2.1 — 46M Language Model on Hugging Face', exact=True).get_attribute('href') == 'https://huggingface.co/davemaxuellkr/Global-Innovation-Build-Challenge-V2'
         assert page.get_by_role('link', name='View SLM_v2.1 — 46M Language Model on Devpost', exact=True).get_attribute('href') == 'https://devpost.com/software/slm_v1'
-        assert 'Bronze · Track 01: Foundational LLM Development' in page.locator('#recognition').inner_text()
+        assert page.get_by_role('link', name='View certificate for SLM_v2.1 — 46M Language Model', exact=True).get_attribute('href') == '/certificates/GIBC_V2_SLM_v2_1_Bronze_Dave_Maxuell.pdf'
+        assert '3rd Place (Bronze) · Track 01: Foundational LLM Development' in page.locator('#recognition').inner_text()
+        assert page.get_by_role('link', name='Certificate (PDF): Global Innovation Build Challenge V2 — SLM_v2.1', exact=True).get_attribute('href') == '/certificates/GIBC_V2_SLM_v2_1_Bronze_Dave_Maxuell.pdf'
         paper_link = page.get_by_role('link', name='View paper on Google Scholar:', exact=False)
         assert 'citation_for_view=DpN3XPYAAAAJ:u5HHmVD_uO8C' in paper_link.get_attribute('href')
         for link in page.locator('a[target="_blank"]').all():

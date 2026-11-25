@@ -28,7 +28,7 @@ These are credibility improvements requiring facts from the owner, not copywriti
 ## AI Malpyeong competition addition (September 22, 2026)
 
 - Official task: [2026 글쓰기 채점 능력 평가](https://kli.korean.go.kr/benchmark/taskOrdtm/taskList.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub01), July 1–August 25, 2026, National Institute of Korean Language.
-- The [official leaderboard](https://kli.korean.go.kr/benchmark/taskOrdtm/taskLeaderBoard.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub04), last evaluated September 1, lists BUFS_NLP / malpyeong-writer at 19th among 53 teams. It reports RMSE 0.4690, Spearman 0.6950, and LLM Judge 4.4837. These are team results; do not call this an award or imply this is the combined final judging rank.
+- The [official leaderboard](https://kli.korean.go.kr/benchmark/taskOrdtm/taskLeaderBoard.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub04), last evaluated September 1, lists BUFS_NLP / malpyeong-writer in the top 19 out of 148 model submissions. It reports RMSE 0.4690, Spearman 0.6950, and LLM Judge 4.4837. These are submission results; do not call this an award or imply this is the combined final judging rank.
 - Owner confirmed the training-pipeline role, SFT followed by DPO (correcting the original DDPO wording), GRPO experimentation, and thinking/reasoning distillation. Other post-training methods are not established by the leaderboard and have not been invented for the CV.
 - The project card surfaces the rank and contribution; its detail dialog and Recognition entry link to the public evidence. GRPO is now listed as hands-on experience in Skills based on this confirmed work.
 
@@ -38,6 +38,7 @@ These are credibility improvements requiring facts from the owner, not copywriti
 - Devpost's October 26, 2026 winner notification confirms **Track 01 — Foundational LLM Development**. This is a track Bronze award, not the overall Grand Champion award. Private email contents and account-specific links are not included in the repository.
 - The project entry now distinguishes the SCG-LM V2 pretraining-only base from the winning V2.1 submission. The [V2.1 model card](https://huggingface.co/davemaxuellkr/Global-Innovation-Build-Challenge-V2) documents benchmark-training-split fine-tuning and its evaluation limitations. The 52.76% four-task mean is task-tuned, not a pretraining-only comparison; the V2 baseline remains 47.12%.
 - Certificates were not attached to the notification. Organizers said distribution would begin one week after the announcement. The CV links to the public award listing as evidence.
+- On November 25, 2026, the official GIBC V2 Bronze Award certificate (`GIBC_V2_SLM_v2_1_Bronze_Dave_Maxuell_CANVA_PDF_PRINT.pdf`) was added to `public/certificates/GIBC_V2_SLM_v2_1_Bronze_Dave_Maxuell.pdf`, confirming 3rd Place in the Foundational LLM Development Track (July 11 – October 1, 2026), and linked from both the Projects and Recognition sections.
 
 ## Reference guidance
 

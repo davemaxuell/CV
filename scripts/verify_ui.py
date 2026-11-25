@@ -70,7 +70,9 @@ with sync_playwright() as p:
         assert page.get_by_role('link',name='View SLM_v2.1 — 46M Language Model on GitHub',exact=True).get_attribute('href')=='https://github.com/davemaxuell/Global-Innovation-Build-Challenge-V2'
         assert page.get_by_role('link',name='View SLM_v2.1 — 46M Language Model on Hugging Face',exact=True).get_attribute('href')=='https://huggingface.co/davemaxuellkr/Global-Innovation-Build-Challenge-V2'
         assert page.get_by_role('link',name='View SLM_v2.1 — 46M Language Model on Devpost',exact=True).get_attribute('href')=='https://devpost.com/software/slm_v1'
-        assert 'Bronze · Track 01: Foundational LLM Development' in page.locator('#recognition').inner_text()
+        assert page.get_by_role('link',name='View certificate for SLM_v2.1 — 46M Language Model',exact=True).get_attribute('href')=='/certificates/GIBC_V2_SLM_v2_1_Bronze_Dave_Maxuell.pdf'
+        assert '3rd Place (Bronze) · Track 01: Foundational LLM Development' in page.locator('#recognition').inner_text()
+        assert page.get_by_role('link',name='Certificate (PDF): Global Innovation Build Challenge V2 — SLM_v2.1',exact=True).get_attribute('href')=='/certificates/GIBC_V2_SLM_v2_1_Bronze_Dave_Maxuell.pdf'
         project_trigger=page.get_by_role('button',name='Read details: Silla Road Global',exact=True)
         project_trigger.click()
         dialog=page.get_by_role('dialog')

@@ -130,6 +130,7 @@ export default function AcademicPage() {
             {project.repositoryUrl && <a className="academic-github-link" href={project.repositoryUrl} {...external} aria-label={`View ${project.title} on GitHub`} title="View on GitHub"><img src="/links/github.svg" alt="" width="18" height="18" /></a>}
             {project.modelUrl && <a href={project.modelUrl} {...external} aria-label={`View ${project.title} on Hugging Face`}>Model on Hugging Face ↗</a>}
             {project.submissionUrl && <a href={project.submissionUrl} {...external} aria-label={`View ${project.title} on Devpost`}>Award on Devpost ↗</a>}
+            {project.certificateUrl && <a href={project.certificateUrl} {...external} aria-label={`View certificate for ${project.title}`}>Certificate ↗</a>}
             {project.leaderboardUrl && <a href={project.leaderboardUrl} {...external} aria-label={`Official leaderboard: ${project.title}`}>Official leaderboard ↗</a>}
           </div>
           <details className="academic-details"><summary>Project details</summary>
@@ -145,7 +146,12 @@ export default function AcademicPage() {
         <div className="academic-entries">{recognitions.map(item => <DatedEntry key={item.id} date={item.year}>
           <h3>{item.title}</h3><p>{item.issuer}</p>
           {item.badge && <p className="academic-result">{item.badge}</p>}
-          {item.sourceUrl && <a href={item.sourceUrl} {...external} aria-label={`${item.sourceLabel || 'Official leaderboard'}: ${item.title}`}>{item.sourceLabel || 'Official leaderboard'} ↗</a>}
+          {(item.sourceUrl || item.certificateUrl) && (
+            <div className="academic-links">
+              {item.sourceUrl && <a href={item.sourceUrl} {...external} aria-label={`${item.sourceLabel || 'Official leaderboard'}: ${item.title}`}>{item.sourceLabel || 'Official leaderboard'} ↗</a>}
+              {item.certificateUrl && <a href={item.certificateUrl} {...external} aria-label={`${item.certificateLabel || 'View certificate'}: ${item.title}`}>{item.certificateLabel || 'View certificate'} ↗</a>}
+            </div>
+          )}
         </DatedEntry>)}</div>
       </Section>
 

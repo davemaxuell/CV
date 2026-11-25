@@ -23,6 +23,7 @@ export const ProjectModal = ({ project, onClose }: { project: Project | null; on
         <p>{project.description}</p>
         {project.highlights.length > 0 && <ul>{project.highlights.map((item) => <li key={item}>{item}</li>)}</ul>}
         <p className="document-tools">{project.tags.join(' · ')}</p>
+        {project.certificateUrl && <a className="project-link" href={project.certificateUrl} target="_blank" rel="noopener noreferrer">Certificate ↗</a>}
         {project.leaderboardUrl && <a className="project-link" href={project.leaderboardUrl} target="_blank" rel="noopener noreferrer">Official leaderboard ↗</a>}
       </div>
     </motion.div>
