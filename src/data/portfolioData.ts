@@ -527,8 +527,8 @@ export const recognitions: RecognitionItem[] = [
     issuer: "GIBC Organizing Team",
     year: "Oct. 2026",
     badge: "3rd Place (Bronze) · Track 01: Foundational LLM Development",
-    sourceUrl: "https://devpost.com/software/slm_v1",
-    sourceLabel: "Award on Devpost"
+    sourceUrl: "https://drive.google.com/file/d/1e1Mr9KybD5GiCZdkcXQ0HNd9Cyi05got/view",
+    sourceLabel: "View Bronze certificate"
   },
   {
     id: "rec-malpyeong-2026",
