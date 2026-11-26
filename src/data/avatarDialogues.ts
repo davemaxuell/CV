@@ -155,7 +155,7 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
     lines: [
       "Cheongeum is a voice-first desktop and web AI assistant helping visually impaired users navigate Korean public-service sites.",
       "I connected OpenAI gpt-live-1.1 voice, Stagehand v4, Playwright, and 461+ Korean welfare APIs with sensitive-field guardrails.",
-      "The assistant reads local PDF and HWPX files, guides forms step by step, and achieved 9/10 live-site task success across 273 tests.",
+      "The assistant reads local PDF and HWPX files and guides forms step by step with sensitive-field guardrails.",
     ],
   },
   'project:scg-lm-v2': {

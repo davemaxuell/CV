@@ -359,12 +359,11 @@ export const projects: Project[] = [
     subtitle: "Self-web-surfing voice AI assistant for digitally underprivileged users",
     affiliation: "Team Hunmin-Cheongeum",
     period: "Nov. 2026 – Present",
-    result: "9/10 live-site task success · 273 automated tests",
     description: "Built a voice-first desktop and web AI assistant (TypeScript, React, Electron) helping visually impaired users and newcomers navigate Korean public-service websites in Korean, English, Chinese, and Japanese.",
     highlights: [
       "Connected OpenAI gpt-live-1.1 for real-time voice conversation and read-aloud, gpt-transcribe for speech-to-text, and text-embedding-3-small for saved notes.",
       "Integrated Stagehand v4 and Playwright browser control with official Korean welfare APIs (461+ programs), local PDF/HWPX file reading, and SQLite/pgvector storage to guide users through forms step by step.",
-      "Added screenshot guardrails for sensitive fields so users handle login and final submissions directly; passed 273 automated tests with 9/10 live-site task success."
+      "Added screenshot guardrails for sensitive fields so users handle login and final submissions directly."
     ],
     tags: ["Voice AI", "Stagehand v4", "Playwright", "Electron", "pgvector"]
   },
@@ -426,7 +425,6 @@ export const projects: Project[] = [
     subtitle: "Bilingual regulatory data modeling workspace & LangGraph hybrid RAG",
     affiliation: "Daewoong Foundation Global Scholarship Program | AI & Design Thinking",
     period: "Sept. 2026",
-    result: "767 FDA letters · Bilingual EN/KO",
     description: "Built an evidence-first bilingual (EN/KO) regulatory intelligence workspace with Next.js, FastAPI, PostgreSQL/pgvector, and LangGraph hybrid RAG across 767 U.S. FDA warning letters.",
     highlights: [
       "Structured U.S. FDA drug warning letters and GMP trends for evidence-grounded regulatory review.",
