@@ -11,7 +11,6 @@ import { InstitutionLogo } from '../components/InstitutionLogo';
 import { useSmoothScroll } from '../components/useSmoothScroll';
 import portrait from '../assets/images/dave-profile.jpg';
 
-const cvUrl = 'https://docs.google.com/document/d/1UeQordLd55N3Tvdrse-tNfqrjUSfOBhcgXU6Df60-9c/edit?tab=t.0';
 const portfolioUrl = 'https://dave-maxuell-cv.vercel.app/';
 const academicIds = ['bufs-present', 'unist-intern', 'bufs-bgcf', 'teaching-assistant'];
 const chronologicalPublications = [...publications].sort((a, b) => Number(b.year) - Number(a.year));
@@ -58,7 +57,7 @@ export default function AcademicPage() {
           {socialLinks.map(link => <a key={link.name} href={link.href} {...external} aria-label={link.name} title={link.name}>
             <img src={`/links/${link.icon}`} alt="" width="18" height="18" />
           </a>)}
-          <a href={cvUrl} {...external}>View CV</a>
+          <a href={personalInfo.cvUrl} {...external}>View CV</a>
         </nav>
         <button className="academic-menu-toggle" type="button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="academic-navigation" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button>
         <nav id="academic-navigation" className={`academic-navigation ${menuOpen ? 'is-open' : ''}`} aria-label="Sections" onKeyDown={event => { if (event.key === 'Escape') { setMenuOpen(false); document.querySelector<HTMLButtonElement>('.academic-menu-toggle')?.focus(); } }}>
@@ -170,7 +169,7 @@ export default function AcademicPage() {
       <footer className="academic-footer" id="contact">
         <p>{personalInfo.name} · {personalInfo.location}</p>
         <p><a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a><span aria-hidden="true"> · </span><a href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, '')}`}>{personalInfo.phone}</a></p>
-        <p><a href={cvUrl} {...external}>View CV ↗</a><span aria-hidden="true"> · </span><a href={portfolioUrl} {...external}>Interactive portfolio ↗</a></p>
+        <p><a href={personalInfo.cvUrl} {...external}>View CV ↗</a><span aria-hidden="true"> · </span><a href={portfolioUrl} {...external}>Interactive portfolio ↗</a></p>
       </footer>
     </main>
   </>;

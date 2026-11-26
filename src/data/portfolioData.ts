@@ -11,6 +11,7 @@ export const personalInfo = {
   github: "https://github.com/davemaxuell",
   linkedin: "https://www.linkedin.com/in/dave-maxuell-b39185224/",
   scholar: "https://scholar.google.com/citations?user=DpN3XPYAAAAJ&hl=en",
+  cvUrl: "https://docs.google.com/document/d/1fJ1FdzzXGrje7FAMMglRCvJLzkBgA7TI/edit#heading=h.fpj7oqtimrw9",
   aboutIntro: [
     "I'm an undergraduate student based in Busan, South Korea, actively researching AI. Messy documents and tricky questions are my kind of problem. My current focus is large language models (LLMs), natural language processing (NLP), vision-language models (VLMs), and retrieval-augmented generation (RAG).",
     "I conduct research at Busan University of Foreign Studies and currently intern at UNIST's Interactive Multimodal Machine Learning Lab. I take ideas from experiments to working systems, then test how well they hold up. My work has earned Excellent Paper Awards at HCLT and KIISE.",

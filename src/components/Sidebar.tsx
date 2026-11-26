@@ -39,7 +39,7 @@ export const Sidebar = ({
       <div className="profile-actions">
         <a
           className="secondary-button"
-          href="https://docs.google.com/document/d/1UeQordLd55N3Tvdrse-tNfqrjUSfOBhcgXU6Df60-9c/edit?tab=t.0"
+          href={personalInfo.cvUrl}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => {

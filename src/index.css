@@ -761,6 +761,23 @@ textarea:focus-visible {
   background: var(--accent-soft);
   color: var(--accent);
 }
+.link-grid .link-card--featured {
+  grid-column: 1 / -1;
+  border: 1px solid var(--line);
+}
+.link-grid .link-card--featured:hover {
+  border-color: var(--accent);
+}
+.link-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.link-note {
+  font-size: 13px;
+  opacity: 0.78;
+}
 .link-grid svg {
   flex-shrink: 0;
 }

@@ -10,7 +10,7 @@ from playwright.sync_api import sync_playwright, expect
 URL = os.environ.get('CV_TEST_URL', 'http://127.0.0.1:4174')
 OUT = Path(__file__).resolve().parents[1] / '.artifacts' / 'academic'
 OUT.mkdir(parents=True, exist_ok=True)
-CV_URL = 'https://docs.google.com/document/d/1UeQordLd55N3Tvdrse-tNfqrjUSfOBhcgXU6Df60-9c/edit?tab=t.0'
+CV_URL = 'https://docs.google.com/document/d/1fJ1FdzzXGrje7FAMMglRCvJLzkBgA7TI/edit#heading=h.fpj7oqtimrw9'
 
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=True, channel='msedge')

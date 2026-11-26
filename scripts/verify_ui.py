@@ -87,9 +87,13 @@ with sync_playwright() as p:
             page.get_by_role('button',name='Open profile menu').click()
             page.locator('#mobile-profile-menu').wait_for()
         cv_link=page.get_by_role('link',name='View CV',exact=True).filter(visible=True)
-        assert cv_link.get_attribute('href')=='https://docs.google.com/document/d/1UeQordLd55N3Tvdrse-tNfqrjUSfOBhcgXU6Df60-9c/edit?tab=t.0'
+        assert cv_link.get_attribute('href')=='https://docs.google.com/document/d/1fJ1FdzzXGrje7FAMMglRCvJLzkBgA7TI/edit#heading=h.fpj7oqtimrw9'
         assert cv_link.get_attribute('target')=='_blank'
         assert 'noopener' in cv_link.get_attribute('rel')
+        paper_cv_link=page.locator('#links').get_by_role('link',name='Paper CV (Google Docs)',exact=True)
+        assert paper_cv_link.get_attribute('href')=='https://docs.google.com/document/d/1fJ1FdzzXGrje7FAMMglRCvJLzkBgA7TI/edit#heading=h.fpj7oqtimrw9'
+        assert paper_cv_link.get_attribute('target')=='_blank'
+        assert 'noopener' in paper_cv_link.get_attribute('rel')
         assert page.locator('.contact-form').evaluate('(f)=>!f.checkValidity()')
         assert page.get_by_role('button',name='Open email draft',exact=True).count()==1
         page.evaluate('document.activeElement.blur(); window.scrollTo(0,0)')
