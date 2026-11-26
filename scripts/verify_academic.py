@@ -100,6 +100,8 @@ with sync_playwright() as p:
         project.locator('summary').click()
 
         # Scroll every image into view so lazy tech logos are actually decoded.
+        tech_text = page.locator('#skills').inner_text()
+        assert all(s in tech_text for s in ('LangChain', 'CUDA', 'Claude Code', 'Codex', 'Cursor'))
         for image in page.locator('img').all():
             image.scroll_into_view_if_needed()
             expect(image).to_have_js_property('complete', True)

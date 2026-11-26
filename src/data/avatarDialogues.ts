@@ -473,9 +473,9 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
   'tech:FastAPI': {
     label: 'FastAPI',
     lines: [
-      "I used FastAPI in the Daewoong regulatory agent. It belongs to the backend side of my toolkit.",
+      "I use FastAPI in projects such as PharmaAgent OS. It belongs to the backend side of my toolkit.",
       "My stack includes FastAPI for backend services. Research tools also need a way to connect with applications.",
-      "I list FastAPI in projects such as Silla Road, alongside the retrieval and model tools powering the service.",
+      "I list FastAPI alongside the retrieval and model tools powering my end-to-end AI services.",
     ],
   },
   'tech:PostgreSQL': {
@@ -500,6 +500,46 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
       "I use Slack for team collaboration. The toolkit includes a place for conversations as well as code.",
       "My collaboration tools include Slack. Research projects involve people exchanging ideas alongside the technical work.",
       "I list Slack here for team communication. Every tool in the stack doesn't have to train a model!",
+    ],
+  },
+  'tech:LangChain': {
+    label: 'LangChain',
+    lines: [
+      "I use LangChain and LangGraph to connect document parsing, hybrid retrieval, and tool-calling agents.",
+      "My BUFS and PharmaAgent OS pipelines build on LangChain and LangGraph for grounded RAG workflows.",
+      "Orchestration ties individual models and vector stores together into reliable end-to-end applications.",
+    ],
+  },
+  'tech:CUDA': {
+    label: 'CUDA',
+    lines: [
+      "I train and post-train models on NVIDIA GPUs including H100 and A6000 nodes with CUDA acceleration.",
+      "From 45B-token pretraining to VLM post-training and vLLM serving, CUDA runs underneath the heavy lifting.",
+      "My UNIST simulation and model-training workflows also rely on NVIDIA's GPU stack and Isaac Sim.",
+    ],
+  },
+  'tech:Claude Code': {
+    label: 'Claude Code',
+    lines: [
+      "I use Claude Code as part of my daily agentic development workflow for building, refactoring, and debugging.",
+      "Working effectively with coding agents helps me move quickly from research ideas to tested systems.",
+      "Claude Code sits alongside Codex and Cursor in how I build and ship software.",
+    ],
+  },
+  'tech:Codex': {
+    label: 'Codex',
+    lines: [
+      "I use OpenAI Codex in my engineering workflow for fast iteration, code exploration, and automated verification.",
+      "Pairing coding agents with thorough test suites keeps rapid development grounded in working checks.",
+      "Codex is one of the agentic coding tools I use alongside Claude Code and Cursor.",
+    ],
+  },
+  'tech:Cursor': {
+    label: 'Cursor',
+    lines: [
+      "Cursor is my primary AI-assisted IDE for writing TypeScript, Python, and PyTorch code.",
+      "I combine Cursor's interactive editing with terminal coding agents to iterate on research and web apps.",
+      "From FastAPI backends to React frontends, Cursor is where most of the code comes together.",
     ],
   },
 };

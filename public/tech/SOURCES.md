@@ -16,3 +16,5 @@ Hugging Face uses its full-color original: https://huggingface.co/front/assets/h
 Curated display: Python, PyTorch, Hugging Face, FastAPI, PostgreSQL, Next.js. New marks: https://github.com/simple-icons/simple-icons/tree/develop/icons (python.svg, postgresql.svg, nextdotjs.svg), CC0; unchanged geometry with fills #3776AB, #4169E1, #000000. Other retained assets are not displayed.
 
 Slack: full-color mark from https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png, linked by the official https://slack.com/media-kit page. Added to the displayed stack at the owner's request; used for product identification.
+
+Added 2026-11-26: LangChain (`langchain.svg`), CUDA (`nvidia.svg`), Claude Code (`claude.svg`, Simple Icons `claude.svg` with fill `#D97757`), Codex (`openai.svg`, Simple Icons v11 `openai.svg` with fill `#10A37F`), and Cursor (`cursor.svg`, Simple Icons `cursor.svg` with fill `#000000`). SVG geometry unmodified.

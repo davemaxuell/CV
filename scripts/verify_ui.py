@@ -102,6 +102,8 @@ with sync_playwright() as p:
         assert paper_cv_link.get_attribute('href')=='https://docs.google.com/document/d/1fJ1FdzzXGrje7FAMMglRCvJLzkBgA7TI/edit#heading=h.fpj7oqtimrw9'
         assert paper_cv_link.get_attribute('target')=='_blank'
         assert 'noopener' in paper_cv_link.get_attribute('rel')
+        tech_text=page.locator('#tech-stack').inner_text()
+        assert all(s in tech_text for s in ('LangChain','CUDA','Claude Code','Codex','Cursor'))
         assert page.locator('.contact-form').evaluate('(f)=>!f.checkValidity()')
         assert page.get_by_role('button',name='Open email draft',exact=True).count()==1
         page.evaluate('document.activeElement.blur(); window.scrollTo(0,0)')

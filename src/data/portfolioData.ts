@@ -162,9 +162,14 @@ export const techStackPills = [
   { name: "Python", category: "Primary language", icon: "python.svg" },
   { name: "PyTorch", category: "Deep learning", icon: "pytorch.svg" },
   { name: "Hugging Face", category: "Transformers and model training", icon: "huggingface.svg" },
+  { name: "LangChain", category: "RAG and agent orchestration", icon: "langchain.svg" },
+  { name: "CUDA", category: "GPU acceleration and training", icon: "nvidia.svg" },
   { name: "FastAPI", category: "Python APIs", icon: "fastapi.svg" },
   { name: "PostgreSQL", category: "Data and vector storage", icon: "postgresql.svg" },
   { name: "Next.js", category: "Web applications", icon: "nextdotjs.svg" },
+  { name: "Claude Code", category: "AI coding agent", icon: "claude.svg" },
+  { name: "Codex", category: "AI coding agent", icon: "openai.svg" },
+  { name: "Cursor", category: "AI-assisted IDE", icon: "cursor.svg" },
   { name: "Slack", category: "Team collaboration", icon: "slack.png" }
 ];
 
