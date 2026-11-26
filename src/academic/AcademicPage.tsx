@@ -76,9 +76,9 @@ export default function AcademicPage() {
         <figure className="academic-portrait"><img src={portrait} alt="Dave Maxuell" width="960" height="1280" fetchPriority="high" /></figure>
         <p className="academic-email">Email: <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a></p>
         <div className="academic-bio">
-          <p>I'm an undergraduate student at <a href="#education">Busan University of Foreign Studies</a> (Prof. Pum-Mo Ryu), expecting to graduate in February 2027. Alongside my research at BUFS, I'm currently a research intern at UNIST's Interactive Multimodal Machine Learning Lab (Prof. Taehwan Kim).</p>
+          <p>I'm a graduating undergraduate student at <a href="#education">Busan University of Foreign Studies</a> (Prof. Pum-Mo Ryu), expecting to graduate in February 2027. Alongside my research at BUFS, I'm currently a research intern at UNIST's Interactive Multimodal Machine Learning Lab (Prof. Taehwan Kim).</p>
           <p>My work covers deep learning, LLM/VLM pretraining and post-training (SFT, LoRA/QLoRA, DPO, GRPO), multimodal document RAG, and AI agents. Across research and industry, my projects have raised Bank of Korea financial RAG evaluation from 66% to 89%, served 600+ students at 91% accuracy, and earned <a href="#publications">Excellent Paper Awards at HCLT and KIISE</a>.</p>
-          <p>I plan to pursue AI research further in graduate study, focusing on foundation models, vision-language-action (VLA), continuous vision-language navigation (VLN), multimodal reinforcement learning, and post-training.</p>
+          <p>I'm open to AI engineering and applied research roles starting in 2027, focusing on foundation models, AI agents, post-training, and reinforcement learning methods.</p>
         </div>
         <p className="academic-availability">{personalInfo.status} · <a href={`mailto:${personalInfo.email}`}>Get in touch</a></p>
       </section>

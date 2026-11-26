@@ -13,9 +13,9 @@ export const personalInfo = {
   scholar: "https://scholar.google.com/citations?user=DpN3XPYAAAAJ&hl=en",
   cvUrl: "https://docs.google.com/document/d/1fJ1FdzzXGrje7FAMMglRCvJLzkBgA7TI/edit#heading=h.fpj7oqtimrw9",
   aboutIntro: [
-    "I'm an undergraduate AI researcher and engineer based in Busan, South Korea, working across the full lifecycle from deep learning and LLM/VLM pretraining and post-training (SFT, LoRA/QLoRA, DPO, GRPO) to domain data modeling, enterprise multimodal RAG, and AI agents.",
+    "I'm a graduating undergraduate AI researcher and engineer (expected Feb. 2027), working across the full lifecycle from deep learning and LLM/VLM pretraining and post-training (SFT, LoRA/QLoRA, DPO, GRPO) to domain data modeling, enterprise multimodal RAG, and AI agents.",
     "I conduct research at Busan University of Foreign Studies (Prof. Pum-Mo Ryu) and intern at UNIST's Interactive Multimodal Machine Learning Lab (Prof. Taehwan Kim). Across industry and research, my work has raised Bank of Korea financial RAG evaluation from 66% to 89%, deployed an on-premise regulatory agent at Daewoong Pharmaceutical (88% reported satisfaction), served 600+ students with a six-language RAG chatbot (91% accuracy), earned Excellent Paper Awards at HCLT and KIISE, and won a Bronze Prize among 1,718 participants by pretraining a 46.3M-parameter language model from scratch.",
-    "I want to pursue AI research more deeply through graduate study, focusing on foundation models, vision-language-action (VLA), continuous vision-language navigation (VLN), multimodal reinforcement learning, and post-training."
+    "I'm looking for full-time AI engineering and applied ML roles starting in 2027, where I can build and ship production systems around foundation models, AI agents, post-training, and reinforcement learning methods."
   ]
 };
 
