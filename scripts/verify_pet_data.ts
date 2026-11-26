@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { avatarDialogues } from '../src/data/avatarDialogues';
-import { experiences, projects, publications, educationList, recognitions, languageSkills, skillCategories, techStackPills } from '../src/data/portfolioData';
+import { experiences, projects, publications, educationList, recognitions, languageSkills, certificates, skillCategories, techStackPills } from '../src/data/portfolioData';
 import { createDialogueDeck } from '../src/components/usePetDialogue';
 
 const expected = [
@@ -9,7 +9,7 @@ const expected = [
   ...projects.map(item => `project:${item.id}`),
   ...publications.map(item => `publication:${item.id}`),
   ...educationList.map(item => `education:${item.id}`),
-  ...[...recognitions, ...languageSkills].map(item => `recognition:${item.id}`),
+  ...[...recognitions, ...languageSkills, ...certificates].map(item => `recognition:${item.id}`),
   ...skillCategories.map(item => `skill:${item.id || item.title}`),
   ...techStackPills.map(item => `tech:${item.name}`),
 ];

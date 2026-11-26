@@ -76,6 +76,9 @@ with sync_playwright() as p:
         assert page.get_by_role('button',name='Read details: Korean Essay Scoring — AI Malpyeong',exact=True).count()==1
         assert '3rd Place (Bronze) · Track 01: Foundational LLM Development' in page.locator('#recognition').inner_text()
         assert page.get_by_role('link',name='Certificate (PDF): Global Innovation Build Challenge V2 — SLM_v2.1',exact=True).get_attribute('href')=='/certificates/GIBC_V2_SLM_v2_1_Bronze_Dave_Maxuell.pdf'
+        assert page.locator('#certificates .recognition-row').count()==5
+        assert page.get_by_role('link',name='View certificate: End-to-End Deep Learning (딥러닝 한번에 끝내기)',exact=True).get_attribute('href')=='https://drive.google.com/file/d/184AS_GqFYK33qzPr4QfVGMuaq2vQD98c/view?usp=sharing'
+        assert page.get_by_role('link',name='View certificate: MLOps Essentials: Model Deployment to Operations (MLOps의 정석: AI 모델 배포부터 운영까지)',exact=True).get_attribute('href')=='https://drive.google.com/file/d/1_y2flKGx9G1N49SX-_ISFBmgQGHVjJgv/view?usp=sharing'
         project_trigger=page.get_by_role('button',name='Read details: Silla Road Global',exact=True)
         project_trigger.click()
         dialog=page.get_by_role('dialog')

@@ -5,7 +5,7 @@
  * FORM: User-pinned https://hoyeonchang.github.io/; measured reference screenshots are the approved direction. */
 import { useState, type ReactNode } from 'react';
 import { Menu, X } from 'lucide-react';
-import { personalInfo, educationList, experiences, publications, projects, recognitions, languageSkills, skillCategories, techStackPills } from '../data/portfolioData';
+import { personalInfo, educationList, experiences, publications, projects, recognitions, languageSkills, certificates, skillCategories, techStackPills } from '../data/portfolioData';
 import type { Experience } from '../types';
 import { InstitutionLogo } from '../components/InstitutionLogo';
 import { useSmoothScroll } from '../components/useSmoothScroll';
@@ -164,6 +164,18 @@ export default function AcademicPage() {
           <DatedEntry date="Indonesian"><p>Native proficiency</p></DatedEntry>
           {languageSkills.map(language => <DatedEntry key={language.id} date={language.year}><h3>{language.title}</h3><p>{language.issuer}{language.badge && ` · ${language.badge}`}</p></DatedEntry>)}
         </div>
+      </Section>
+
+      <Section id="certificates" title="Certificates">
+        <div className="academic-entries">{certificates.map(item => <DatedEntry key={item.id} date={item.year}>
+          <h3>{item.title}</h3><p>{item.issuer}</p>
+          {item.badge && <p className="academic-result">{item.badge}</p>}
+          {item.certificateUrl && (
+            <div className="academic-links">
+              <a href={item.certificateUrl} {...external} aria-label={`${item.certificateLabel || 'View certificate'}: ${item.title}`}>{item.certificateLabel || 'View certificate'} ↗</a>
+            </div>
+          )}
+        </DatedEntry>)}</div>
       </Section>
 
       <footer className="academic-footer" id="contact">

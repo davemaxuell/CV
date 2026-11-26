@@ -603,6 +603,54 @@ export const languageSkills: RecognitionItem[] = [
   }
 ];
 
+export const certificates: RecognitionItem[] = [
+  {
+    id: "cert-aiffel-dl",
+    title: "End-to-End Deep Learning (딥러닝 한번에 끝내기)",
+    issuer: "AIFFEL Campus · Modulabs ((주) 모두의연구소)",
+    year: "Completed",
+    badge: "AIFFEL AI Learning System",
+    certificateUrl: "https://drive.google.com/file/d/184AS_GqFYK33qzPr4QfVGMuaq2vQD98c/view?usp=sharing",
+    certificateLabel: "View certificate"
+  },
+  {
+    id: "cert-aiffel-math",
+    title: "AI by Hand: Deep Learning Mathematics with Python (내 손으로 이해하는 딥러닝 기초수학)",
+    issuer: "AIFFEL Campus · Modulabs ((주) 모두의연구소)",
+    year: "Completed",
+    badge: "AIFFEL AI Learning System",
+    certificateUrl: "https://drive.google.com/file/d/1RqpL4i1tCOtc24q5s_DgcDTEadwk3s8G/view?usp=sharing",
+    certificateLabel: "View certificate"
+  },
+  {
+    id: "cert-aiffel-mlops",
+    title: "MLOps Essentials: Model Deployment to Operations (MLOps의 정석: AI 모델 배포부터 운영까지)",
+    issuer: "AIFFEL Campus · Modulabs ((주) 모두의연구소)",
+    year: "Completed",
+    badge: "AIFFEL AI Learning System",
+    certificateUrl: "https://drive.google.com/file/d/1_y2flKGx9G1N49SX-_ISFBmgQGHVjJgv/view?usp=sharing",
+    certificateLabel: "View certificate"
+  },
+  {
+    id: "cert-aiffel-genai-biz",
+    title: "Business Survival Strategy in the Generative AI Era (생성AI 시대 비즈니스 생존 전략)",
+    issuer: "AIFFEL Campus · Modulabs ((주) 모두의연구소)",
+    year: "Completed",
+    badge: "AIFFEL AI Learning System",
+    certificateUrl: "https://drive.google.com/file/d/1gsOygqOzmGmyRgZ3w5lCTvYl7ihIcOB0/view?usp=sharing",
+    certificateLabel: "View certificate"
+  },
+  {
+    id: "cert-aiffel-ethics",
+    title: "AI Ethics & Trustworthy AI Usage (직장인을 위한 AI 윤리: 신뢰할 수 있는 AI 활용법)",
+    issuer: "AIFFEL Campus · Modulabs ((주) 모두의연구소)",
+    year: "Completed",
+    badge: "AIFFEL AI Learning System",
+    certificateUrl: "https://drive.google.com/file/d/1-jquUqkMeSqZTd4U2FsV1DXEl4fvkzE5/view?usp=sharing",
+    certificateLabel: "View certificate"
+  }
+];
+
 export const contactLinks = [
   { label: "Book a call / Discussion", href: "mailto:davemaxuell@gmail.com?subject=Discussion%20or%20Meeting%20Request", external: true },
   { label: "GitHub Profile", href: "https://github.com/davemaxuell", external: true },

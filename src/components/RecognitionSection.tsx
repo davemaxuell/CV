@@ -1,5 +1,5 @@
 ﻿import { SectionBadge } from "./SectionBadge";
-import { recognitions, languageSkills } from "../data/portfolioData";
+import { recognitions, languageSkills, certificates } from "../data/portfolioData";
 import type { RecognitionItem } from "../types";
 const CredentialSection = ({ id, label, items }: { id: string; label: string; items: RecognitionItem[] }) => (
   <section id={id} data-avatar-context={id === 'language-skills' ? 'skills' : 'recognition'} className="cv-section">
@@ -30,3 +30,4 @@ const CredentialSection = ({ id, label, items }: { id: string; label: string; it
 
 export const RecognitionSection = () => <CredentialSection id="recognition" label="Recognition" items={recognitions} />;
 export const LanguageSkillsSection = () => <CredentialSection id="language-skills" label="Language Skills" items={languageSkills} />;
+export const CertificatesSection = () => <CredentialSection id="certificates" label="Certificates" items={certificates} />;

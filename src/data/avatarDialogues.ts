@@ -350,6 +350,46 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
       "I speak English, Korean, and Indonesian. This entry records my IELTS Academic certification from 2021.",
     ],
   },
+  'recognition:cert-aiffel-dl': {
+    label: 'Deep learning certificate',
+    lines: [
+      "I completed the End-to-End Deep Learning course through AIFFEL Campus by Modulabs.",
+      "This AIFFEL completion certificate covers core deep learning foundations alongside my hands-on model projects.",
+      "You can open the Google Drive certificate here to verify my AIFFEL deep learning coursework.",
+    ],
+  },
+  'recognition:cert-aiffel-math': {
+    label: 'Deep learning math certificate',
+    lines: [
+      "I completed AI by Hand: Deep Learning Mathematics with Python at AIFFEL Campus.",
+      "Working through neural network math by hand in Python strengthened how I reason about architectures and training.",
+      "This Modulabs AIFFEL certificate links directly to the Google Drive completion record.",
+    ],
+  },
+  'recognition:cert-aiffel-mlops': {
+    label: 'MLOps certificate',
+    lines: [
+      "I completed the MLOps Essentials course at AIFFEL Campus, covering deployment through operations.",
+      "Deploying AI systems reliably matters as much as training them, which drew me to this AIFFEL MLOps course.",
+      "You can view the AIFFEL MLOps completion certificate via the Google Drive link here.",
+    ],
+  },
+  'recognition:cert-aiffel-genai-biz': {
+    label: 'Generative AI strategy certificate',
+    lines: [
+      "I completed AIFFEL Campus's course on business survival strategy in the generative AI era.",
+      "Alongside model engineering, this AIFFEL certificate explores how generative AI fits into real-world business strategy.",
+      "The completion certificate from Modulabs AIFFEL is viewable directly on Google Drive here.",
+    ],
+  },
+  'recognition:cert-aiffel-ethics': {
+    label: 'AI ethics certificate',
+    lines: [
+      "I completed AIFFEL Campus's course on AI ethics and trustworthy AI usage.",
+      "Thinking carefully about responsible and trustworthy AI sits alongside my technical research.",
+      "You can view this Modulabs AIFFEL AI ethics certificate through the linked Google Drive document.",
+    ],
+  },
   'skill:multimodal-vlm': {
     label: 'Images meet language',
     lines: [
