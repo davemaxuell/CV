@@ -195,7 +195,7 @@ with sync_playwright() as playwright:
     check('mute persists across reload and suppresses hover', mute)
 
     def modal():
-        page.get_by_role('button', name='Read details: Silla Road Global', exact=True).click()
+        page.get_by_role('button', name='Read details: Cheongeum (청음) — Voice AI Public-Service Agent', exact=True).click()
         expect(page.get_by_role('dialog')).to_be_visible()
         expect(bubble(page)).to_have_count(0)
         page.locator('.project-document h2').hover()

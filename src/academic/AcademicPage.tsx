@@ -76,9 +76,9 @@ export default function AcademicPage() {
         <figure className="academic-portrait"><img src={portrait} alt="Dave Maxuell" width="960" height="1280" fetchPriority="high" /></figure>
         <p className="academic-email">Email: <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a></p>
         <div className="academic-bio">
-          <p>I'm an undergraduate student at <a href="#education">Busan University of Foreign Studies</a> in Busan, South Korea, expecting to graduate in February 2027. Alongside my research at BUFS, I'm currently a research intern at UNIST's Interactive Multimodal Machine Learning Lab.</p>
-          <p>My work focuses on <strong>LLMs, NLP, VLMs, and RAG</strong>. I learn through projects, paying close attention to the workflow, the training pipeline, and how reward methods shape model behavior. My research has received <a href="#publications">Excellent Paper Awards at HCLT and KIISE</a>.</p>
-          <p>I want to pursue AI research more deeply through graduate study. I'm especially curious about foundation models and model architecture, vision-language-action and navigation (VLA/VLN), reinforcement learning, and post-training.</p>
+          <p>I'm an undergraduate student at <a href="#education">Busan University of Foreign Studies</a> (Prof. Pum-Mo Ryu), expecting to graduate in February 2027. Alongside my research at BUFS, I'm currently a research intern at UNIST's Interactive Multimodal Machine Learning Lab (Prof. Taehwan Kim).</p>
+          <p>My work covers deep learning, LLM/VLM pretraining and post-training (SFT, LoRA/QLoRA, DPO, GRPO), multimodal document RAG, and AI agents. Across research and industry, my projects have raised Bank of Korea financial RAG evaluation from 66% to 89%, served 600+ students at 91% accuracy, and earned <a href="#publications">Excellent Paper Awards at HCLT and KIISE</a>.</p>
+          <p>I plan to pursue AI research further in graduate study, focusing on foundation models, vision-language-action (VLA), continuous vision-language navigation (VLN), multimodal reinforcement learning, and post-training.</p>
         </div>
         <p className="academic-availability">{personalInfo.status} · <a href={`mailto:${personalInfo.email}`}>Get in touch</a></p>
       </section>
@@ -161,12 +161,11 @@ export default function AcademicPage() {
 
       <Section id="languages" title="Languages">
         <div className="academic-entries">
-          <DatedEntry date="Indonesian"><p>Native proficiency</p></DatedEntry>
           {languageSkills.map(language => <DatedEntry key={language.id} date={language.year}><h3>{language.title}</h3><p>{language.issuer}{language.badge && ` · ${language.badge}`}</p></DatedEntry>)}
         </div>
       </Section>
 
-      <Section id="certificates" title="Certificates">
+      <Section id="certificates" title="Course Completion Certificates">
         <div className="academic-entries">{certificates.map(item => <DatedEntry key={item.id} date={item.year}>
           <h3>{item.title}</h3><p>{item.issuer}</p>
           {item.badge && <p className="academic-result">{item.badge}</p>}

@@ -46,7 +46,7 @@ with sync_playwright() as p:
         page.locator('#skill-detail').wait_for()
         page.locator('.skill-chip').first.click()
         page.locator('#projects').scroll_into_view_if_needed()
-        assert page.locator('.project-grid .project-card').count()==9
+        assert page.locator('.project-grid .project-card').count()==7
         assert page.locator('.project-grid').evaluate('(e)=>e.scrollWidth<=e.clientWidth')
         for title in page.locator('.resume-title').all():
             assert title.evaluate('(e)=>e.scrollWidth<=e.clientWidth+1'), title.inner_text()
@@ -62,11 +62,12 @@ with sync_playwright() as p:
         assert '3 first-author works' in page.locator('#publications .section-context').inner_text()
         for link in page.locator('.cv-navigation a').all():
             assert page.locator(link.get_attribute('href')).count()==1
+        assert 'Cheongeum (청음)' in page.locator('#projects').inner_text()
+        assert 'SGIS Dongne Type' not in page.locator('#projects').inner_text()
+        assert 'Silla Road' not in page.locator('#projects').inner_text()
+        assert 'XAI · Hallucination' not in page.locator('#projects').inner_text()
         assert page.get_by_role('link',name='View project: PharmaAgent OS',exact=True).get_attribute('href')=='https://pharmaagent-os-ochre.vercel.app/'
         assert page.get_by_role('link',name="View Factors Affecting Korea's Tourism Industry on GitHub",exact=True).get_attribute('href')=='https://github.com/davemaxuell/korea-tourism-forecasting'
-        sgis_github=page.get_by_role('link',name='View SGIS Dongne Type — Neighborhood Explorer on GitHub',exact=True)
-        assert sgis_github.get_attribute('href')=='https://github.com/mjeon01/sgis-dongne-type'
-        assert sgis_github.locator('img[src$="/links/github.svg"]').count()==1
         assert page.get_by_role('link',name='View SLM_v2.1 — 46M Language Model on GitHub',exact=True).get_attribute('href')=='https://github.com/davemaxuell/Global-Innovation-Build-Challenge-V2'
         assert page.get_by_role('link',name='View SLM_v2.1 — 46M Language Model on Hugging Face',exact=True).get_attribute('href')=='https://huggingface.co/davemaxuellkr/Global-Innovation-Build-Challenge-V2'
         assert page.get_by_role('link',name='View SLM_v2.1 — 46M Language Model on Devpost',exact=True).get_attribute('href')=='https://devpost.com/software/slm_v1'
@@ -76,10 +77,14 @@ with sync_playwright() as p:
         assert page.get_by_role('button',name='Read details: Korean Essay Scoring — AI Malpyeong',exact=True).count()==1
         assert '3rd Place (Bronze) · Track 01: Foundational LLM Development' in page.locator('#recognition').inner_text()
         assert page.get_by_role('link',name='Certificate (PDF): Global Innovation Build Challenge V2 — SLM_v2.1',exact=True).get_attribute('href')=='/certificates/GIBC_V2_SLM_v2_1_Bronze_Dave_Maxuell.pdf'
+        assert 'Course Completion Certificates' in page.locator('#certificates').inner_text()
         assert page.locator('#certificates .recognition-row').count()==5
         assert page.get_by_role('link',name='View certificate: End-to-End Deep Learning (딥러닝 한번에 끝내기)',exact=True).get_attribute('href')=='https://drive.google.com/file/d/184AS_GqFYK33qzPr4QfVGMuaq2vQD98c/view?usp=sharing'
         assert page.get_by_role('link',name='View certificate: MLOps Essentials: Model Deployment to Operations (MLOps의 정석: AI 모델 배포부터 운영까지)',exact=True).get_attribute('href')=='https://drive.google.com/file/d/1_y2flKGx9G1N49SX-_ISFBmgQGHVjJgv/view?usp=sharing'
-        project_trigger=page.get_by_role('button',name='Read details: Silla Road Global',exact=True)
+        lang_text=page.locator('#language-skills').inner_text()
+        assert all(s in lang_text for s in ('Indonesian — Native','Korean — TOPIK Level 6','English — TOEIC 955','English — IELTS Academic 7.5'))
+        assert 'Highest Tier' not in lang_text and 'Proficiency' not in lang_text
+        project_trigger=page.get_by_role('button',name='Read details: Cheongeum (청음) — Voice AI Public-Service Agent',exact=True)
         project_trigger.click()
         dialog=page.get_by_role('dialog')
         dialog.wait_for()

@@ -97,113 +97,97 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
   'experience:bufs-present': {
     label: 'Research at BUFS',
     lines: [
-      "At BUFS, I research multilingual document retrieval and Korean handwriting. Text and images both get a seat at the table.",
-      "I'm an undergraduate researcher in the Multimodal AI & NLP Research Lab, working on documents and vision-language models.",
-      "My BUFS work includes adapting document indexing and verifying answers. Finding information is only part of the job.",
+      "At BUFS with Prof. Pum-Mo Ryu, I research multilingual RAG, multimodal document understanding, and Korean handwriting analysis.",
+      "I trained PaddleOCR-VL, Docling, ColPali, and ColQwen with SFT and post-training (DPO, GRPO, TPO), lifting accuracy by +14.6pt on one H100 GPU.",
+      "My BUFS research has produced three HCLT papers and one KIISE paper, including two Excellent Paper Awards.",
     ],
   },
   'experience:unist-intern': {
     label: 'Research at UNIST',
     lines: [
-      "At UNIST, I investigate models that connect seeing, language, and actions, with attention to risks and feasibility.",
-      "My UNIST internship explores specialized model routing for spatial reasoning and hazard awareness. Different experts, different parts of the problem.",
-      "I prepared research plans and a VLA architecture at UNIST, using tools including PyTorch and Isaac Sim.",
+      "At UNIST with Prof. Taehwan Kim, I work on HD KSOE blueprint VLM-RAG, risk-aware VLA backbones, and continuous VLN.",
+      "I led continuous VLN experiments on R2R-CE and RxR-CE in Matterport3D with Qwen3.5-4B, raising success rate by +8.2pt.",
+      "My UNIST internship also spans ColQwen layout-aware chunking and SFT/GRPO VLA experiments with NVIDIA Isaac Sim.",
     ],
   },
   'experience:daewoong-pharma': {
     label: 'Daewoong Pharmaceutical',
     lines: [
-      "At Daewoong, I built an agent that monitored regulatory updates and turned relevant information into summaries and alerts.",
-      "My Daewoong internship involved retrieving information across 22 regulatory and industry websites. That was a lot of sources to organize!",
-      "I worked with the Quality Assurance team on regulatory intelligence. The operation reported 88% employee satisfaction.",
+      "At Daewoong, I solo-built an on-premise regulatory AI agent that monitors GMP and FDA updates across 22 websites.",
+      "My local pipeline uses Qwen3.6 27B with vLLM, structured tool calling, and RAG over internal SOP and GMP documents.",
+      "I worked with the Quality Assurance team on this internal deployment, which reported 88% employee satisfaction.",
     ],
   },
   'experience:teddysum-bok': {
     label: 'Financial document retrieval',
     lines: [
-      "I evaluated financial-document retrieval for TeddySum and the Bank of Korea. Dense tables made this an interesting challenge.",
-      "My freelance work examined roughly 40 financial and macroeconomic documents, tracking where retrieval failed or answers went off course.",
-      "I refined reranking in this financial RAG work. The reported evaluation accuracy increased from 66% to 89%.",
+      "As a freelance AI engineer for TeddySum and the Bank of Korea, I evaluated internal financial RAG with RAGAS and LLM-as-Judge.",
+      "I implemented BM25 and BGE-M3 hybrid retrieval, reciprocal rank fusion, and BGE-Reranker-v2-M3 cross-encoder reranking.",
+      "These retrieval and semantic-chunking upgrades raised the reported Bank of Korea evaluation score from 66% to 89%.",
     ],
   },
   'experience:bufs-bgcf': {
     label: 'Helping international students',
     lines: [
-      "For BGCF, I developed a six-language chatbot for international students. It connected document retrieval with question answering.",
-      "My BGCF chatbot reached more than 600 international students. This research had people on the other end of the answers.",
-      "I used LangChain, Qdrant, and Docling for this student-support service, with automated evaluation to check its answers.",
+      "For BUFS and BGCF, I developed a six-language RAG chatbot grounded in university guidelines and regulations.",
+      "My chatbot reached more than 600 international students, with 91% reported answer accuracy and 84% satisfaction.",
+      "I used LangChain, Qdrant, and Docling to parse regulations and connect multilingual retrieval to question answering.",
     ],
   },
   'experience:oriental-precision': {
-    label: 'Research assistant at Oriental',
+    label: 'AI intern at Oriental',
     lines: [
-      "I worked as a research assistant at Oriental Precision, combining video and LiDAR for worker detection around ship cranes.",
-      "My research assistant work included crane speed and lever-control constraints. Detecting a worker was only one piece of the safety logic.",
-      "At Oriental Precision, I worked with C, YOLOv8, and CAD coordinates on a real-time worker-detection system.",
+      "I worked as an AI engineer intern at Oriental Precision, combining video and LiDAR for worker detection around ship cranes.",
+      "My work incorporated crane and lever-control constraints into hazard-aware human and obstacle detection logic.",
+      "At Oriental Precision, I built the real-time worker-detection system using video, LiDAR, and YOLOv8.",
     ],
   },
   'experience:teaching-assistant': {
     label: 'Teaching assistant',
     lines: [
-      "As a teaching assistant, I helped students explore attention mechanisms, prompt engineering, and the basics of language models.",
-      "I supported coding and fine-tuning exercises with PyTorch and Hugging Face Transformers. This work involved explaining as well as implementing.",
-      "My teaching assistant role supported introductory LLM instruction at BUFS. Plenty of ideas to turn into working code!",
+      "As teaching assistant for Prof. Jihun Kang, I supported English-taught Machine Learning and Introductory LLM courses.",
+      "I guided hands-on coding and fine-tuning labs using PyTorch and Hugging Face Transformers.",
+      "My teaching assistant role ran from February to July 2026 across ML theory and introductory LLM labs.",
+    ],
+  },
+  'project:cheongeum-voice-agent': {
+    label: 'Cheongeum voice agent',
+    lines: [
+      "Cheongeum is a voice-first desktop and web AI assistant helping visually impaired users navigate Korean public-service sites.",
+      "I connected OpenAI gpt-live-1.1 voice, Stagehand v4, Playwright, and 461+ Korean welfare APIs with sensitive-field guardrails.",
+      "The assistant reads local PDF and HWPX files, guides forms step by step, and achieved 9/10 live-site task success across 273 tests.",
     ],
   },
   'project:scg-lm-v2': {
     label: 'SLM_v2.1',
     lines: [
-      "I trained SCG-LM V2 from scratch: 46.3 million parameters and 45 billion English training tokens.",
-      "The base model trained for 31.9 hours on one H100. Its weights and evaluation records are public.",
-      "My SLM_v2.1 submission placed 3rd for Bronze in the Foundational LLM Development track at Global Innovation Build Challenge V2. Both the Devpost award and certificate are linked.",
-    ],
-  },
-  'project:sgis-dongne-type': {
-    label: 'SGIS Dongne Type',
-    lines: [
-      "I built SGIS Dongne Type to explore South Korean neighborhoods through population, household, and business statistics.",
-      "My neighborhood explorer uses 16 types and ten shared indicators to help people discover and compare statistically similar places.",
-      "The project combines Next.js, MapLibre maps, and FastAPI. You can explore the live site or read the code from this card.",
+      "I trained SCG-LM V2 from scratch: a 46.3M-parameter Llama-style decoder pretrained on 45.0B English tokens.",
+      "The base model trained for 31.9 hours on one H100 across 22.5B unique curated tokens from five sources.",
+      "My SLM_v2.1 submission placed 3rd for Bronze among 1,718 participants at Global Innovation Build Challenge V2.",
     ],
   },
   'project:malpyeong-writing-2026': {
     label: 'Korean essay scoring',
     lines: [
-      "I designed a training pipeline for scoring Korean essays and explaining the scores, reaching top 19 out of 148 model submissions.",
-      "My AI Malpyeong work combined supervised fine-tuning and preference training, with experiments in GRPO and reasoning distillation.",
-      "I worked on essay scores and supporting explanations across content, organization, and expression, and published the writer model on Hugging Face.",
+      "I fine-tuned Qwen/Qwen3.5-9B as a score-conditioned Korean essay rationale writer, reaching top 19 out of 148 model submissions.",
+      "My AI Malpyeong pipeline combined SFT, DPO distillation from Qwen3.6-35B, and GRPO on two H100 GPUs.",
+      "The model reached 4.3926 overall rationale quality, and the Hugging Face model and official leaderboard are both linked.",
     ],
   },
   'project:pharmaagent-os': {
     label: 'PharmaAgent OS',
     lines: [
-      "My PharmaAgent OS project is a research workspace for FDA drug warning letters, with source-cited briefs and conversational search.",
-      "I built PharmaAgent OS with English–Korean support. It brings search and cited summaries into one research workspace.",
-      "My PharmaAgent OS stack includes Next.js, FastAPI, and PostgreSQL. The live project and repository are linked on its card.",
-    ],
-  },
-  'project:silla-road': {
-    label: 'Silla Road Global',
-    lines: [
-      "I'm working on a Gyeongju tourism assistant that uses tourism data to answer questions in four languages.",
-      "My Silla Road work connects tourism information with retrieval and source citations. Recommendations should have something concrete behind them.",
-      "For Silla Road, I built retrieval around Korea Tourism Organization data, with maps and itinerary-aware recommendations in the project.",
+      "Built for the Daewoong Foundation Global Scholarship Program, PharmaAgent OS is a bilingual EN/KO regulatory intelligence workspace.",
+      "I connected Next.js, FastAPI, PostgreSQL/pgvector, and LangGraph hybrid RAG across 767 U.S. FDA drug warning letters.",
+      "The workspace supports structured data modeling and evidence-grounded review, with both the live app and repo linked here.",
     ],
   },
   'project:handwriting-agent': {
     label: 'Korean handwriting feedback',
     lines: [
-      "I built an agent that reads Korean handwriting and explains grammatical errors step by step. A little feedback beyond transcription.",
-      "My handwriting project combines vision-language models with fine-tuning. It aims to locate learner errors and explain corrections.",
-      "I created synthetic handwriting data for this project and evaluated recognition, error detection, and correction separately.",
-    ],
-  },
-  'project:xai-hallucination': {
-    label: 'Understanding AI hallucinations',
-    lines: [
-      "I wrote a white paper and tutorial about hallucinations in language models, focusing on structured information extraction.",
-      "My explainable-AI work includes tutorials on feature attribution and attention visualization. I wanted to make those methods easier to explore.",
-      "I compared factual consistency with and without retrieved sources here. The tutorial walks through ways to investigate model answers.",
+      "Team Naratmalssami placed Top 80 out of 721 teams in the Nationwide AI Competition Rookie Track with this handwriting agent.",
+      "I expanded 152 real samples to 5,000 synthetic error-injected handwriting images using a Korean-trained OneDM diffusion model.",
+      "The pipeline combines Qwen SFT, EXAONE 4.5 GRPO for error detection, and Upstage Solar as LLM-as-Judge.",
     ],
   },
   'project:lightweight-rag': {
@@ -305,9 +289,9 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
   'recognition:rec-ai-competition': {
     label: 'Nationwide AI Competition',
     lines: [
-      "I joined the Nationwide AI Competition's rookie track with Team 나랏말싸미, working on Korean handwriting feedback.",
-      "My team's competition project connects handwriting recognition with grammatical feedback. The project card explains the models and evaluation.",
-      "I'm part of Team 나랏말싸미 in the 2026 rookie track. Our work focuses on Korean handwriting and learner errors.",
+      "Team Naratmalssami placed Top 80 out of 721 teams in the Nationwide AI Competition Rookie Track.",
+      "Our competition project connects Korean handwriting recognition with OneDM synthetic data and grammatical feedback.",
+      "I paired Qwen SFT, EXAONE 4.5 GRPO, and Upstage Solar in the feedback pipeline.",
     ],
   },
   'recognition:rec-scholarship': {
@@ -324,6 +308,14 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
       "I received the GKS-U Scholarship in 2022. It's another part of my education story here in South Korea.",
       "My GKS-U Scholarship dates to 2022. This entry records that early milestone alongside the more recent ones.",
       "I'm a 2022 GKS-U Scholarship awardee. You can explore my university and language studies in the education section.",
+    ],
+  },
+  'recognition:rec-indonesian': {
+    label: 'Native Indonesian',
+    lines: [
+      "Indonesian is my native language, alongside the Korean and English certifications listed here.",
+      "I speak Indonesian natively and work academically in both English and Korean.",
+      "This entry notes my native Indonesian alongside my TOPIK, TOEIC, and IELTS certifications.",
     ],
   },
   'recognition:rec-topik': {

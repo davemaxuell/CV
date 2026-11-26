@@ -43,8 +43,9 @@ with sync_playwright() as p:
         assert page.locator('#publications article').count() == 4
         publication_years = [int(re.search(r'20\d{2}', venue).group()) for venue in page.locator('.academic-venue').all_text_contents()]
         assert publication_years == sorted(publication_years, reverse=True)
-        assert page.locator('#projects article').count() == 9
+        assert page.locator('#projects article').count() == 7
         assert page.locator('#recognition article').count() == 7
+        assert 'Course Completion Certificates' in page.locator('#certificates').inner_text()
         assert page.locator('#certificates article').count() == 5
         assert page.get_by_text('Published in proceedings', exact=True).count() == 2
         hclt_links = page.get_by_role('link', name='View paper on KoreaScience:', exact=False)
@@ -56,9 +57,14 @@ with sync_playwright() as p:
         assert page.locator('#publications .academic-result').filter(has_text='Excellent Paper Award').count() == 2
         assert '3 first-author works listed' in page.locator('#publications').inner_text()
         assert 'Top 19 out of 148 model submissions' in page.locator('#projects').inner_text()
-        assert 'GKS-U Scholarship' in page.locator('#recognition').inner_text()
+        assert 'Cheongeum (청음)' in page.locator('#projects').inner_text()
+        assert 'SGIS Dongne Type' not in page.locator('#projects').inner_text()
+        assert 'Silla Road' not in page.locator('#projects').inner_text()
+        assert 'XAI · Hallucination' not in page.locator('#projects').inner_text()
+        assert 'Global Korea Scholarship (GKS-U)' in page.locator('#recognition').inner_text()
         language_text = page.locator('#languages').inner_text()
-        assert all(s in language_text for s in ('TOEIC 955', '2026', 'IELTS Academic 7.5', '2021'))
+        assert all(s in language_text for s in ('Indonesian — Native', 'Korean — TOPIK Level 6', 'English — TOEIC 955', '2026', 'English — IELTS Academic 7.5', '2021'))
+        assert 'Highest Tier' not in language_text and 'Proficiency' not in language_text
 
         # All internal destinations exist; direct links retain their real destinations.
         for link in page.locator('a[href^="#"]').all():
@@ -66,9 +72,6 @@ with sync_playwright() as p:
         assert page.get_by_role('link', name='View CV', exact=True).get_attribute('href') == CV_URL
         assert page.get_by_role('link', name='View project: PharmaAgent OS', exact=True).get_attribute('href') == 'https://pharmaagent-os-ochre.vercel.app/'
         assert page.get_by_role('link', name="View Factors Affecting Korea's Tourism Industry on GitHub", exact=True).get_attribute('href') == 'https://github.com/davemaxuell/korea-tourism-forecasting'
-        sgis_github = page.get_by_role('link', name='View SGIS Dongne Type — Neighborhood Explorer on GitHub', exact=True)
-        assert sgis_github.get_attribute('href') == 'https://github.com/mjeon01/sgis-dongne-type'
-        assert sgis_github.locator('img[src$="/links/github.svg"]').count() == 1
         assert page.get_by_role('link', name='View SLM_v2.1 — 46M Language Model on GitHub', exact=True).get_attribute('href') == 'https://github.com/davemaxuell/Global-Innovation-Build-Challenge-V2'
         assert page.get_by_role('link', name='View SLM_v2.1 — 46M Language Model on Hugging Face', exact=True).get_attribute('href') == 'https://huggingface.co/davemaxuellkr/Global-Innovation-Build-Challenge-V2'
         assert page.get_by_role('link', name='View SLM_v2.1 — 46M Language Model on Devpost', exact=True).get_attribute('href') == 'https://devpost.com/software/slm_v1'

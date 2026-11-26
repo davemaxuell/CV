@@ -30,4 +30,4 @@ const CredentialSection = ({ id, label, items }: { id: string; label: string; it
 
 export const RecognitionSection = () => <CredentialSection id="recognition" label="Recognition" items={recognitions} />;
 export const LanguageSkillsSection = () => <CredentialSection id="language-skills" label="Language Skills" items={languageSkills} />;
-export const CertificatesSection = () => <CredentialSection id="certificates" label="Certificates" items={certificates} />;
+export const CertificatesSection = () => <CredentialSection id="certificates" label="Course Completion Certificates" items={certificates} />;
