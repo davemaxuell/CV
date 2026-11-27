@@ -270,22 +270,6 @@ export const avatarDialogues: Record<string, AvatarDialogue> = {
       "My AI Malpyeong result connects to the essay-scoring project. The project card has the training approach and evaluation details.",
     ],
   },
-  'recognition:rec-kiise-2026': {
-    label: 'KIISE paper award',
-    lines: [
-      "I received a KIISE Excellent Paper Award in 2026 for my multilingual, multimodal RAG research.",
-      "My student-support retrieval research earned this KIISE paper award. You can find the study in the publications section.",
-      "This award recognizes my multilingual RAG paper. The work combines document structure, retrieval, and answer checking.",
-    ],
-  },
-  'recognition:rec-hclt-2025': {
-    label: 'HCLT paper award',
-    lines: [
-      "I received an HCLT Excellent Paper Award in 2025 for my multilingual, multi-turn dataset research.",
-      "My HCLT award connects to the dataset of 6,000 conversations for international student support. Careful data work made the paper.",
-      "This award came from my first-author dataset paper. It covers dialogues in Korean, English, and Uzbek.",
-    ],
-  },
   'recognition:rec-ai-competition': {
     label: 'Nationwide AI Competition',
     lines: [

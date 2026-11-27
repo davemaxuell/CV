@@ -75,6 +75,8 @@ with sync_playwright() as p:
         assert page.get_by_role('link',name='View Korean Essay Scoring — AI Malpyeong on Hugging Face',exact=True).get_attribute('href')=='https://huggingface.co/davemaxuellkr/260814-writer-model'
         assert page.get_by_role('link',name='Official leaderboard: Korean Essay Scoring — AI Malpyeong',exact=True).get_attribute('href')=='https://kli.korean.go.kr/benchmark/taskOrdtm/taskLeaderBoard.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub04'
         assert page.get_by_role('button',name='Read details: Korean Essay Scoring — AI Malpyeong',exact=True).count()==1
+        assert page.locator('#recognition .recognition-row').count()==5
+        assert 'Excellent Paper Award' not in page.locator('#recognition').inner_text()
         assert '3rd Place (Bronze) · Track 01: Foundational LLM Development' in page.locator('#recognition').inner_text()
         assert page.get_by_role('link',name='Certificate (PDF): Global Innovation Build Challenge V2 — SLM_v2.1',exact=True).get_attribute('href')=='/certificates/GIBC_V2_SLM_v2_1_Bronze_Dave_Maxuell.pdf'
         assert 'Course Completion Certificates' in page.locator('#certificates').inner_text()

@@ -44,7 +44,8 @@ with sync_playwright() as p:
         publication_years = [int(re.search(r'20\d{2}', venue).group()) for venue in page.locator('.academic-venue').all_text_contents()]
         assert publication_years == sorted(publication_years, reverse=True)
         assert page.locator('#projects article').count() == 7
-        assert page.locator('#recognition article').count() == 7
+        assert page.locator('#recognition article').count() == 5
+        assert 'Excellent Paper Award' not in page.locator('#recognition').inner_text()
         assert 'Course Completion Certificates' in page.locator('#certificates').inner_text()
         assert page.locator('#certificates article').count() == 5
         assert page.get_by_text('Published in proceedings', exact=True).count() == 2

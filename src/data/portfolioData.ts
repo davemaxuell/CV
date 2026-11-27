@@ -518,20 +518,6 @@ export const recognitions: RecognitionItem[] = [
     sourceUrl: "https://kli.korean.go.kr/benchmark/taskOrdtm/taskLeaderBoard.do?taskOrdtmId=205&clCd=ING_TASK&subMenuId=sub04"
   },
   {
-    id: "rec-kiise-2026",
-    title: "Excellent Paper Award — Multilingual Multimodal RAG System",
-    issuer: "KIISE (Korea Institute of Information Scientists and Engineers)",
-    year: "2026",
-    badge: "Paper Award"
-  },
-  {
-    id: "rec-hclt-2025",
-    title: "Excellent Paper Award — Multilingual Multi-turn Dataset",
-    issuer: "HCLT (Human & Cognitive Language Technology)",
-    year: "2025",
-    badge: "Paper Award"
-  },
-  {
     id: "rec-ai-competition",
     title: "Nationwide AI Competition, Rookie Track (Team Naratmalssami)",
     issuer: "Ministry of Science & ICT / AI Organizers",
